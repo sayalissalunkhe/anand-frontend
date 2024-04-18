@@ -19,11 +19,11 @@ export default function FranchisingOpportunities() {
   const dispatch = useDispatch()
 
   const onSubmit = (data) => {
-    dispatch(setLoading(true)) 
+    dispatch(setLoading(true))
 
     var formdata = new FormData();
     formdata.append("name", data.name);
-    formdata.append("page_url",window.location.href);
+    formdata.append("page_url", window.location.href);
     formdata.append("city", data.city);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
@@ -38,7 +38,7 @@ export default function FranchisingOpportunities() {
     fetch(API_URL.FRANCHISING_OPPORTUNITIES, requestOptions)
       .then(response => response.json())
       .then(result => {
-        if(result.Errors === false) {
+        if (result.Errors === false) {
           dispatch(setLoading(false))
           reset()
           FormResponse()
@@ -57,21 +57,21 @@ export default function FranchisingOpportunities() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
-            <div className="col">
-              <div className="caption-details bnr-txt">
-                <ul>
-                  <li>
-                    <Link to="/"> Home </Link>
-                  </li>
-                  <li> / </li>
-                  <li> Doctors </li>
-                  <li> / </li>
-                  <li> Franchising Opportunities </li>
-                </ul>
-                <h1>
-                  Become a Partner<br></br> with us
-                </h1>
-              </div>
+              <div className="col">
+                <div className="caption-details bnr-txt">
+                  <ul>
+                    <li>
+                      <Link to="/"> Home </Link>
+                    </li>
+                    <li> / </li>
+                    <li> Doctors </li>
+                    <li> / </li>
+                    <li> Franchising Opportunities </li>
+                  </ul>
+                  <h1>
+                    Become a Partner<br></br> with us
+                  </h1>
+                </div>
               </div>
             </div>
           </div>
@@ -88,15 +88,11 @@ export default function FranchisingOpportunities() {
                   <span className="inlne">Franchising </span> Opportunities
                 </h2>
                 <p>
-                We are looking for partners who can grow with us and help us expand our reach to offer state-of-the-art diagnostic services across the country. Today Anand Diagnostic Laboratory is a leading diagnostic player with over 100+ clinical laboratories and 1500+ collection centres across India. We invite you to be a franchisee and be part of this growth story.
+                  Neuberg Anand Reference Laboratory is on the lookout for partners eager to join us and assist in widening our network to provide top-tier diagnostic solutions throughout Karnataka. Currently, as a prominent diagnostic entity, we boast more than 200 collection centers across Karnataka. We are excited to offer franchise opportunities right here in Karnataka, inviting you to become a part of our ongoing success story.
+
                 </p>
                 <p>
-                  An association with us offers an ideal environment and
-                  platform for a partner to be part of the growing Indian
-                  healthcare industry. We offer exciting opportunities to
-                  enthusiastic individuals with a strong business acumen and
-                  interest in replicating the Anand Diagnostic Laboratory
-                  business model successfully in their locality.
+                  Partnering with us means stepping into a conducive environment tailored for growth within the booming healthcare sector of Karnataka. We present remarkable opportunities for driven individuals who possess keen business insight and a passion for implementing the Neuberg Anand Diagnostic Laboratory business model successfully in their local areas.
                 </p>
               </div>
             </div>
@@ -106,114 +102,114 @@ export default function FranchisingOpportunities() {
                 <h4 className="mb-3 text-center text-white">Partner with us</h4>
                 <form onSubmit={handleSubmit(onSubmit)} >
                   <div className="formdata">
-                      <small className="text-light">Name</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="name"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="text"
-                        name="name"
-                        {...register("name", {
-                          required: "This is required.",
-                        })}
-                      /> 
+                    <small className="text-light">Name</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="name"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="text"
+                      name="name"
+                      {...register("name", {
+                        required: "This is required.",
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">Email</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="email"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="email"
-                        name="email"
-                        {...register("email", {
-                          required: "This is required.",
-                          pattern:{
-                            value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                            message:'Invalid email address!'
-                          }
-                        })}
-                      /> 
+                    <small className="text-light">Email</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="email"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="email"
+                      name="email"
+                      {...register("email", {
+                        required: "This is required.",
+                        pattern: {
+                          value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                          message: 'Invalid email address!'
+                        }
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">Mobile</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="mobile"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="tel"
-                        name="mobile"
-                        {...register("mobile", {
-                          required: "This is required.",
-                          pattern:{
-                            value:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
-                            message:'Not a valid Phone Number'
-                          } 
-                        })}
-                      /> 
+                    <small className="text-light">Mobile</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="mobile"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="tel"
+                      name="mobile"
+                      {...register("mobile", {
+                        required: "This is required.",
+                        pattern: {
+                          value: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+                          message: 'Not a valid Phone Number'
+                        }
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">City</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="city"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="text"
-                        name="city"
-                        {...register("city", {
-                          required: "This is required.",
-                        })}
-                      /> 
+                    <small className="text-light">City</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="city"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="text"
+                      name="city"
+                      {...register("city", {
+                        required: "This is required.",
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">Message</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="message"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <textarea
-                        className="form-control"
-                        name="msg"
-                        id="msg"
-                        {...register("message", {
-                          required: "This is required.",
-                        })}
-                      ></textarea> 
+                    <small className="text-light">Message</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="message"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <textarea
+                      className="form-control"
+                      name="msg"
+                      id="msg"
+                      {...register("message", {
+                        required: "This is required.",
+                      })}
+                    ></textarea>
                   </div>
-                  <div className="formdata"> 
+                  <div className="formdata">
                     <input
                       type="submit"
                       name="submit"
