@@ -49,7 +49,7 @@ export default function VitaminTesting() {
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
-        'phone_conversion_number': '+91 8951869839'
+        'phone_conversion_number': '+91 8035287579'
       });
   `;
 
@@ -330,25 +330,25 @@ export default function VitaminTesting() {
         <div class="tax-saver-check-container">
           <div>
             <ul>
-              <li>Vitamin D test (25OH) - ₹1800 </li>
-              <li>Vitamin B12 - ₹1600</li>
-              <li>Vitamin E    - ₹5900</li>
+              <li>Vitamin D test (25OH) {/*₹1800 */}</li>
+              <li>Vitamin B12 {/*₹1600<*/}</li>
+              <li>Vitamin E    {/*₹5900*/}</li>
               {/* <li>Vitamin B2 </li> */}
               {/* <li>Vitamin B6 </li> */}
             </ul>
           </div>
           <div>
             <ul>
-              <li>Vitamin A - ₹5900</li>
-              <li>Iron Profile - ₹1499</li>
+              <li>Vitamin A {/*₹5900*/}</li>
+              <li>Iron Profile {/*₹1499*/}</li>
               {/* <li>B9 Folic acid </li> */}
               {/* <li>Vitamin B1 </li> */}
             </ul>
           </div>
           <div>
             <ul>
-              <li>Vitamin A & E - ₹8250</li>
-              <li>Vitamin D,D2,D3 - ₹1960</li>
+              <li>Vitamin A & E {/*₹8250*/}</li>
+              <li>Vitamin D,D2,D3 {/*₹1960*/}</li>
             </ul>
           </div>
         </div>

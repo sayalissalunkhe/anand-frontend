@@ -18,9 +18,9 @@ export default function ReachUs() {
                                     </Link>
                                 </div> */}
                                 <div className="col-md-6">
-                                    <Link to="tel:08951869839">
+                                    <Link to="tel:8035287579">
                                         <img src={callUs} width={60} alt="call" className="img-fluid mb-3" />
-                                        <h4>+91 8951869839 <span>Call us</span></h4>
+                                        <h4>+91 8035287579 <span>Call us</span></h4>
                                     </Link>
                                 </div>
                                 <div className="col-md-6">

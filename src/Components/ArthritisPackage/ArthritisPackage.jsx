@@ -40,7 +40,7 @@ export default function ArthritisPackage() {
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
-        'phone_conversion_number': '+91 8951869839'
+        'phone_conversion_number': '+91 8035287579'
       });
   `;
 

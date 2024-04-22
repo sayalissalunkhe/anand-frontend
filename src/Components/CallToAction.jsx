@@ -1,6 +1,6 @@
 function CallToAction() {
     return (
-        <a href="tel:08951869839" className="action-button shadow-lg"> <i className="fa fa-phone"></i> Call Us </a>
+        <a href="tel:8035287579" className="action-button shadow-lg"> <i className="fa fa-phone"></i> Call Us </a>
     )
 }
 

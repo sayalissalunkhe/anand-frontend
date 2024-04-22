@@ -36,7 +36,7 @@
                   </a>
                </div>
                <div className="col-7">
-                  <p className="text-right mb-0">Call now to book<a href="tel:08951869839"><img src="images/phone-icon.png" alt=""/>+91 8951869839</a></p>
+                  <p className="text-right mb-0">Call now to book<a href="tel:8035287579"><img src="images/phone-icon.png" alt=""/>+91 8035287579</a></p>
                </div>
             </div>
          </header>
@@ -68,7 +68,7 @@ SOUTH AFRICA | UAE | USA </span>
 
 
 				<div className="col-12 col-sm-6 ftr-call">
-					<p>Contact Us<a href="tel:08951869839"><img src="images/footer-phone-icon.png" alt=""/>+91 8951869839</a></p>
+					<p>Contact Us<a href="tel:8035287579"><img src="images/footer-phone-icon.png" alt=""/>+91 8035287579</a></p>
 				</div>
 
              

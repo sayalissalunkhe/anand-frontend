@@ -40,7 +40,7 @@ export default function CaptainHealthCheck() {
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
-        'phone_conversion_number': '+91 8951869839'
+        'phone_conversion_number': '+91 8035287579'
       });
   `;
 
@@ -303,6 +303,16 @@ export default function CaptainHealthCheck() {
         </div>
         <div className="right-img">
           <img src={dhoniimg} alt="" className="dhoni-img-form" />
+        </div>
+      </div>
+
+      <div className="how-it-works-container">
+        <div className="mb-3 mt-4 check-health-heading-container">
+          <span className="book-our-heading">Holistic well being </span>
+          <span className="health-check-heading">with our Captain's Health Check.</span>
+        </div>
+        <div className="howit-works-info-container text-center">
+          <p>Embark on a journey to holistic well-being with our Captain's Health Check. Comprehensive and thorough, this checkup covers every aspect of your health, providing invaluable insights into your overall wellness. From blood tests to vital organ assessments, our detailed examination ensures a 360-degree view of your health. Take charge of your well-being today and make informed choices for a healthier, more vibrant life. Don't forget to browse our other health check packages for specialized insights tailored to your unique needs.</p>
         </div>
       </div>
 
