@@ -18,12 +18,67 @@ export default function FranchisingOpportunities() {
   } = useForm();
   const dispatch = useDispatch()
 
+
+  const gtmScript1 = document.createElement("script");
+  gtmScript1.async = true;
+  gtmScript1.src = "https://www.googletagmanager.com/gtag/js?id=AW-10841898141";
+
+  const gtmScript2 = document.createElement("script");
+  gtmScript2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-10841898141');
+    `;
+
+  const gtmScript3 = document.createElement("script");
+  gtmScript3.innerHTML = `
+        gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+          'phone_conversion_number': '+91 8035287579'
+        });
+    `;
+
+  const gtmScript4 = document.createElement("script");
+  gtmScript4.innerHTML = `
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = 'https://www.anandlab.com/anand-at-home-thank-you';
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-10841898141/3fWKCNPbr6kZEJ356LEo',
+          'event_callback': callback
+      });
+      return false;
+    }`;
+
+  // Append the script tags to the head of the document
+  document.head.appendChild(gtmScript1);
+  document.head.appendChild(gtmScript2);
+  document.head.appendChild(gtmScript3);
+  document.head.appendChild(gtmScript4);
+
+
+  // Define the gtag_report_conversion function
+  const gtag_report_conversion = (url) => {
+    const callback = () => {
+      if (typeof (url) !== 'undefined') {
+        window.location = url;
+      }
+    };
+    window.gtag('event', 'conversion', {
+      'send_to': 'AW-10841898141/3fWKCNPbr6kZEJ356LEo',
+      'event_callback': callback
+    });
+  };
+
   const onSubmit = (data) => {
-    dispatch(setLoading(true)) 
+    dispatch(setLoading(true))
 
     var formdata = new FormData();
     formdata.append("name", data.name);
-    formdata.append("page_url",window.location.href);
+    formdata.append("page_url", window.location.href);
     formdata.append("city", data.city);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
@@ -35,10 +90,13 @@ export default function FranchisingOpportunities() {
       redirect: 'follow'
     };
 
+    // Call the gtag_report_conversion function passing the desired URL
+    gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
+
     fetch(API_URL.FRANCHISING_OPPORTUNITIES, requestOptions)
       .then(response => response.json())
       .then(result => {
-        if(result.Errors === false) {
+        if (result.Errors === false) {
           dispatch(setLoading(false))
           reset()
           FormResponse()
@@ -57,21 +115,21 @@ export default function FranchisingOpportunities() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
-            <div className="col">
-              <div className="caption-details bnr-txt">
-                <ul>
-                  <li>
-                    <Link to="/"> Home </Link>
-                  </li>
-                  <li> / </li>
-                  <li> Doctors </li>
-                  <li> / </li>
-                  <li> Franchising Opportunities </li>
-                </ul>
-                <h1>
-                  Become a Partner<br></br> with us
-                </h1>
-              </div>
+              <div className="col">
+                <div className="caption-details bnr-txt">
+                  <ul>
+                    <li>
+                      <Link to="/"> Home </Link>
+                    </li>
+                    <li> / </li>
+                    <li> Doctors </li>
+                    <li> / </li>
+                    <li> Franchising Opportunities </li>
+                  </ul>
+                  <h1>
+                    Become a Partner<br></br> with us
+                  </h1>
+                </div>
               </div>
             </div>
           </div>
@@ -88,7 +146,7 @@ export default function FranchisingOpportunities() {
                   <span className="inlne">Franchising </span> Opportunities
                 </h2>
                 <p>
-                We are looking for partners who can grow with us and help us expand our reach to offer state-of-the-art diagnostic services across the country. Today Anand Diagnostic Laboratory is a leading diagnostic player with over 100+ clinical laboratories and 1500+ collection centres across India. We invite you to be a franchisee and be part of this growth story.
+                  We are looking for partners who can grow with us and help us expand our reach to offer state-of-the-art diagnostic services across the country. Today Anand Diagnostic Laboratory is a leading diagnostic player with over 100+ clinical laboratories and 1500+ collection centres across India. We invite you to be a franchisee and be part of this growth story.
                 </p>
                 <p>
                   An association with us offers an ideal environment and
@@ -106,114 +164,114 @@ export default function FranchisingOpportunities() {
                 <h4 className="mb-3 text-center text-white">Partner with us</h4>
                 <form onSubmit={handleSubmit(onSubmit)} >
                   <div className="formdata">
-                      <small className="text-light">Name</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="name"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="text"
-                        name="name"
-                        {...register("name", {
-                          required: "This is required.",
-                        })}
-                      /> 
+                    <small className="text-light">Name</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="name"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="text"
+                      name="name"
+                      {...register("name", {
+                        required: "This is required.",
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">Email</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="email"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="email"
-                        name="email"
-                        {...register("email", {
-                          required: "This is required.",
-                          pattern:{
-                            value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                            message:'Invalid email address!'
-                          }
-                        })}
-                      /> 
+                    <small className="text-light">Email</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="email"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="email"
+                      name="email"
+                      {...register("email", {
+                        required: "This is required.",
+                        pattern: {
+                          value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                          message: 'Invalid email address!'
+                        }
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">Mobile</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="mobile"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="tel"
-                        name="mobile"
-                        {...register("mobile", {
-                          required: "This is required.",
-                          pattern:{
-                            value:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
-                            message:'Not a valid Phone Number'
-                          } 
-                        })}
-                      /> 
+                    <small className="text-light">Mobile</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="mobile"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="tel"
+                      name="mobile"
+                      {...register("mobile", {
+                        required: "This is required.",
+                        pattern: {
+                          value: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+                          message: 'Not a valid Phone Number'
+                        }
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">City</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="city"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="text"
-                        name="city"
-                        {...register("city", {
-                          required: "This is required.",
-                        })}
-                      /> 
+                    <small className="text-light">City</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="city"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <input
+                      className="form-control jsrequired"
+                      type="text"
+                      name="city"
+                      {...register("city", {
+                        required: "This is required.",
+                      })}
+                    />
                   </div>
                   <div className="formdata">
-                      <small className="text-light">Message</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="message"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <textarea
-                        className="form-control"
-                        name="msg"
-                        id="msg"
-                        {...register("message", {
-                          required: "This is required.",
-                        })}
-                      ></textarea> 
+                    <small className="text-light">Message</small>
+                    <ErrorMessage
+                      errors={errors}
+                      name="message"
+                      render={({ message }) => (
+                        <small className="text-danger ml-2">
+                          * {message}
+                        </small>
+                      )}
+                    />
+                    <textarea
+                      className="form-control"
+                      name="msg"
+                      id="msg"
+                      {...register("message", {
+                        required: "This is required.",
+                      })}
+                    ></textarea>
                   </div>
-                  <div className="formdata"> 
+                  <div className="formdata">
                     <input
                       type="submit"
                       name="submit"
