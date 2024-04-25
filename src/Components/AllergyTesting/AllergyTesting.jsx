@@ -73,6 +73,19 @@ export default function AllergyTesting() {
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
 
+  // Define the gtag_report_conversion function
+  const gtag_report_conversion = (url) => {
+    const callback = () => {
+      if (typeof (url) !== 'undefined') {
+        window.location = url;
+      }
+    };
+    window.gtag('event', 'conversion', {
+      'send_to': 'AW-10841898141/3fWKCNPbr6kZEJ356LEo',
+      'event_callback': callback
+    });
+  };
+
   const extractParamsFromURL = (url) => {
     const params = new URLSearchParams(url.split('?')[1]);
     const extractedParams = {};
@@ -117,7 +130,9 @@ export default function AllergyTesting() {
     formData.notes = notesDataString;
     // console.log(notesDataString);
 
-    axios.post(API_URL.REACH_US, formData)
+    gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
+
+    axios.post(API_URL.LANDING_PAGES_FORM, formData)
       .then((res) => {
         // FormResponse()
         navigate("/anand-at-home-thank-you");

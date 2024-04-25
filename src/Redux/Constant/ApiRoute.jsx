@@ -46,6 +46,8 @@ export const API_URL = {
     REMOVE_TO_CART             : `${process.env.REACT_APP_BASE_URL}/api/remove-to-cart/`,
     CUSTOMER_CART_ITEMS        : `${process.env.REACT_APP_BASE_URL}/api/cart-items`,
     REACH_US                   : `${process.env.REACT_APP_BASE_URL}/api/contact-us`,
+    // Landing page -> contact page controller function api
+    LANDING_PAGES_FORM         : `${process.env.REACT_APP_BASE_URL}/api/landing_pages_form`,
     CAREERS                    : `${process.env.REACT_APP_BASE_URL}/api/current-opening`,
     CAREERS_DEATILS            : `${process.env.REACT_APP_BASE_URL}/api/job-details/`,
     LOCATIONS                  : `${process.env.REACT_APP_BASE_URL}/api/locations`,

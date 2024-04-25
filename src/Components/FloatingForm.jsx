@@ -25,7 +25,7 @@ function FloatingForm() {
         data.page = 'CALL BACK FORM - FOOTER'
         data.page_url = window.location.href
         axios.post(API_URL.REACH_US, data).then((res) => {
-            FormResponse()
+            // FormResponse()
             setLoading(false)
             reset()
             setOpen(!open)

@@ -34,7 +34,7 @@ export default function CbcElectrolytesEtc() {
   const [open, setOpen] = useState(true);
   const [Loading, setLoading] = useState(false);
 
-  
+
   const gtmScript1 = document.createElement("script");
   gtmScript1.async = true;
   gtmScript1.src = "https://www.googletagmanager.com/gtag/js?id=AW-10841898141";
@@ -74,6 +74,20 @@ export default function CbcElectrolytesEtc() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
+  
+  // Define the gtag_report_conversion function
+  const gtag_report_conversion = (url) => {
+    const callback = () => {
+      if (typeof (url) !== 'undefined') {
+        window.location = url;
+      }
+    };
+    window.gtag('event', 'conversion', {
+      'send_to': 'AW-10841898141/3fWKCNPbr6kZEJ356LEo',
+      'event_callback': callback
+    });
+  };
+
 
 
   const extractParamsFromURL = (url) => {
@@ -117,6 +131,9 @@ export default function CbcElectrolytesEtc() {
     data.page = "CBC ELECTROLYTES ETC";
     data.page_url = window.location.href;
     data.notes = notesDataString;
+
+    gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
+
     axios.post(API_URL.REACH_US, data).then((res) => {
       // FormResponse()
       navigate("/anand-at-home-thank-you");
@@ -165,7 +182,7 @@ export default function CbcElectrolytesEtc() {
       document.head.appendChild(gtmScript4);
     }
   }, []);
-  
+
 
   var consumeing = {
     slidesToScroll: 1,
