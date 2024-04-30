@@ -24,10 +24,10 @@ export default function ReachUs() {
                                     </Link>
                                 </div>
                                 <div className="col-md-6">
-                                    <a href="mailto:info@anandlab.com">
+                                    {/* <a href="mailto:info@anandlab.com">
                                         <img src={mail} alt="mail" className="img-fluid mb-3" />
                                         <h4 className='pb-1'>info@anandlab.com</h4>
-                                    </a>
+                                    </a> */}
 
                                     {/* <a href="mailto:helpdesk@anandlab.com">
                                         <h4>helpdesk@anandlab.com

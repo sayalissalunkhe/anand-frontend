@@ -74,7 +74,7 @@ export default function Peoplebhind() {
                                             <div className="modal-header">
                                                 <h5 className="modal-title cs-tm" id="exampleModalLabel">Dr A V Ramaprasad,
                                                     <span>Founder & Director</span>
-                                                    <a href='mailto:sujayprasad@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />sujayprasad@anandlab.com </a>
+                                                    {/* <a href='mailto:sujayprasad@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />sujayprasad@anandlab.com </a> */}
                                                 </h5>
                                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -99,7 +99,7 @@ export default function Peoplebhind() {
                                         <a href="" data-toggle="modal" data-target="#jay">
                                             <img src={people3} alt="call" className="img-fluid" />
                                             <h4>Dr N Jayaram, <span> Managing Director </span></h4>
-                                            <a href='mailto:jayaram@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />jayaram@anandlab.com </a>
+                                            {/* <a href='mailto:jayaram@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />jayaram@anandlab.com </a> */}
                                         </a>
                                     </div>
                                 </div>
@@ -110,7 +110,8 @@ export default function Peoplebhind() {
                                             <div className="modal-header">
                                                 <h5 className="modal-title cs-tm" id="exampleModalLabel">Dr N Jayaram,
                                                     <span>Managing Director</span>
-                                                    <a href='mailto:jayaram@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />jayaram@anandlab.com </a></h5>
+                                                    {/* <a href='mailto:jayaram@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />jayaram@anandlab.com </a>*/}
+                                                </h5>
                                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -135,7 +136,7 @@ export default function Peoplebhind() {
                                         <a href="" data-toggle="modal" data-target="#suj">
                                             <img src={people2} alt="call" className="img-fluid" />
                                             <h4>Dr Sujay Prasad, <span> Technical Director</span></h4>
-                                            <a href='mailto:sujayprasad@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />sujayprasad@anandlab.com </a>
+                                            {/* <a href='mailto:sujayprasad@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />sujayprasad@anandlab.com </a> */}
                                         </a>
                                     </div>
                                 </div>
@@ -146,10 +147,11 @@ export default function Peoplebhind() {
                                             <div className="modal-header">
                                                 <h5 className="modal-title cs-tm" id="exampleModalLabel">Dr Sujay Prasad,
                                                     <span>Technical Director</span>
-                                                    <a href='mailto:sujayprasad@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />sujayprasad@anandlab.com </a></h5>
-                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                    {/* <a href='mailto:sujayprasad@anandlab.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />sujayprasad@anandlab.com </a> */}
+                                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </h5>
                                             </div>
                                             <div className="modal-body">
                                                 <div className="mdl-img">
@@ -173,7 +175,7 @@ export default function Peoplebhind() {
                                         <a href="" data-toggle="modal" data-target="#she">
                                             <img src={people4} alt="call" className="img-fluid" />
                                             <h4>Aishwarya Vasudevan, <span> Group COO </span></h4>
-                                            <a href='mailto:aishwarya@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />aishwarya@ neubergdiagnostics.com </a>
+                                            {/* <a href='mailto:aishwarya@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />aishwarya@ neubergdiagnostics.com </a> */}
 
                                         </a>
                                     </div>
@@ -184,7 +186,7 @@ export default function Peoplebhind() {
                                         <div className="modal-content">
                                             <div className="modal-header">
                                                 <h5 className="modal-title cs-tm" id="exampleModalLabel">Aishwarya Vasudevan, <span> Group COO </span>
-                                                    <a href='mailto:aishwarya@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />aishwarya@neubergdiagnostics.com </a>
+                                                    {/* <a href='mailto:aishwarya@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />aishwarya@neubergdiagnostics.com </a> */}
                                                 </h5>
                                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -203,14 +205,14 @@ export default function Peoplebhind() {
                                             </div>
                                         </div>
                                     </div>
-                                </div> 
+                                </div>
 
                                 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate mb-4" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
                                     <div className="box-fixer nwe-fex">
                                         <a href="javascript:void(0)" className='no-hover'>
                                             <img src={people12} alt="call" className="img-fluid" />
                                             <h4>Elizabeth Thomas <span>Associate Vice President - Operations</span></h4>
-                                            <a href='mailto:elizabeth@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />elizabeth@neubergdiagnostics.com </a>
+                                            {/* <a href='mailto:elizabeth@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />elizabeth@neubergdiagnostics.com </a> */}
                                         </a>
                                     </div>
                                 </div>
@@ -219,7 +221,7 @@ export default function Peoplebhind() {
                                         <a href="javascript:void(0)" className='no-hover'>
                                             <img src={people15} alt="call" className="img-fluid" />
                                             <h4>Keerti Saha <span>GM - Human Resources</span></h4>
-                                            <a href='mailto:keerti.saha@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />keerti.saha@ neubergdiagnostics.com </a>
+                                            {/* <a href='mailto:keerti.saha@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />keerti.saha@ neubergdiagnostics.com </a> */}
                                         </a>
                                     </div>
                                 </div>
@@ -228,7 +230,7 @@ export default function Peoplebhind() {
                                         <a href="javascript:void(0)" className='no-hover'>
                                             <img src={people10} alt="call" className="img-fluid" />
                                             <h4>Govindaraj V <span>Associate General Manager - IT</span></h4>
-                                            <a href='mailto:govindaraj.v@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />govindaraj.v@ neubergdiagnostics.com </a>
+                                            {/* <a href='mailto:govindaraj.v@neubergdiagnostics.com' className='d-flex align-items-center mt-2 small'><MdEmail className='mr-2 m-0' size={22} />govindaraj.v@ neubergdiagnostics.com </a> */}
                                         </a>
                                     </div>
                                 </div>

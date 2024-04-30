@@ -42,13 +42,13 @@ export default function CartBtn(props) {
     }
     if(CheckCartBucket(props.testData.TestId))  {
         return (
-            <button  className="remove-btn" onClick={() => removeToCart()}>
+            <button  className="cart-btn remove-btn" onClick={() => removeToCart()}>
                 <small><i className="fa fa-times mr-2"></i>Remove</small>
             </button>
         )
     } else  {
         return (
-            <button className="text-white choose-your-package" onClick={() => addToCartItem()} >
+            <button className="cart-btn text-white choose-your-package" onClick={() => addToCartItem()} >
                 <i className="fa fa-cart-plus mr-1"></i>ADD
             </button>
         )

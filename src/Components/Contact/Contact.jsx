@@ -12,12 +12,12 @@ import Helmet from "react-helmet";
 
 export default function Contact() {
     const [Loading, setLoading] = useState(false)
-    const { register, handleSubmit, formState: { errors } ,reset  } = useForm({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: yupResolver(
             Yup.object().shape({
                 name: Yup.string().required(),
                 email: Yup.string().required(),
-                mobile    : Yup.string().required(),
+                mobile: Yup.string().required(),
                 location: Yup.string(),
                 message: Yup.string()
             })
@@ -25,7 +25,7 @@ export default function Contact() {
     })
     const contactUsFrom = (data) => {
         setLoading(true)
-        axios.post(API_URL.REACH_US,data).then((res) => {
+        axios.post(API_URL.REACH_US, data).then((res) => {
             FormResponse()
             setLoading(false)
             reset()
@@ -38,10 +38,10 @@ export default function Contact() {
     }, []);
     return (
         <div>
-           <Helmet> 
-      <title>Reach Us - Anand Diagnostic Laboratory Services</title> 
-      <meta name="description" content="To get in touch with us, please submit the form below or send us an email or talk to us on the phone. We take all customer communications seriously."></meta>
-    </Helmet>           
+            <Helmet>
+                <title>Reach Us - Anand Diagnostic Laboratory Services</title>
+                <meta name="description" content="To get in touch with us, please submit the form below or send us an email or talk to us on the phone. We take all customer communications seriously."></meta>
+            </Helmet>
             <section className='inner-banner'>
                 <img src={bannerimage} alt="call" className="img-fluid" />
                 <div className="inner-caption">
@@ -90,7 +90,7 @@ export default function Contact() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mb-5 animated fadeInUp"><hr /></div>
+                                    {/* <div className="mb-5 animated fadeInUp"><hr /></div>
                                     <h5 className="animated fadeInUp mb-3 text-center"><strong>Health and Customer Care Enquiry</strong></h5>
                                     <p className="text-center">Need assistance or want to share your Health experience with us? You can call us or email us:</p>
                                     <div className="row justify-content-center">
@@ -99,14 +99,14 @@ export default function Contact() {
                                                 <p>
                                                     <i className="fa fa-envelope" aria-hidden="true"></i>
                                                     <span>
-                                                    <a href="mailto:info@anandlab.com" target="_blank">info@anandlab.com</a>
-                                                        <br /> 
-                                                    {/* <a href="mailto:helpdesk@anandlab.com" target="_blank">helpdesk@anandlab.com</a> */}
-                                                        </span>
-                                                    </p>
+                                                        <a href="mailto:info@anandlab.com" target="_blank">info@anandlab.com</a>
+                                                        <br />
+                                                         //<a href="mailto:helpdesk@anandlab.com" target="_blank">helpdesk@anandlab.com</a>
+                                                    </span>
+                                                </p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <div className="mb-5 animated fadeInUp"><hr /></div>
                                 </div>
                                 <div className="col-sm-12 col-md-6 col-lg-8">

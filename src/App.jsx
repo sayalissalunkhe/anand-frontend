@@ -22,6 +22,7 @@ import Commitment from './Components/Commitment/Commitment'
 import Accreditation from './Components/Accreditation/Accreditation'
 import PatientsConsumers from './Components/PatientsConsumers/PatientsConsumers'
 import Packages from './Components/Packages/Packages'
+import PackagesAds from './Components/PackagesAds/PackagesAds'
 import Loader from './Components/Loader/Loader'
 import HealthPackages from './Components/HealthPackages/HealthPackages'
 import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/PreparingForHeathCheckup'
@@ -128,6 +129,7 @@ export default function App() {
           <Route path='/accreditation' element={<Accreditation />} />
           <Route path='/patients-consumers' element={<PatientsConsumers />} />
           <Route path='/packages' element={<Packages />} />
+          <Route path='/packages-ads' element={<PackagesAds />} />
           <Route path='/health-packages' element={<HealthPackages />} />
           <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup />} />
           <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection />} />
