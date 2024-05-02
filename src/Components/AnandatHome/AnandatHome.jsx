@@ -33,8 +33,8 @@ export default function AnandatHome() {
 
   const notesValue = Object.entries(extractedParams).map(([key, value]) => `${key}=${value}`).join('&');
 
-  // Convert JavaScript object to JSON string
   const notesDataString = JSON.stringify(notesValue);
+  console.log(notesDataString);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(
@@ -50,7 +50,7 @@ export default function AnandatHome() {
     data.page = 'ANAND AT HOME'
     data.page_url = window.location.href
     data.notes = notesDataString;
-    axios.post(API_URL.REACH_US, data).then((res) => {
+    axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
       // FormResponse()
       navigate("/anand-at-home-thank-you");
       setLoading(false)
