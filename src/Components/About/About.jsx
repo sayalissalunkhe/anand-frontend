@@ -60,7 +60,7 @@ export default function About() {
               <div className="legacy-care">
               <div className="common-heading"><h2> <span>Our Legacy </span>
               ENSURING <span className='yelow'>“CARE”</span> IN HEALTHCARE</h2></div>
-              <p>May 8, 1974 – the day Anand Diagnostic Laboratory made a humble beginning on Infantry Road, Shivajinagar Bangalore. This was the day Dr A V Ramaprasad moved from the role of teacher to lead what has grown into a pioneer in technology driven diagnostics in the region. Core principles of honesty and integrity through transparency that were ingrained and percolated down the ladder of the organisation from the time of its inception found roots and are visible 43 years hence. The visionary in Dr Ramaprasad drove him relentlessly to advocate few basic rules for all to follow a) “The patient comes first. </p>
+              <p>May 8, 1974 – the day Anand Diagnostic Laboratory made a humble beginning on Infantry Road, Shivajinagar Bangalore. This was the day Dr A V Ramaprasad moved from the role of teacher to lead what has grown into a pioneer in technology driven diagnostics in the region. Core principles of honesty and integrity through transparency that were ingrained and percolated down the ladder of the organisation from the time of its inception found roots and are visible 5 decades hence. The visionary in Dr Ramaprasad drove him relentlessly to advocate few basic rules for all to follow a) “The patient comes first. </p>
               <div className="spcl-cnt">
               <img src={dbcde} alt="call" className="img-fluid" />
               The user of our services is the very reason<br></br> of our existence. Total quality management<br></br> is the window through which we achieve<br></br> user satisfaction.
@@ -82,8 +82,9 @@ export default function About() {
               <div className="legacy-mage">
               <img src={testuimonialimg} alt="call" className="img-fluid" />
               <div className="legacy-face">
-               <h4>48<span>+</span></h4>
-               <h5>Years of Diagnostic Excellence</h5> 
+               {/* <h4>5 <span>+</span></h4> */}
+               <h4>5</h4>
+               <h5>Decades of Diagnostic Excellence</h5> 
               </div>
               </div>
           </div>
@@ -155,7 +156,7 @@ export default function About() {
         <div className="col-lg-7">
               <div className="legacy-care">
               <div className="common-heading"><h2> <span>People Behind </span>
-              Over 40 years ago,</h2></div>
+              Over 5 decades ago,</h2></div>
               <p>when doctors relied on stethoscope and pulse as their primary investigation tools, one man set up a diagnostic laboratory, believing that the future of investigative medicine will rely upon laboratory tests as a primary diagnostic tool. Today, this laboratory has grown to incorporate the latest in diagnostic medicine, supporting clinicians across the region with reliable reports for accurate diagnosis and treatment of illnesses.</p> <br></br>
               <div className='cmn-buton'>
               <p>

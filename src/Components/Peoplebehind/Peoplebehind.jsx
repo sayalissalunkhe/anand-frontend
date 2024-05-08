@@ -52,7 +52,7 @@ export default function Peoplebhind() {
                         <div className="col-lg-12 p-0">
                             <div className="col-lg-12">
                                 <div className="common-heading"><h2> <span className='inlne'>The Core</span> Management </h2></div>
-                                <p>About 40 years ago, when doctors relied on the stethoscope and pulse as their primary investigation tools, one man set up a diagnostic laboratory believing that the future of investigative medicine lies on laboratory tests as a primary diagnostic tool. Today Anand laboratory has grown to incorporate the latest in diagnostic medicine, supporting clinicians across the region with reliable reports for accurate diagnosis and treatment of illnesses.</p>
+                                <p>About 5 decades ago, when doctors relied on the stethoscope and pulse as their primary investigation tools, one man set up a diagnostic laboratory believing that the future of investigative medicine lies on laboratory tests as a primary diagnostic tool. Today Anand laboratory has grown to incorporate the latest in diagnostic medicine, supporting clinicians across the region with reliable reports for accurate diagnosis and treatment of illnesses.</p>
                             </div>
 
 
