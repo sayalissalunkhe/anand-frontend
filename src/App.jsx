@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Header from './Components/Includes/Header'
+import { Route, Routes, Navigate } from 'react-router-dom'
+
+import Header from './Components/Includes/Header' 
 import Footer from './Components/Includes/Footer'
 import Test from './Components/Test/Test'
 import TestDetails from './Components/Containers/TestDetails'
@@ -24,7 +25,7 @@ import PatientsConsumers from './Components/PatientsConsumers/PatientsConsumers'
 import Packages from './Components/Packages/Packages'
 import PackagesAds from './Components/PackagesAds/PackagesAds'
 import Loader from './Components/Loader/Loader'
-import HealthPackages from './Components/HealthPackages/HealthPackages'
+// import HealthPackages from './Components/HealthPackages/HealthPackages'
 import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/PreparingForHeathCheckup'
 import DriveThroughBloodCollection from './Components/DriveThroughBloodCollection/DriveThroughBloodCollection'
 import Feedback from './Components/Feedback/Feedback'
@@ -131,7 +132,8 @@ export default function App() {
           <Route path='/patients-consumers' element={<PatientsConsumers />} />
           <Route path='/packages' element={<Packages />} />
           <Route path='/packages-ads' element={<PackagesAds />} />
-          <Route path='/health-packages' element={<HealthPackages />} />
+          {/* <Route path='/health-packages' element={<HealthPackages />} /> */}
+          <Route path="/health-packages" element={<Navigate to="/packages" />} />
           <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup />} />
           <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection />} />
           <Route path='/feedback' element={<FeedbackB2B />} />
