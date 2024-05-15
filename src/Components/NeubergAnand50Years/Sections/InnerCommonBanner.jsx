@@ -1,24 +1,19 @@
 
-import { Link } from "react-router-dom";
-import bannerbgimage from "../../../assets/images/50-yrs-banner.png";
-import bannerimage from "../../../assets/images/illustration-for-50-yrs-banner.png";
-import border from "../../../assets/images/50-yrs-line.png";
+// import { Link } from "react-router-dom";
+import bannerbgimage from "../../../assets/images/50-yrs-banner-new.jpg";
+// import bannerimage from "../../../assets/images/illustration-for-50-yrs-banner.png";
+// import border from "../../../assets/images/50-yrs-line.png";
 
 export default function
   () {
   return (
     <section className='inner-banner'>
       <img src={bannerbgimage} alt="call" className="img-fluid" />
-      <div className="inner-caption">
+      {/* <div className="inner-caption">
         <div className="container">
           <div className="row">
             <div className="col-6 col-sm-7 d-flex align-items-center">
               <div className="caption-details bnr-txt">
-                {/* <ul>
-                  <li><Link to='/'> Home </Link></li>
-                  <li> / </li>
-                  <li> Neuberg Anand 50 Years </li>
-                </ul> */}
                 <h1>
                   Featured <br />
                   Workshops
@@ -33,7 +28,7 @@ export default function
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }
