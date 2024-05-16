@@ -140,7 +140,7 @@ export default function NeubergAnand50Years() {
 
 
                     <div className="row">
-                        <h3 className="text-center anand-50years-heading mx-auto mb-4 mt-5">50 Golden Years CME Program</h3>
+                        <h3 className="text-center anand-50years-heading mx-auto mb-3">50 Golden Years CME Program</h3>
                     </div>
                 </div>
             </section>
@@ -148,7 +148,7 @@ export default function NeubergAnand50Years() {
             <section className="day-1-section">
                 <div className="container">
                     <div className="row">
-                        <h3 className="heading text-white font-weight-normal">Day 1- <b className="bold"> Saturday, 25th May 2024</b></h3>
+                        <h3 className="heading text-white font-weight-normal">Day 1- <b className="bold">Saturday, 25th May 2024 </b></h3>
 
                         <div className="event-table">
                             <table>
@@ -174,8 +174,8 @@ export default function NeubergAnand50Years() {
                                         <td className="right-heading">Dr. Thuppil Venkatesh</td>
                                     </tr>
                                     <tr>
-                                        <td className="left-heading pb-4">HIGH-TEA</td>
-                                        <td className="right-heading pb-4">&nbsp;</td>
+                                        <td className="left-heading">HIGH-TEA</td>
+                                        <td className="right-heading">&nbsp;</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -200,140 +200,12 @@ export default function NeubergAnand50Years() {
                                         <td className="right-heading">Dr. Manisha Sandeep Patwardhan</td>
                                     </tr>
                                     <tr>
-                                        <td className="left-heading pb-4">Panel discussion New test introduction <br />- Challenges and ways to overcome them</td>
-                                        <td className="right-heading pb-4">NETWORKING & DINNER</td>
+                                        <td className="left-heading">Panel discussion New test introduction <br />- Challenges and ways to overcome them</td>
+                                        <td className="right-heading">NETWORKING & DINNER</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="day-2-section">
-                <div className="container">
-                    <div className="row">
-                        <h3 className="heading text-white font-weight-normal">Day 2- <b className="bold">Sunday, 26th May 2024 </b></h3>
-
-                        <div className="event-table">
-                            <table>
-                                <thead>
-                                    <th colSpan={3} className="theading-heading">Session 3 : <b className="bold"> 09:00 to 11:30</b></th>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td className="left-heading">Update in Bladder Pathology</td>
-                                        <td className="right-heading">Dr. Sujay Prasad</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="left-heading">The normal GI endoscopic biopsy</td>
-                                        <td className="right-heading">Prof. S Datta Gupta</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="left-heading">Managing customer expectations through process excellence</td>
-                                        <td className="right-heading">Dr. Jayaram N</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="left-heading">TEA BREAK</td>
-                                        <td className="right-heading pb-4">&nbsp;</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div className="event-table mt-5">
-                            <table>
-                                <thead>
-                                    <th colSpan={3} className="theading-heading">Session 4 : <b className="bold">11:30 to 13:40</b></th>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td className="left-heading">SYMPOSIUM- Myeloma end to end solutions <br />provided by the laboratory</td>
-
-                                        <td className="right-heading">Dr. Sujay Prasad</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="left-heading">FOCUS-”Primary Immunodeficiency”- <br />
-                                            The role of a clinical & laboratory jugalbandi</td>
-                                        <td className="right-heading">Dr. Avanthvikas</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="left-heading pb-4">Concluding Remarks & Vote of Thanks</td>
-                                        <td className="right-heading pb-4">Dr. Sujay Prasad</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="left-heading">LUNCH</td>
-                                        <td className="right-heading pb-4">&nbsp;</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="program-details-section pb-0">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <h3 className="bolder text-center mx-auto text-purple heading">PROGRAM DETAILS</h3>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="program-details-bg px-0">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-7">
-                            <div className="program-details-list py-4">
-                                <h5>Who should attend?</h5>
-                                <p>Lab Directors, Pathologists, Biochemists, Faculty <br /> and PG students of Pathology</p>
-
-                                <h5>Maximum number of participants</h5>
-                                <p>80 (First come first serve basis)</p>
-
-                                <h5>Date & Time</h5>
-                                <p>Day 1- 25th May |  2 PM TO 7 PM <br />
-                                    Day 2-26th May |  9 AM TO 2 PM</p>
-
-                                <h5>Registration Fee</h5>
-                                <p>Rs.1180/- (Rs.1000 + 18% GST ) </p>
-
-                                <div>
-                                    <p className="text-black mb-0">Payment Details:</p>
-                                    <p className="mb-0">Bank : <span className="program-purple-text">HDFC BANK LTD, MG Road, Bengaluru</span></p>
-                                    <p className="mb-0">Account No : <span className="program-purple-text">50200022407969</span></p>
-                                    <p className="mb-0"> className="mb-0"IFSC Code : <span className="program-purple-text">HDFC0000076</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-sm-5 py-4 program-coordinators-section bg-white">
-                            <div className="text-center pt-4">
-                                <h3 className="mx-auto program-coordinators-heading">PROGRAM COORDINATORS</h3>
-
-                                <h4 className="program-purple-text font-weight-lighter mt-5">Dr. KNC Murthy</h4>
-                                <p className="program-yellow-text bold mb-4 mt-2">kncmurthy@naalm.com</p>
-
-                                <h4 className="program-purple-text font-weight-lighter mt-5">Ms. Dakshayani S</h4>
-                                <p className="program-yellow-text bold mb-4 mt-2">dakshayani.s@naalm.com</p>
-
-                                <h4 className="program-purple-text font-weight-lighter mt-5">Mr. Nandeesh M</h4>
-                                <p className="program-yellow-text bold">nandeeshm@neubergdiagnosics.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div className="container">
-                    <div className="row text-center">
-                        <h3 className="bolder text-center mx-auto text-purple heading">REGISTRATION PROCESS</h3>
-                        <h5 className="program-purple-text bold mb-4 text-center">Please click ‘Register now’ to register online. Payment can be made either through bank transfer or UPI (details in registration form)</h5>
-                        <a href="#" className="orange-btn d-inline-block m-auto">Register Now</a>
                     </div>
                 </div>
             </section>
