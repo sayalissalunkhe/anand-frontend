@@ -27,7 +27,7 @@ export default function NeubergAnand50Years() {
                         </div>
                     </div>
 
-                    <div className="row">
+                    <div className="row director-row">
                         <div className="col-sm-6">
                             <div className="director-module">
                                 <p> Dr.Jayaram N <br /> Director, NARL, NAALM</p>
@@ -136,9 +136,6 @@ export default function NeubergAnand50Years() {
                         </div>
                     </div>
                 </div> */}
-
-
-
                     <div className="row">
                         <h3 className="text-center anand-50years-heading mx-auto mb-4 mt-5">50 Golden Years CME Program</h3>
                     </div>
@@ -328,7 +325,7 @@ export default function NeubergAnand50Years() {
                 </div>
             </section>
 
-            <section>
+            <section className="register-now-section">
                 <div className="container">
                     <div className="row text-center">
                         <h3 className="bolder text-center mx-auto text-purple heading">REGISTRATION PROCESS</h3>
