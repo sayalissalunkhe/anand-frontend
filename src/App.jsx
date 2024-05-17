@@ -46,6 +46,7 @@ import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
 import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
 import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees'
 import CaptainHealthCheck from './Components/CaptainHealthCheck/CaptainHealthCheck'
+import CaptainHealth from './Components/CaptainHealth/CaptainHealth'
 import Careers from './Components/Careers/Careers'
 import Career from './Components/Career/Career'
 import MyProfile from './Components/MyProfile/MyProfile'
@@ -72,6 +73,7 @@ import FeedbackB2B from './Components/Feedback/FeedbackB2B'
 import AnandatHomeNipt from './Components/AnandatHomeNipt/AnandatHomeNipt'
 import NIPT from './Components/NIPT/NIPT'
 import AllergyTesting from './Components/AllergyTesting/AllergyTesting'
+import AllergyTest from './Components/AllergyTest/AllergyTest'
 import LabShivajiNagarBranch from './Components/LabShivajiNagarBranch/LabShivajiNagarBranch'
 import VitaminTesting from './Components/VitaminTesting/VitaminTesting'
 import DiabetesLipidProfile from './Components/DiabetesLipidProfile/DiabetesLipidProfile'
@@ -153,8 +155,10 @@ export default function App() {
           <Route path='/head-office' exact element={<HeadOffice />} />
           <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees />} />
           <Route path='/captains-health-check' exact element={<CaptainHealthCheck />} />
+          <Route path='/captains-health' exact element={<CaptainHealth />} />
           <Route path='/nipt' exact element={<NIPT />} />
           <Route path='/allergy-testing' exact element={<AllergyTesting />} />
+          <Route path='/allergy-test' exact element={<AllergyTest />} />
           <Route path='/anand-diagnostic-laboratory-shivajiangar-branch' exact element={<LabShivajiNagarBranch />} />
           <Route path='/vitamin-testing' exact element={<VitaminTesting />} />
           <Route path='/diabetes-lipid-profile' exact element={<DiabetesLipidProfile />} />
