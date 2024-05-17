@@ -15,14 +15,7 @@ export default function NeubergAnand50Years() {
                 <div className="container">
                     <div className="row">
                         <div className="col py-5">
-                            <p className="mt-4 text-center text-purple page-para">To commemorate 50 years of our existence, it is our privilege to invite you
-                                to join us for a series of hands-on and interactive workshops at
-                                <b> Neuberg Anand Reference Laboratory, Bangalore</b> , in the month of May
-                                2024.
-                            </p>
-                            <p className="mt-1 text-center text-purple page-para"> These workshops have been designed to address various aspects of
-                                diagnostic medicine and cater to both practicing doctors and laboratory
-                                professions alike.
+                            <p className="mt-4 text-center text-purple page-para px-3">We are thrilled to announce the Golden Jubilee Celebration of Neuberg Anand Reference Laboratory (NARL). Since 1974, we have been at the forefront of diagnostic excellence, and now, we invite you to join us in commemorating 50 remarkable years.
                             </p>
                         </div>
                     </div>
