@@ -330,7 +330,7 @@ export default function NeubergAnand50Years() {
                     <div className="row text-center">
                         <h3 className="bolder text-center mx-auto text-purple heading">REGISTRATION PROCESS</h3>
                         <h5 className="program-purple-text bold mb-4 text-center">Please click ‘Register now’ to register online. Payment can be made either through bank transfer or UPI (details in registration form)</h5>
-                        <a href="#" className="orange-btn d-inline-block m-auto">Register Now</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSes2gR0nAdAZrDoq_aPC-n7tBroslXrjFrvlzFnPm-TP94FMg/viewform" target="_blank" className="orange-btn d-inline-block m-auto">Register Now</a>
                     </div>
                 </div>
             </section>
