@@ -48,7 +48,7 @@ export default function AllergyTesting() {
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
-      gtag('config', 'AW-10841898141/fCGjCLGmmLAZEJ356LEo', {
+      gtag('config', 'AW-10841898141/WxZXCPaj0LEZEJ356LEo', {
         'phone_conversion_number': '+91 8035287588'
       });
   `;
