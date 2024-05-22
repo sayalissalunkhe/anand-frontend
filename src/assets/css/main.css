@@ -374,7 +374,7 @@ a:hover {
     max-width: 1300px;
   }
 
-  .mothers-day-page, 
+  .mothers-day-page,
   .allergy-test-page {
     padding-top: 110px;
   }
@@ -891,6 +891,19 @@ a.link-white:hover:after {
 
 .orange-btn.bg-blue:hover {
   color: #fff;
+}
+
+.brochure-btn {
+  background: #f48a12;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  display: block;
+  margin: 1rem auto 0;
+  width: fit-content;
+  line-height: normal;
+  /* float: right; */
 }
 
 .submit-btn {
@@ -10368,6 +10381,10 @@ img.line-image {
 }
 
 @media (max-width: 600px) {
+  /* .brochure-btn {
+    float: none;
+  } */
+
   .director-row {
     width: 90%;
   }

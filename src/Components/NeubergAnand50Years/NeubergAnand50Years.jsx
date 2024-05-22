@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import InnerCommonBanner from "./Sections/InnerCommonBanner";
+import Brochure from "../../assets/images/Golden-50-Years-CME.pdf";
 
 export default function NeubergAnand50Years() {
     useEffect(() => {
@@ -129,13 +130,13 @@ export default function NeubergAnand50Years() {
                         </div>
                     </div>
                 </div> */}
-                    <div className="row">
+                    {/* <div className="row">
                         <h3 className="text-center anand-50years-heading mx-auto mb-4 mt-5">50 Golden Years CME Program</h3>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
-            <section className="day-1-section">
+            {/* <section className="day-1-section">
                 <div className="container">
                     <div className="row">
                         <h3 className="heading text-white font-weight-normal">Day 1- <b className="bold"> Saturday, 25th May 2024</b></h3>
@@ -262,13 +263,13 @@ export default function NeubergAnand50Years() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section className="program-details-section pb-0">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <h3 className="bolder text-center mx-auto text-purple heading">PROGRAM DETAILS</h3>
+                            <h3 className="bolder text-center mx-auto text-purple heading">PROGRAM DETAILS <a href={Brochure} target="_blank" className="brochure-btn d-block">Download Brochure</a></h3>
                         </div>
                     </div>
                 </div>
