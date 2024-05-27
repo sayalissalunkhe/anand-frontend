@@ -462,13 +462,16 @@ export default function Header() {
                           >Accreditation
                           </Link>
                         </li>
-                        <li className="nav-item sngle-frce about-inn">
+                        {/* <li className="nav-item sngle-frce about-inn">
                           <Link
                             onClick={handleLink}
                             className="nav-link"
                             to="/neuberg-anand-50-years"
                           >Events
                           </Link>
+                        </li> */}
+                        <li className="nav-item sngle-frce about-inn">
+                          <a href="https://www.anandlab.com/blog" className="nav-link">Blogs</a>
                         </li>
                         <li className="nav-item dropdown sngle-frce">
                           <Link

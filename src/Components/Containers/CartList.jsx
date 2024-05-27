@@ -9,6 +9,25 @@ import { API_URL } from "../../Redux/Constant/ApiRoute";
 import axios from "axios";
 
 export default function CartList() {
+  const gtagReportConversion = (url, eventId) => {
+    const callback = () => {
+      if (typeof (url) !== 'undefined') {
+        window.location = url;
+      }
+    };
+    window.gtag('event', 'conversion', {
+      'send_to': eventId,
+      'event_callback': callback
+    });
+
+    return false;
+  };
+
+  const handleBeginCheckout = () => {
+    // alert('handleBeginCheckout');
+    gtagReportConversion('/checkout', 'AW-10841898141/vYldCObjl7MZEJ356LEo');
+  };
+
   useEffect(() => {
     window.scroll(0, 0)
   }, [])
@@ -38,7 +57,7 @@ export default function CartList() {
         fetchCartList()
       }
     } catch (error) {
-      if(localStorage.getItem("CartTestList")) {
+      if (localStorage.getItem("CartTestList")) {
         setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
       }
     }
@@ -147,7 +166,7 @@ export default function CartList() {
                           <td>
                             <div className="case m-0 text-center">
                               <p>
-                                <Link to="/checkout">Checkout</Link>
+                                <Link to="/checkout" onClick={handleBeginCheckout}>Checkout</Link>
                               </p>
                             </div>
                           </td>
@@ -202,7 +221,7 @@ export default function CartList() {
                       </table>
                       <div className="case text-right">
                         <p>
-                          <Link to="/">Checkout</Link>
+                          <Link to="/" onClick={handleBeginCheckout}>Checkout</Link>
                         </p>
                       </div>
                     </div>
