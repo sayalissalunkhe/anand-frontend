@@ -50,7 +50,7 @@ export default function CbcElectrolytesEtc() {
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
-        'phone_conversion_number': '+91 8035287579'
+        'phone_conversion_number': '+918035287579'
       });
   `;
 

@@ -73,7 +73,7 @@ export default function AnandatHomeNipt() {
     const gtmScript3 = document.createElement('script');
     gtmScript3.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
-        'phone_conversion_number': '+91 8035287579'
+        'phone_conversion_number': '+918035287579'
       });
     `;
 
@@ -120,7 +120,7 @@ export default function AnandatHomeNipt() {
             </div>
             <div className="col-sm-12 col-md-12 col-lg-5 mb-5">
               <div className="contact-number-container-home">
-                  <a href="tel:8035287579" className="call-icon-home shadow-lg"> <i className="fa fa-phone"></i>+91 8035287579 </a>
+                  <a href="tel:+918035287579" className="call-icon-home shadow-lg"> <i className="fa fa-phone"></i>+918035287579 </a>
               </div>
               <div className="green-bg ps-rel franc-isemed animated fadeInRight">
                 <h4 className="mb-3 text-center text-white">Enquire Now</h4>
