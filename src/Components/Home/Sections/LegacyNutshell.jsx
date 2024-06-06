@@ -23,8 +23,8 @@ export default function LegacyNutshell() {
                     <h5>Years of Diagnostic Excellence</h5>
                   </li>
                   <li>
-                    <h4 className="home-counter-text"> <span className="counter">125</span> <span className="clr-pnk">+</span> </h4>
-                    <h5>Touch points across India</h5>
+                    <h4 className="home-counter-text"> <span className="counter">200</span> <span className="clr-pnk">+</span> </h4>
+                    <h5>Touch points across Karnataka</h5>
                   </li>
                   <li>
                     <h4 className="home-counter-text"> <span className="counter">800</span> <span className="clr-pnk">+</span> </h4>
@@ -38,10 +38,10 @@ export default function LegacyNutshell() {
                     <h4 className="home-counter-text"> <span className="counter">1.2</span>M <span className="clr-pnk">+</span> </h4>
                     <h5>Blood Sample collections per year</h5>
                   </li>
-                  <li>
+                  {/* <li>
                     <h4 className="home-counter-text"> <span className="counter">20</span>M <span className="clr-pnk">+</span> </h4>
                     <h5>Blood tests across Neuberg Labs per year</h5>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

@@ -156,9 +156,11 @@ export default function AnandatHome() {
                       {errors?.mobile ? <small className='text-danger'>{'Mobile is a invalid field'}</small> : ''}
                       <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
                     </div>
-                    <h6 className="text-light">Please enter your details and we will reach out to you as soon as we can.</h6>
-                    {errors?.message ? <div><small className='text-danger'>{'Choose any one!'}</small></div> : ''}
-                    <div className="d-flex input-box">
+                    <h6 className="text-light">
+                      {/* Please enter your details and we will reach out to you as soon as we can. */}
+                    </h6>
+                    {/* {errors?.message ? <div><small className='text-danger'>{'Choose any one!'}</small></div> : ''} */}
+                    {/* <div className="d-flex input-box">
                       <p>
                         <input type="radio" id="test1" value="Contact me on call" name="radio-group"  {...register('message')} />
                         <label for="test1">Call</label>
@@ -171,7 +173,7 @@ export default function AnandatHome() {
                         <input type="radio" id="test3" value="Contact me on Email" name="radio-group"  {...register('message')} />
                         <label for="test3">Email</label>
                       </p>
-                    </div>
+                    </div> */}
                     <div className="formdata">
                       {
                         Loading === true
