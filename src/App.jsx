@@ -82,6 +82,8 @@ import KftCreatinineThyroid from './Components/KftCreatinineThyroid/KftCreatinin
 import ArthritisPackage from './Components/ArthritisPackage/ArthritisPackage'
 import NeubergAnand50Years from './Components/NeubergAnand50Years/NeubergAnand50Years'
 import MothersDay from './Components/MothersDay/MothersDay'
+import MensHealth from './Components/MensHealth/MensHealth'
+import WomensHealth from './Components/WomensHealth/WomensHealth'
 
 export default function App() {
   const dispatch = useDispatch();
@@ -178,6 +180,8 @@ export default function App() {
           <Route path='/arthritis-package' exact element={<ArthritisPackage />} />
           <Route path='/neuberg-anand-50-years' exact element={<NeubergAnand50Years />} />
           <Route path='/neuberg-anand-mothers-day' exact element={<MothersDay />} />
+          <Route path='/menshealth' exact element={<MensHealth />} />
+          <Route path='/womenshealth' exact element={<WomensHealth />} />
         </Routes>
         <Footer />
         <AlertBox />

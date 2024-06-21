@@ -10350,6 +10350,12 @@ img.line-image {
   color: #000;
 }
 
+@media (min-width: 1400px) {
+  .page-banner-section{
+    margin-top: 110px;
+  }
+}
+
 @media (max-width: 1024px) {
   .w-25 {
     width: 50% !important;

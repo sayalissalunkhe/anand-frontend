@@ -21,7 +21,7 @@ import commitmentIcon3 from "../../assets/images/commitment-icon-3.png";
 import taticon from "../../assets/images/tat_icon.png";
 import * as Yup from "yup";
 
-export default function CaptainHealth() {
+export default function CaptainHealthCheck() {
   const [open, setOpen] = useState(true);
   const [Loading, setLoading] = useState(false);
 
@@ -34,14 +34,13 @@ export default function CaptainHealth() {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-10841898141');
     `;
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
-      gtag('config', 'AW-10841898141/WxZXCPaj0LEZEJ356LEo', {
-        'phone_conversion_number': '+91 8035287588'
+      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
       });
   `;
 
@@ -217,11 +216,8 @@ export default function CaptainHealth() {
         <div className="check-health-heading-container">
           <span className="book-our-heading">BOOK OUR</span>
           <span className="health-check-heading">
-            &nbsp; CAPTAIN'S HEALTH
+            &nbsp; CAPTAIN'S HEALTH CHECK
           </span>
-          <div class="contact-number-container-home mb-5 mt-3 w-25 mx-auto">
-            <a href="tel:8035287588" class="call-icon-home shadow-lg"> <i class="fa fa-phone"></i>+91 8035287588</a>
-          </div>
         </div>
       </div>
       <div className="book-health-form-container">

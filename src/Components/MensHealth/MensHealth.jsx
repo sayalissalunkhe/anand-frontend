@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HowItWorks from "../HowItWorks/HowItWorks";
-import css from "./CaptainHealthCheck.module.css";
+import css from "./MensHealth.module.css";
 import { useForm } from "react-hook-form";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import axios from "axios";
 import { CgSpinner } from "react-icons/cg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import dhoni_img from '../../assets/images/landing_pages/dhoni-img.png';
+import banner_img from '../../assets/images/mens-health/banner-img.png';
 import capt_left from '../../assets/images/landing_pages/Shield.png';
 import capt_right from '../../assets/images/landing_pages/doc-character.png';
 import basic_left from '../../assets/images/landing_pages/orange-plus.png';
@@ -20,7 +20,7 @@ import adv_right from '../../assets/images/landing_pages/light-purple-plus.png';
 import form_banner from '../../assets/images/mens-health/captain-img.png';
 
 
-function CaptainHealthCheck() {
+function MensHealth() {
   const [open, setOpen] = useState(true);
   const [Loading, setLoading] = useState(false);
 
@@ -58,11 +58,27 @@ function CaptainHealthCheck() {
       return false;
     }`;
 
+  const gtmScript5 = document.createElement("script");
+  gtmScript5.innerHTML = `
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-10841898141/ssISCMLJ9LsZEJ356LEo',
+          'event_callback': callback
+      });
+      return false;
+  }`;
+
   // Append the script tags to the head of the document
   document.head.appendChild(gtmScript1);
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
+  document.head.appendChild(gtmScript5);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
@@ -76,6 +92,23 @@ function CaptainHealthCheck() {
       'event_callback': callback
     });
   };
+
+  const handleClick = (event, url) => {
+    event.preventDefault();
+    const gtag_report_conversion = (url) => {
+      const callback = () => {
+        if (typeof (url) !== 'undefined') {
+          window.location = url;
+        }
+      };
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-10841898141/Qa7oCKKE9ZoZEJ356LEo',
+        'event_callback': callback
+      });
+    };
+
+    gtag_report_conversion(url);
+  }
 
 
   const extractParamsFromURL = (url) => {
@@ -138,32 +171,15 @@ function CaptainHealthCheck() {
     }
   }, []);
 
-  const handleClick = (event, url) => {
-    event.preventDefault();
-    const gtag_report_conversion = (url) => {
-      const callback = () => {
-        if (typeof (url) !== 'undefined') {
-          window.location = url;
-        }
-      };
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-10841898141/Qa7oCKKE9ZoZEJ356LEo',
-        'event_callback': callback
-      });
-    };
-
-    gtag_report_conversion(url);
-  }
-
   return (
     <>
-      <div className={`${[css['page-banner-section']]} container pb-0 pt-5`}>
+      <div className={`${[css['page-banner-section']]} container pt-5`}>
+        {/* <img src="/assets/images/mens-health/mens-health-banner.jpg" alt="page-banner" className="w-100 img-fluid" /> */}
         <div className="row">
-          <div className="col-sm-8">
+          <div className="col-sm-7">
             <div className={`${[css['banner-text']]}`}>
-              <h3>BOOK YOUR CAPTAIN’S <span>HEALTH CHECK</span></h3>
-
-              <h5 className="my-3">Book Your Comprehensive Health Checkup Today!</h5>
+              <h3>WHAT MEN NEED?</h3>
+              <p>The balance of a good headspace, great energy management and ideal weight maintenance is all it takes for a happy and healthy life!</p>
 
               <div className={`${[css['banner-links']]}`}>
                 <a href="#getin_touch" className={` ${css.get_touch}`}>Get in Touch</a>
@@ -171,19 +187,19 @@ function CaptainHealthCheck() {
               </div>
             </div>
           </div>
-          <div className="col-sm-4 d-flex justify-content-center align-items-end">
-            <img src={dhoni_img} alt="banner-img" className="img-fluid" />
+          <div className="col-sm-5">
+            <img src={banner_img} alt="banner-img" className="img-fluid" />
           </div>
         </div>
       </div>
 
-      <div className="container pt-4">
+      {/* <div className="container pt-4">
         <div className="row">
           <div className="col-8 m-auto">
             <p className={`${[css['page-content']]} text-center`}>Embark on a journey to holistic well-being with our Captain's Health Check. Comprehensive and thorough, this checkup covers every aspect of your health, providing invaluable insights into your overall wellness. </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className={`container-fluid ${css.pkg_section} ${css['light-pink-bg']} ${css['energy-pkg-section']}`}>
         <div className="row">
@@ -374,45 +390,6 @@ function CaptainHealthCheck() {
               />
             </div>
             <div className={`col-sm-5`}>
-              {/* <div className={`${css.form_module}`}>
-                                <form onSubmit={handleSubmit}>
-                                    <label className={`d-block text-center`}>Our partners in health are at your service.</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Name"
-                                        autoComplete="off"
-                                        className={`form-control ${css.input_css}`}
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                    />
-                                    <input
-                                        type="tel"
-                                        placeholder="Phone"
-                                        autoComplete="off"
-                                        className={`form-control ${css.input_css}`}
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                    />
-                                    <button
-                                        disabled={isPropertyEmpty}
-                                        type="submit"
-                                        className={` ${css.sent_enquiry}`}
-                                    >
-                                        Request A Call
-                                        {isLoading && (
-                                            <div
-                                                className="spinner-border"
-                                                css={{ width: "20px", height: "20px" }}
-                                                role="status"
-                                            >
-                                                <span className="visually-hidden">Loading...</span>
-                                            </div>
-                                        )}
-                                    </button>
-                                </form>
-                            </div> */}
               <div className={`${css.form_module}`}>
                 <form onSubmit={handleSubmit(contactUsFrom)}>
                   <div className="form-container">
@@ -484,4 +461,4 @@ function CaptainHealthCheck() {
   );
 }
 
-export default CaptainHealthCheck;
+export default MensHealth;

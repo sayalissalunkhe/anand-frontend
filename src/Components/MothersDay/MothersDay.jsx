@@ -84,7 +84,7 @@ export default function MothersDay() {
       }
     };
     window.gtag('event', 'conversion', {
-      'send_to': 'AW-10841898141/3fWKCNPbr6kZEJ356LEo',
+      'send_to': 'AW-10841898141/Qa7oCKKE9ZoZEJ356LEo',
       'event_callback': callback
     });
   };
