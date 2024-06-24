@@ -180,8 +180,8 @@ export default function App() {
           <Route path='/arthritis-package' exact element={<ArthritisPackage />} />
           <Route path='/neuberg-anand-50-years' exact element={<NeubergAnand50Years />} />
           <Route path='/neuberg-anand-mothers-day' exact element={<MothersDay />} />
-          <Route path='/menshealth' exact element={<MensHealth />} />
-          <Route path='/womenshealth' exact element={<WomensHealth />} />
+          <Route path='/mens-health' exact element={<MensHealth />} />
+          <Route path='/womens-health' exact element={<WomensHealth />} />
         </Routes>
         <Footer />
         <AlertBox />
