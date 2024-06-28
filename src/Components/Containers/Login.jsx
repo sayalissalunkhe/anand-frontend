@@ -10,11 +10,11 @@ import { useDispatch } from "react-redux";
 import { setAuthUser, setTestCartList } from "../../Redux/Actions/TestAction";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as Yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 
 export default function Login() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [email, setEmail] = useState(null);
   const [mobileNumber, setMobileNumber] = useState(null);
   const [Otp, setOtp] = useState(null);
@@ -23,44 +23,57 @@ export default function Login() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
-  const LoginWithOtp = () => {
-    if (email === null || mobileNumber === null) {
-      return false
-    }
-    dispatch(setLoading(true))
-    axios.post(API_URL.LOGIN_WITH_OTP, {
-      email: email,
-      mobile: mobileNumber,
-    }).then((response) => {
-      dispatch(setLoading(false))
-      if (response.data.status) {
-        setServerOtp(response.data.otp)
-        PutUser(response.data.data)
-        toast.success('Enter Your OTP !')
-      } else {
-        toast.error(response.data.message)
-      }
-    }).catch((errors) => {
-      console.log(errors.response)
-    });
-  }
-  const VerifyOtp = () => {
-    if (Otp == serverOtp) {
-      dispatch(setAuthUser(AuthUser()))
-      toast.success('Login Success')
+
+  const handleRedirectAfterLogin = () => {
+    const redirectAfterLogin = localStorage.getItem('redirectAfterLogin');
+    if (redirectAfterLogin) {
+      localStorage.removeItem('redirectAfterLogin');
+      navigate(redirectAfterLogin);
+    } else {
       if (localStorage.getItem('CartTestList')) {
         navigate("/my-cart");
       } else {
         navigate("/my-account");
       }
-    } else {
-      toast.error('Ivalid OTP! Try again!')
-      RemoveUser()
     }
-  }
+  };
+
+  const LoginWithOtp = () => {
+    if (email === null || mobileNumber === null) {
+      return false;
+    }
+    dispatch(setLoading(true));
+    axios.post(API_URL.LOGIN_WITH_OTP, {
+      email: email,
+      mobile: mobileNumber,
+    }).then((response) => {
+      dispatch(setLoading(false));
+      if (response.data.status) {
+        setServerOtp(response.data.otp);
+        PutUser(response.data.data);
+        toast.success('Enter Your OTP!');
+      } else {
+        toast.error(response.data.message);
+      }
+    }).catch((errors) => {
+      console.log(errors.response);
+    });
+  };
+
+  const VerifyOtp = () => {
+    if (Otp == serverOtp) {
+      dispatch(setAuthUser(AuthUser()));
+      toast.success('Login Success');
+      handleRedirectAfterLogin();
+    } else {
+      toast.error('Invalid OTP! Try again!');
+      RemoveUser();
+    }
+  };
+
   useEffect(() => {
-    window.scroll(0, 0)
-  }, [])
+    window.scroll(0, 0);
+  }, []);
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(
@@ -69,35 +82,27 @@ export default function Login() {
         password: Yup.string().required(),
       })
     )
-  })
+  });
 
   const LoginAccount = (data) => {
-    dispatch(setLoading(true))
+    dispatch(setLoading(true));
     axios.post(API_URL.LOGIN, data).then((response) => {
-      dispatch(setLoading(false))
+      dispatch(setLoading(false));
       if (response.data.status) {
         localStorage.setItem("CartTestList", JSON.stringify(response.data.cart_items));
-        dispatch(
-          setTestCartList(
-            JSON.parse(localStorage.getItem("CartTestList"))
-          )
-        );
-        PutUser(response.data.data)
-        dispatch(setAuthUser(response.data.data))
-        toast.success('Login Success')
-        if (localStorage.getItem('CartTestList')) {
-          navigate("/my-cart");
-        } else {
-          navigate("/my-account");
-        }
+        dispatch(setTestCartList(JSON.parse(localStorage.getItem("CartTestList"))));
+        PutUser(response.data.data);
+        dispatch(setAuthUser(response.data.data));
+        toast.success('Login Success');
+        handleRedirectAfterLogin();
       } else {
-        toast.error(response.data.message)
+        toast.error(response.data.message);
       }
     }).catch((errors) => {
-      console.log(errors.response)
-      dispatch(setLoading(false))
+      console.log(errors.response);
+      dispatch(setLoading(false));
     });
-  }
+  };
 
   return (
     <div>
@@ -153,7 +158,7 @@ export default function Login() {
                           </div>
                           <div className="col-lg-12 text-center">
                             <div className="user-regster">
-                              You Don't have a account ?
+                              You Don't have an account ?
                               <Link to="/register"> Register Here!</Link>
                             </div>
                           </div>
@@ -176,7 +181,6 @@ export default function Login() {
               <div className="dhoni-bgm">
                 <div className="common-heading">
                   <h2>
-
                     Welcome <span> to Neuberg Anand </span>
                   </h2>
                 </div>
@@ -192,50 +196,26 @@ export default function Login() {
                       </h2>
                     </div>
                     <div className="row">
-                      {
-                        serverOtp == null ?
-                          <div className="col p-0">
-                            <Form>
-                              <div className="form-data col-lg-12">
-                                <input
-                                  className="input100"
-                                  type="email"
-                                  name="name"
-                                  placeholder="Enter Email Address"
-                                  onChange={(e) => setEmail(e.target.value)}
-                                  required
-                                />
-                              </div>
-                              <div className="form-data col-lg-12">
-                                <input
-                                  className="input100"
-                                  type="tel"
-                                  name="name"
-                                  placeholder="Enter your Phone Number"
-                                  onChange={(e) => setMobileNumber(e.target.value)}
-                                  required
-                                />
-                              </div>
-                              <div className="form-data sbm col-lg-12">
-                                <input
-                                  type="submit"
-                                  name="submit"
-                                  value="Send OTP"
-                                  onClick={LoginWithOtp}
-                                  required
-                                />
-                              </div>
-                            </Form>
-                          </div>
-                          :
-                          <>
+                      {serverOtp == null ?
+                        <div className="col p-0">
+                          <Form>
                             <div className="form-data col-lg-12">
                               <input
                                 className="input100"
-                                type="text"
+                                type="email"
                                 name="name"
-                                onChange={(e) => setOtp(e.target.value)}
-                                placeholder="Received OTP"
+                                placeholder="Enter Email Address"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                              />
+                            </div>
+                            <div className="form-data col-lg-12">
+                              <input
+                                className="input100"
+                                type="tel"
+                                name="name"
+                                placeholder="Enter your Phone Number"
+                                onChange={(e) => setMobileNumber(e.target.value)}
                                 required
                               />
                             </div>
@@ -243,12 +223,35 @@ export default function Login() {
                               <input
                                 type="submit"
                                 name="submit"
-                                value="Verfiy OTP"
-                                onClick={VerifyOtp}
+                                value="Send OTP"
+                                onClick={LoginWithOtp}
                                 required
                               />
                             </div>
-                          </>
+                          </Form>
+                        </div>
+                        :
+                        <>
+                          <div className="form-data col-lg-12">
+                            <input
+                              className="input100"
+                              type="text"
+                              name="name"
+                              onChange={(e) => setOtp(e.target.value)}
+                              placeholder="Received OTP"
+                              required
+                            />
+                          </div>
+                          <div className="form-data sbm col-lg-12">
+                            <input
+                              type="submit"
+                              name="submit"
+                              value="Verify OTP"
+                              onClick={VerifyOtp}
+                              required
+                            />
+                          </div>
+                        </>
                       }
                     </div>
                     <div className="col-lg-12 text-center p-0">
@@ -276,6 +279,6 @@ export default function Login() {
           </div>
         </Modal.Body>
       </Modal>
-    </div >
+    </div>
   );
 }

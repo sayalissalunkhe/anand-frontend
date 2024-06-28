@@ -6376,6 +6376,10 @@ select.form-control.form-control-lg option {
 }
 
 @media (max-width: 1400px) {
+  .comon-testdetail-banner{
+    margin-top: 0;
+  }
+
   .loyality-program::before {
     left: -190px;
   }

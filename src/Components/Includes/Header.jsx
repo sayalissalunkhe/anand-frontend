@@ -355,7 +355,7 @@ export default function Header() {
                             className="nav-link dropdown-toggle"
                             to="#"
                           >
-                            Doctors
+                            Partner With Us
                           </Link>
                           <span
                             className="mobile-toggle"
