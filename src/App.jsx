@@ -84,6 +84,7 @@ import NeubergAnand50Years from './Components/NeubergAnand50Years/NeubergAnand50
 import MothersDay from './Components/MothersDay/MothersDay'
 import MensHealth from './Components/MensHealth/MensHealth'
 import WomensHealth from './Components/WomensHealth/WomensHealth'
+import Dengue from './Components/Dengue/Dengue'
 
 export default function App() {
   const dispatch = useDispatch();
@@ -182,6 +183,7 @@ export default function App() {
           <Route path='/neuberg-anand-mothers-day' exact element={<MothersDay />} />
           <Route path='/mens-health' exact element={<MensHealth />} />
           <Route path='/womens-health' exact element={<WomensHealth />} />
+          <Route path='/anand-at-home/dengue' exact element={<Dengue />} />
         </Routes>
         <Footer />
         <AlertBox />

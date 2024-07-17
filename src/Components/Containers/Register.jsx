@@ -7,21 +7,21 @@ import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 import { setAuthUser } from "../../Redux/Actions/TestAction";
-import { useForm } from "react-hook-form";  
+import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { useEffect } from "react";
 
 export default function Login() {
-  useEffect(() => window.scroll(0, 0) , [])
+  useEffect(() => window.scroll(0, 0), [])
   let navigate = useNavigate();
   const dispatch = useDispatch()
-  
+
   const formSchema = Yup.object().shape({
-    name           : Yup.string().required(),
-    mobile         : Yup.string().matches(/^[6-9]\d{9}$/).required(),
-    email          : Yup.string().required(),
-    password       : Yup.string().required().matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/),
+    name: Yup.string().required(),
+    mobile: Yup.string().matches(/^[6-9]\d{9}$/).required(),
+    email: Yup.string().required(),
+    password: Yup.string().required().matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/),
     confirmPassword: Yup.string().required().oneOf([Yup.ref('password')], 'Passwords does not match'),
   })
   const formOptions = { resolver: yupResolver(formSchema) }
@@ -36,7 +36,7 @@ export default function Login() {
         PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
         if (AuthUser()) {
-          if(localStorage.getItem('CartTestList')) {
+          if (localStorage.getItem('CartTestList')) {
             navigate("/my-cart");
           } else {
             navigate("/my-account");
@@ -74,7 +74,7 @@ export default function Login() {
                           </div>
                           <div className="row">
                             <div className="form-data col-lg-12">
-                              <input className={`input1001 ${errors.name && 'border-danger'}`} type="text" placeholder="Name *" {...register("name")} /> 
+                              <input className={`input1001 ${errors.name && 'border-danger'}`} type="text" placeholder="Name *" {...register("name")} />
                             </div>
                             <div className="form-data col-lg-12">
                               <input className={`input1001 ${errors.mobile && 'border-danger'}`} type="text" placeholder="mobile *" {...register("mobile")} />

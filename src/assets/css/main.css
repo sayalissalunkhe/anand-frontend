@@ -6375,11 +6375,17 @@ select.form-control.form-control-lg option {
   }
 }
 
-@media (max-width: 1400px) {
-  .comon-testdetail-banner{
+@media (min-width: 1300px) {
+  .comon-testdetail-banner {
     margin-top: 0;
   }
 
+  #home-banner-carousel .carousel-indicators {
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1400px) {
   .loyality-program::before {
     left: -190px;
   }
@@ -10355,7 +10361,7 @@ img.line-image {
 }
 
 @media (min-width: 1400px) {
-  .page-banner-section{
+  .page-banner-section {
     margin-top: 110px;
   }
 }
