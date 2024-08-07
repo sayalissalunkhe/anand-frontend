@@ -18,11 +18,18 @@ import general_right from '../../assets/images/landing_pages/light-purple-plus.p
 import adv_left from '../../assets/images/landing_pages/orange-plus.png';
 import adv_right from '../../assets/images/landing_pages/light-purple-plus.png';
 import form_banner from '../../assets/images/mens-health/captain-img.png';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 
 function MensHealth() {
   const [open, setOpen] = useState(true);
   const [Loading, setLoading] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  const handleRecaptchaChange = (value) => {
+    console.log('Captcha value:', value);
+    setRecaptchaValue(value);
+  };
 
   const gtmScript1 = document.createElement("script");
   gtmScript1.async = true;
@@ -148,20 +155,26 @@ function MensHealth() {
     ),
   });
   const contactUsFrom = (data) => {
-    setLoading(true);
-    data.page = "CAPTAIN HEALTH CHECK";
-    data.page_url = window.location.href;
-    data.notes = notesDataString;
+    if (recaptchaValue) {
+      setLoading(true);
+      data.page = "CAPTAIN HEALTH CHECK";
+      data.page_url = window.location.href;
+      data.notes = notesDataString;
 
-    gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
+      gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
 
-    axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
-      // FormResponse()
-      navigate("/anand-at-home-thank-you");
-      setLoading(false);
-      reset();
-      setOpen(!open);
-    });
+      axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
+        // FormResponse()
+        navigate("/anand-at-home-thank-you");
+        setLoading(false);
+        reset();
+        setOpen(!open);
+      });
+    } else {
+      // Handle the case where reCAPTCHA validation failed
+      console.log('Please complete the reCAPTCHA');
+      alert('Please check reCAPTCHA');
+    }
   };
   useEffect(() => {
     document.title = "Book Our Captain's Health Check in Bengaluru";
@@ -390,9 +403,9 @@ function MensHealth() {
               />
             </div>
             <div className={`col-sm-5`}>
-              <div className={`${css.form_module}`}>
+            <div className={`${css.form_module}`}>
                 <form onSubmit={handleSubmit(contactUsFrom)}>
-                  <div className="form-container">
+                  <div className="form-container p-0">
                     <h5 className="get-callback-heading">Our partners in health are at your service.</h5>
                     {errors?.name ? (
                       <small className="text-danger">
@@ -433,17 +446,22 @@ function MensHealth() {
                       )}
                     </div>
 
+                    <ReCAPTCHA
+                      sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key
+                      onChange={handleRecaptchaChange}
+                    />
+
                     {Loading === true ? (
                       <button
                         type="submit"
                         disabled
-                        className="btn-primary btn-flx-full"
+                        className="btn-primary btn-flx-full mt-2"
                       >
                         <CgSpinner className="fa-spin mr-2" />
                         Loading ...
                       </button>
                     ) : (
-                      <button type="submit" className="submit-connect-form">
+                      <button type="submit" className="submit-connect-form mt-2">
                         Request A Call
                       </button>
                     )}

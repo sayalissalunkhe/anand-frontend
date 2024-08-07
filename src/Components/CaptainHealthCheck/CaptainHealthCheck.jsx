@@ -18,11 +18,18 @@ import general_right from '../../assets/images/landing_pages/light-purple-plus.p
 import adv_left from '../../assets/images/landing_pages/orange-plus.png';
 import adv_right from '../../assets/images/landing_pages/light-purple-plus.png';
 import form_banner from '../../assets/images/mens-health/captain-img.png';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 
 function CaptainHealthCheck() {
   const [open, setOpen] = useState(true);
   const [Loading, setLoading] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  const handleRecaptchaChange = (value) => {
+    console.log('Captcha value:', value);
+    setRecaptchaValue(value);
+  };
 
   const gtmScript1 = document.createElement("script");
   gtmScript1.async = true;
@@ -115,6 +122,7 @@ function CaptainHealthCheck() {
     ),
   });
   const contactUsFrom = (data) => {
+    if (recaptchaValue) {
     setLoading(true);
     data.page = "CAPTAIN HEALTH CHECK";
     data.page_url = window.location.href;
@@ -129,6 +137,11 @@ function CaptainHealthCheck() {
       reset();
       setOpen(!open);
     });
+    } else {
+      // Handle the case where reCAPTCHA validation failed
+      console.log('Please complete the reCAPTCHA');
+      alert('Please check reCAPTCHA');
+    }
   };
   useEffect(() => {
     document.title = "Book Our Captain's Health Check in Bengaluru";
@@ -167,7 +180,7 @@ function CaptainHealthCheck() {
 
               <div className={`${[css['banner-links']]}`}>
                 <a href="#getin_touch" className={` ${css.get_touch}`}>Get in Touch</a>
-                <a href={`tel:918035287579`} className={` ${css.sent_enquiry}`}><i className="fa fa-phone"></i> +918035287579</a>
+                <a href={`tel:918035287579`} className={` ${css.sent_enquiry} m-auto`}><i className="fa fa-phone"></i> +918035287579</a>
               </div>
             </div>
           </div>
@@ -415,7 +428,7 @@ function CaptainHealthCheck() {
                             </div> */}
               <div className={`${css.form_module}`}>
                 <form onSubmit={handleSubmit(contactUsFrom)}>
-                  <div className="form-container">
+                  <div className="form-container p-0">
                     <h5 className="get-callback-heading">Our partners in health are at your service.</h5>
                     {errors?.name ? (
                       <small className="text-danger">
@@ -456,17 +469,22 @@ function CaptainHealthCheck() {
                       )}
                     </div>
 
+                    <ReCAPTCHA
+                      sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key
+                      onChange={handleRecaptchaChange}
+                    />
+
                     {Loading === true ? (
                       <button
                         type="submit"
                         disabled
-                        className="btn-primary btn-flx-full"
+                        className="btn-primary btn-flx-full mt-2"
                       >
                         <CgSpinner className="fa-spin mr-2" />
                         Loading ...
                       </button>
                     ) : (
-                      <button type="submit" className="submit-connect-form">
+                      <button type="submit" className="submit-connect-form mt-2">
                         Request A Call
                       </button>
                     )}

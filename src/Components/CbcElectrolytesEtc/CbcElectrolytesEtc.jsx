@@ -29,10 +29,17 @@ import axios from "axios";
 import { CgSpinner } from "react-icons/cg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function CbcElectrolytesEtc() {
   const [open, setOpen] = useState(true);
   const [Loading, setLoading] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  const handleRecaptchaChange = (value) => {
+    console.log('Captcha value:', value);
+    setRecaptchaValue(value);
+  };
 
 
   const gtmScript1 = document.createElement("script");
@@ -74,7 +81,7 @@ export default function CbcElectrolytesEtc() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
-  
+
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
     const callback = () => {
@@ -127,20 +134,26 @@ export default function CbcElectrolytesEtc() {
     ),
   });
   const contactUsFrom = (data) => {
-    setLoading(true);
-    data.page = "CBC ELECTROLYTES ETC";
-    data.page_url = window.location.href;
-    data.notes = notesDataString;
+    if (recaptchaValue) {
+      setLoading(true);
+      data.page = "CBC ELECTROLYTES ETC";
+      data.page_url = window.location.href;
+      data.notes = notesDataString;
 
-    gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
+      gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
 
-    axios.post(API_URL.REACH_US, data).then((res) => {
-      // FormResponse()
-      navigate("/anand-at-home-thank-you");
-      setLoading(false);
-      reset();
-      setOpen(!open);
-    });
+      axios.post(API_URL.REACH_US, data).then((res) => {
+        // FormResponse()
+        navigate("/anand-at-home-thank-you");
+        setLoading(false);
+        reset();
+        setOpen(!open);
+      });
+    } else {
+      // Handle the case where reCAPTCHA validation failed
+      console.log('Please complete the reCAPTCHA');
+      alert('Please check reCAPTCHA');
+    }
   };
 
   // const dispatch = useDispatch();
@@ -264,11 +277,16 @@ export default function CbcElectrolytesEtc() {
                 placeholder="Enter Your Mobile Number"
                 className="name-number-inp"
               />
+
+              <ReCAPTCHA
+                sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key
+                onChange={handleRecaptchaChange}
+              />
               <div className="radio-inputs-container">
-                <p>
+                {/* <p>
                   Please enter your details and we will reach out to you as
                   soon as we can.
-                </p>
+                </p> */}
                 {errors?.message ? (
                   <div>
                     {/* <small className="text-danger">

@@ -85,6 +85,7 @@ import MothersDay from './Components/MothersDay/MothersDay'
 import MensHealth from './Components/MensHealth/MensHealth'
 import WomensHealth from './Components/WomensHealth/WomensHealth'
 import Dengue from './Components/Dengue/Dengue'
+import FriendshipDay from './Components/FriendshipDay/FriendshipDay'
 
 export default function App() {
   const dispatch = useDispatch();
@@ -184,6 +185,7 @@ export default function App() {
           <Route path='/mens-health' exact element={<MensHealth />} />
           <Route path='/womens-health' exact element={<WomensHealth />} />
           <Route path='/anand-at-home/dengue' exact element={<Dengue />} />
+          <Route path='/friendship-day' exact element={<FriendshipDay />} />
         </Routes>
         <Footer />
         <AlertBox />

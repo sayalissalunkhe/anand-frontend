@@ -12,11 +12,18 @@ import { CgSpinner } from 'react-icons/cg';
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import axios from "axios";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function Dengue() {
   const [open, setOpen] = useState(true)
   const [Loading, setLoading] = useState(false)
   const navigate = useNavigate();
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  const handleRecaptchaChange = (value) => {
+    console.log('Captcha value:', value);
+    setRecaptchaValue(value);
+  };
 
   const extractParamsFromURL = (url) => {
     const params = new URLSearchParams(url.split('?')[1]);
@@ -47,17 +54,23 @@ export default function Dengue() {
     )
   })
   const contactUsFrom = (data) => {
-    setLoading(true)
-    data.page = 'ANAND AT HOME'
-    data.page_url = window.location.href
-    data.notes = notesDataString;
-    axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
-      // FormResponse()
-      navigate("/anand-at-home-thank-you");
-      setLoading(false)
-      reset()
-      setOpen(!open)
-    })
+    if (recaptchaValue) {
+      setLoading(true)
+      data.page = 'ANAND AT HOME'
+      data.page_url = window.location.href
+      data.notes = notesDataString;
+      axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
+        // FormResponse()
+        navigate("/anand-at-home-thank-you");
+        setLoading(false)
+        reset()
+        setOpen(!open)
+      })
+    } else {
+      // Handle the case where reCAPTCHA validation failed
+      console.log('Please complete the reCAPTCHA');
+      alert('Please check reCAPTCHA');
+    }
   }
   useEffect(() => {
     document.title = "Book a Dengue Test | Neuberg Anand";
@@ -177,6 +190,10 @@ export default function Dengue() {
                         <label for="test3">Email</label>
                       </p>
                     </div> */}
+                    <ReCAPTCHA
+                      sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key
+                      onChange={handleRecaptchaChange}
+                    />
                     <div className="formdata">
                       {
                         Loading === true

@@ -28,10 +28,18 @@ import axios from "axios";
 import { CgSpinner } from "react-icons/cg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 export default function AllergyTesting() {
   const [open, setOpen] = useState(true);
   const [Loading, setLoading] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  const handleRecaptchaChange = (value) => {
+    console.log('Captcha value:', value);
+    setRecaptchaValue(value);
+  };
 
   const gtmScript1 = document.createElement("script");
   gtmScript1.async = true;
@@ -123,27 +131,34 @@ export default function AllergyTesting() {
   });
 
   const contactUsFrom = (formData) => {
-    setLoading(true);
+    if (recaptchaValue) {
+      setLoading(true);
 
-    formData.page = "ALLERGY TESTING";
-    formData.page_url = window.location.href;
-    formData.notes = notesDataString;
-    // console.log(notesDataString);
+      formData.page = "ALLERGY TESTING";
+      formData.page_url = window.location.href; 
+      formData.notes = notesDataString;
+      // console.log(notesDataString);
 
-    gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
+      gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
 
-    axios.post(API_URL.LANDING_PAGES_FORM, formData)
-      .then((res) => {
-        // FormResponse()
-        navigate("/anand-at-home-thank-you");
-        setLoading(false);
-        reset();
-        setOpen(!open);
-      })
-      .catch((error) => {
-        console.error("Error in Reach Us API:", error);
-        setLoading(false); // Make sure to handle loading state even in case of errors
-      });
+      axios.post(API_URL.LANDING_PAGES_FORM, formData)
+        .then((res) => {
+          // FormResponse()
+          navigate("/anand-at-home-thank-you");
+          setLoading(false);
+          reset();
+          setOpen(!open);
+        })
+        .catch((error) => {
+          console.error("Error in Reach Us API:", error);
+          setLoading(false); // Make sure to handle loading state even in case of errors
+        });
+      // console.log('Form submitted successfully');
+    } else {
+      // Handle the case where reCAPTCHA validation failed
+      console.log('Please complete the reCAPTCHA');
+      alert('Please check reCAPTCHA');
+    }
   };
 
 
@@ -273,11 +288,19 @@ export default function AllergyTesting() {
                     placeholder="Enter Your Mobile Number"
                     className="name-number-inp"
                   />
+
+
+                  <ReCAPTCHA
+                    sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key
+                    onChange={handleRecaptchaChange}
+                    className="text-left my-1"
+                  />
+
                   <div className="radio-inputs-container">
-                    <p>
+                    {/* <p>
                       Please enter your details and we will reach out to you as
                       soon as we can.
-                    </p>
+                    </p> */}
                     {errors?.message ? (
                       <div>
                         {/* <small className="text-danger">

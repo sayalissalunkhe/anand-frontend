@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-// import anandhome from "../../assets/images/anandathome.jpg"; 
-// import anandhome from "../../assets/images/Health-package-desk.jpg";
-// import anandhome from "../../assets/images/anant-at-home-banner-min.png";
-import anandhome from "../../assets/images/Anand-At-Home-Banner.png";
+import css from "./FriendshipDay.module.css";
+import anandhome from "../../assets/images/frindship-day-banner.png";
+import frndship_tble from "../../assets/images/frindship-table.png";
 import { useForm } from "react-hook-form";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
@@ -13,8 +12,9 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import axios from "axios";
 import ReCAPTCHA from 'react-google-recaptcha';
+import HowItWorks from "../HowItWorks/HowItWorks";
 
-export default function AnandatHome() {
+export default function FriendshipDay() {
   const [open, setOpen] = useState(true)
   const [Loading, setLoading] = useState(false)
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ export default function AnandatHome() {
   const contactUsFrom = (data) => {
     if (recaptchaValue) {
       setLoading(true)
-      data.page = 'ANAND AT HOME'
+      data.page = 'FRIENDSHIP DAY'
       data.page_url = window.location.href
       data.notes = notesDataString;
       axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
@@ -120,7 +120,7 @@ export default function AnandatHome() {
   document.head.appendChild(gtmScript3);
 
   return (
-    <>
+    <div className={`${css['friendship-day-page']}`}>
 
       <Helmet>
         {/* <script
@@ -130,90 +130,121 @@ export default function AnandatHome() {
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VQRMYBYFG"></script>
       </Helmet>
 
-      <div>
-        <section className="abt-secton forumn-frm mt-8">
-          <div className="container">
-            <div className="row flex-column-reverse flex-lg-row">
-              <div className="col-lg-7">
-                <div className="common-heading">
-                  <h2>
-                    <span className="inlne">Why choose </span>
-                    Anand@home?
-                  </h2>
-                  <img src={anandhome} alt="Anand at Home Collection Box for Lab Testing – A white box with the 'Anand' logo, designed for convenient and secure collection of samples for laboratory testing at home with contact information written on it" className="img-fluid" />
-                  <br />
-                  <br />
-                  <div className="common-para1 drk detilos-expl indication-details p-0">
-                    <ul>
-                      <li>Sample collection done right at your doorstep</li>
-                      <li>Easy/multiple booking channels- Telephone, Whatsapp, Email, Live Chat, Online Appointment Form</li>
-                      <li>Home Care Kit: A complete sample collection kit, sealed for one time use only</li>
-                      <li>Since 1974, Ensuring Care in Healthcare, putting customer convenience first</li>
-                    </ul>
-                    <br />
-                    <b>With Anand@home and the Home Care Kit, we’re bringing the finest healthcare experience right to your doorstep.</b>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-12 col-md-12 col-lg-5 mb-5">
-                <div className="contact-number-container-home">
-                  <a href="tel:+918035287579" className="call-icon-home shadow-lg"> <i className="fa fa-phone"></i>+918035287579</a>
-                </div>
-                <div className="green-bg ps-rel franc-isemed animated fadeInRight">
-                  <h4 className="mb-3 text-center text-white">Enquire Now</h4>
-                  <form onSubmit={handleSubmit(contactUsFrom)}>
-                    <div className="formdata">
-                      {errors?.name ? <small className='text-danger'>{errors?.name?.message}</small> : ''}
-                      <input {...register('name')} type="text" placeholder="Enter Your Name" className='form-control' />
-                    </div>
-                    <div className="formdata">
-                      {errors?.mobile ? <small className='text-danger'>{'Mobile is a invalid field'}</small> : ''}
-                      <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
-                    </div>
-                    <h6 className="text-light">
-                      {/* Please enter your details and we will reach out to you as soon as we can. */}
-                    </h6>
-                    {/* {errors?.message ? <div><small className='text-danger'>{'Choose any one!'}</small></div> : ''} */}
-                    {/* <div className="d-flex input-box">
-                      <p>
-                        <input type="radio" id="test1" value="Contact me on call" name="radio-group"  {...register('message')} />
-                        <label for="test1">Call</label>
-                      </p>
-                      <p>
-                        <input type="radio" id="test2" value="Contact me on Whatsapp" name="radio-group"  {...register('message')} />
-                        <label for="test2">Whatsapp</label>
-                      </p>
-                      <p>
-                        <input type="radio" id="test3" value="Contact me on Email" name="radio-group"  {...register('message')} />
-                        <label for="test3">Email</label>
-                      </p>
-                    </div> */}
-                    <ReCAPTCHA
-                      sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key
-                      onChange={handleRecaptchaChange}
-                    />
-                    <div className="formdata">
-                      {
-                        Loading === true
-                          ?
-                          <button type="submit" disabled className="btn-primary btn-flx-full">
-                            <CgSpinner className="fa-spin mr-2" />
-                            Loading ...
-                          </button>
-                          :
-                          <button type="submit" className="btn-primary btn-flx-full">
-                            Submit
-                          </button>
-                      }
-                    </div>
-                  </form>
-                </div>
+
+
+      <div className={`${css['top-space']} container`}>
+        <div className="row my-4">
+          <div className="col-sm-8 mx-auto">
+            <div className={`${[css['banner-content']]} text-center`}>
+              <h3 className={`${css['yellow-text']} mb-3`}>HAPPY FRIENDSHIP DAY:</h3>
+              <h4>MAKE YOUR BOND STRONGER WITH HEALTH & WELL-BEING</h4>
+
+              <p className="my-3">This Friendship’s Day, strengthen your bonds with a commitment to health & well-being </p>
+
+              <div className={`${[css['banner-links']]} pb-3`}>
+                <a href={`tel:918035287579`} className={` ${css.sent_enquiry} ${css['w-auto']} m-auto`}><i className="fa fa-phone"></i> +918035287579</a>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+
+        <div className="row">
+          <div className="col-sm-7 px-0">
+            <img src={anandhome} alt="Friendship Day" className="img-fluid w-100" />
+
+          </div>
+          <div className="col-sm-5 p-0">
+            {/* <div className="contact-number-container-home">
+                  <a href="tel:+918035287579" className="call-icon-home shadow-lg"> <i className="fa fa-phone"></i>+918035287579</a>
+                </div> */}
+            <div className={`${css.form_module}`}>
+              <form onSubmit={handleSubmit(contactUsFrom)}>
+                <div className="form-container p-0">
+                  <h5 className="get-callback-heading">Our partners in health are at your service.</h5>
+                  {errors?.name ? (
+                    <small className="text-danger">
+                      {errors?.name?.message}
+                    </small>
+                  ) : (
+                    ""
+                  )}
+                  <input
+                    {...register("name")}
+                    type="text"
+                    placeholder="Name"
+                    className="name-number-inp"
+                  />
+                  {errors?.mobile ? (
+                    <small className="text-danger">
+                      {"Mobile is a invalid field"}
+                    </small>
+                  ) : (
+                    ""
+                  )}
+                  <input
+                    {...register("mobile")}
+                    type="tel"
+                    placeholder="Mobile Number"
+                    className="name-number-inp"
+                  />
+                  <div className={[css['radio-inputs-container']]}>
+                    {/* <p>
+                        Please enter your details and we will reach out to you as
+                        soon as we can.
+                      </p> */}
+                    {errors?.message ? (
+                      <div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+
+                  <ReCAPTCHA
+                    sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key
+                    onChange={handleRecaptchaChange}
+                  />
+
+                  {Loading === true ? (
+                    <button
+                      type="submit"
+                      disabled
+                      className="btn-primary btn-flx-full mt-2"
+                    >
+                      <CgSpinner className="fa-spin mr-2" />
+                      Loading ...
+                    </button>
+                  ) : (
+                    <button type="submit" className="submit-connect-form mt-2">
+                      Request A Call
+                    </button>
+                  )}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </>
+      <div className="row">
+        <div className="col-11 m-auto">
+          <div className={`${css['section-heading']}`}>LIMITED TIME <span>SPECIAL OFFER</span></div>
+
+          <p>Get additional <span className={`${css['yellow-text']} bold`}>Rs. 200/- off</span> on <span className={`${css['purple-text']} bold`}>Suvarna and Advanced Health Packages </span> when you and your friend visits the nearest Neuberg Branch for a wellness check together.</p>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-11 m-auto text-center">
+          <div className={`${css['section-heading']} pb-4`}> <span>Good Health</span> begins with <br />
+            Regular<span> Health Check-up </span>
+          </div>
+
+          <img src={frndship_tble} alt="Price table" className="img-fluid" />
+        </div>
+      </div>
+
+      <HowItWorks />
+    </div>
   );
 }
