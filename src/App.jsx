@@ -86,6 +86,8 @@ import MensHealth from './Components/MensHealth/MensHealth'
 import WomensHealth from './Components/WomensHealth/WomensHealth'
 import Dengue from './Components/Dengue/Dengue'
 import FriendshipDay from './Components/FriendshipDay/FriendshipDay'
+import IndependenceDay from './Components/IndependanceDay/IndependanceDay' 
+import SeniorCitizenCard from './Components/SeniorCitizenCard/SeniorCitizenCard' 
 
 export default function App() {
   const dispatch = useDispatch();
@@ -186,6 +188,8 @@ export default function App() {
           <Route path='/womens-health' exact element={<WomensHealth />} />
           <Route path='/anand-at-home/dengue' exact element={<Dengue />} />
           <Route path='/friendship-day' exact element={<FriendshipDay />} />
+          <Route path='/independence-day' exact element={<IndependenceDay />} />
+          <Route path='/senior-citizen-card' exact element={<SeniorCitizenCard />} />
         </Routes>
         <Footer />
         <AlertBox />
