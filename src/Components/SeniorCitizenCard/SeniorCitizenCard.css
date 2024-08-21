@@ -49,11 +49,15 @@
     height: 100%;
     box-shadow: 0px 4px 10.8px 0px #00000040;
     border-radius: 15px;
-    padding: 2rem 3rem;
+    padding: 0 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.call-btn.sent_enquiry {
+    font-size: 20px;
 }
 
 .sent_enquiry {
@@ -114,7 +118,7 @@ button[disabled] {
 }
 
 .SeniorCitizenCard .name-number-inp,
-.SeniorCitizenCard .submit-connect-form{
+.SeniorCitizenCard .submit-connect-form {
     width: 80% !important;
 }
 
@@ -186,7 +190,7 @@ button[disabled] {
 
 .icon-item p {
     font-family: 'Maven Pro';
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.5;
     margin-top: 1rem;
@@ -266,6 +270,11 @@ button[disabled] {
     background-color: #e68a00;
 }
 
+.width-fitcontent {
+    width: fit-content;
+    padding: 10px 3rem;
+}
+
 .container {
     /* padding: 20px 0; */
     text-align: center;
@@ -306,7 +315,7 @@ button[disabled] {
 }
 
 .discounts-container {
-    background-color: #FFF3E0;
+    /* background-color: #FFF3E0; */
     padding: 0;
 }
 
@@ -334,7 +343,7 @@ button[disabled] {
 
 .icon-item {
     text-align: center;
-    margin: 10px;
+    margin: 0;
     flex: 1;
     min-width: 150px;
     padding: 1.5rem;
@@ -509,7 +518,7 @@ button[disabled] {
     }
 }
 
-@media (max-width: 1025px) {
+@media (max-device-width: 1025px) {
     .SeniorCitizenCard {
         padding-top: 130px;
     }
@@ -522,7 +531,7 @@ button[disabled] {
 }
 
 
-@media (max-width: 900px) {
+@media (max-device-width: 900px) {
     .benefits-icons {
         flex-direction: row;
         align-items: center;
@@ -544,7 +553,7 @@ button[disabled] {
 }
 
 
-@media (max-width: 769px) {
+@media (max-device-width: 769px) {
     .benefits-icons {
         flex-direction: row;
         align-items: center;
@@ -565,7 +574,7 @@ button[disabled] {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-device-width: 700px) {
     .SeniorCitizenCard {
         padding-top: 70px;
     }
@@ -588,8 +597,17 @@ button[disabled] {
 }
 
 
-@media (max-width: 600px) {
-    .offers-discounts{
+@media (max-device-width: 600px) {
+    .get-callback-heading{
+        padding-top: 1.5rem;
+    }
+
+    .call-btn.sent_enquiry{
+        height: 65px;
+        font-size: 16px;
+    }
+
+    .offers-discounts {
         padding: 15px;
     }
 
@@ -597,6 +615,7 @@ button[disabled] {
         min-width: 100%;
         padding: 0;
     }
+
     .SeniorCitizenCard {
         padding-top: 70px;
     }
@@ -609,7 +628,7 @@ button[disabled] {
         font-size: 25px;
     }
 
-    .card-container{
+    .card-container {
         padding: 30px;
     }
 

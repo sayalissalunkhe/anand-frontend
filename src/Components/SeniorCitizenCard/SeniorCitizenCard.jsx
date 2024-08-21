@@ -16,7 +16,7 @@ import OVisits from "../../assets/images/SeniorCitizenCardImages/OVisit.png"
 import ScheduleTest from "../../assets/images/SeniorCitizenCardImages/ScheduleTest.png";
 import Samples from "../../assets/images/SeniorCitizenCardImages/Samples.png";
 import LaughingCouple from '../../assets/images/SeniorCitizenCardImages/LaughingCouple.png';
-import recaptchalogo from "../../assets/images/SeniorCitizenCardImages/recaptchalogo.png";
+import cardpdf from "../../assets/doc/Elder-care-card.pdf";
 import ElderCare from "../../assets/images/SeniorCitizenCardImages/ElderCare.png";
 import PersonalConcierge from "../../assets/images/SeniorCitizenCardImages/PersonalConcierge.png";
 import SafeAndSecured from "../../assets/images/SeniorCitizenCardImages/SafeAndSecured.png";
@@ -78,7 +78,6 @@ export default function SeniorCitizenCard() {
     document.head.appendChild(gtmScript3);
     document.head.appendChild(gtmScript4);
 
-    // Define the gtag_report_conversion function
     const gtag_report_conversion = (url) => {
         const callback = () => {
             if (typeof (url) !== 'undefined') {
@@ -90,6 +89,27 @@ export default function SeniorCitizenCard() {
             'event_callback': callback
         });
     };
+
+    const handleClick = (event, url) => {
+        event.preventDefault();
+        const gtag_report_conversion = (url) => {
+            const callback = () => {
+                if (typeof (url) !== 'undefined') {
+                    window.location = url;
+                }
+            };
+            window.gtag('event', 'conversion', {
+                'send_to': 'AW-10841898141/3OhYCLma7MsZEJ356LEo',
+                'event_callback': callback
+            });
+        };
+
+        gtag_report_conversion(url);
+    }
+
+
+
+
 
 
     const extractParamsFromURL = (url) => {
@@ -151,12 +171,15 @@ export default function SeniorCitizenCard() {
         }
     };
     useEffect(() => {
-        document.title = "Independence Day Offer";
+        document.title = "Senior Citizen Card";
         window.scroll(0, 0);
         if (window.location.pathname.includes('Bengaluru')) {
             document.head.appendChild(gtmScript4);
         }
+
+
     }, []);
+
 
 
     return (
@@ -173,17 +196,33 @@ export default function SeniorCitizenCard() {
                         <p className="violet-col-text">ENHANCED CARE FOR SENIOR CITIZENS</p>
                     </div>
                 </div>
-                <div className="row justify-content-center mb-3">
+                <div className="row justify-content-center my-3">
                     <div className="col-12 mb-3">
-                        <p className="Pn-text">
+                        {/* <p className="Pn-text">
                             For Senior Citizen Day, we introduce a special card designed to meet the diagnostic needs of our esteemed<br />
                             elders in the community. This initiative underscores our commitment to providing exceptional care and<br />
                             support to our senior citizens.
-                        </p>
-                    </div>
+                        </p> */}
 
-                    <div className="col-md-3 m-auto">
-                        <a href={`tel:+918035287579`} className='sent_enquiry m-auto'><i className="fa fa-phone"></i>+91 8035 28 7579</a>
+                        <div className="benefits-container py-0 my-2">
+                            {/* <div className="benefits-header">
+                                <p className="benefits-title">BENEFITS FOR SENIOR CITIZENS</p>
+                            </div> */}
+                            <div className="benefits-icons">
+                                <div className="icon-item">
+                                    <img className="PersonalConcierge" src={PersonalConcierge} alt="PC" />
+                                    <p>Personal concierge <br /> for senior citizens</p>
+                                </div>
+                                <div className="icon-item">
+                                    <img className="SafeAndSecured" src={SafeAndSecured} alt="SC" />
+                                    <p>Safe & Secured <br /> Free Home Sample Collection</p>
+                                </div>
+                                <div className="icon-item">
+                                    <img className="PersonalReminders" src={PersonalReminders} alt="PC" />
+                                    <p>Personal reminders <br /> for repeat tests</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,33 +299,21 @@ export default function SeniorCitizenCard() {
                             </form>
                         </div>
                     </div>
+
+                    <div className="col-12 mt-4">
+                        <div className="col-lg-4 col-md-7 m-auto">
+                            <a href={`tel:+918035287579`} className='sent_enquiry call-btn m-auto'> CALL US
+                                <i className="fa fa-phone"></i>
+                                +91 8035 28 7579</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div className="container pd-4 top-padding">
-                <div className="text-conatiner justify-content-center">
+            <div className="container pd-4 pt-4 top-padding">
+                <div className="text-conatiner justify-content-center mb-4">
                     <span className="o-col">XTRA CARE</span>
                     <span className="v-col">for Senior Citizens</span>
-                </div>
-            </div>
-
-            <div className="benefits-container">
-                <div className="benefits-header">
-                    <p className="benefits-title">BENEFITS FOR SENIOR CITIZENS</p>
-                </div>
-                <div className="benefits-icons">
-                    <div className="icon-item">
-                        <img className="PersonalConcierge" src={PersonalConcierge} alt="PC" />
-                        <p>Personal concierge <br /> for senior citizens</p>
-                    </div>
-                    <div className="icon-item">
-                        <img className="SafeAndSecured" src={SafeAndSecured} alt="SC" />
-                        <p>Safe & Secured <br /> Free Home Sample Collection</p>
-                    </div>
-                    <div className="icon-item">
-                        <img className="PersonalReminders" src={PersonalReminders} alt="PC" />
-                        <p>Personal reminders <br /> for repeat tests</p>
-                    </div>
                 </div>
             </div>
 
@@ -303,27 +330,27 @@ export default function SeniorCitizenCard() {
                                 <li>
                                     <img className="offer-icon" src={VoiletTick} alt="Offer Icon" />
                                     <p><span className="orange-text">5% OFF </span>
-                                    <span className="violet-txt"> on Health Packages for Seniors</span></p>
+                                        <span className="violet-txt"> on Health Packages for Seniors</span></p>
                                 </li>
                                 <li>
                                     <img className="offer-icon" src={VoiletTick} alt="Offer Icon" />
                                     <p><span className="orange-text">20% OFF </span>
-                                    <span className="violet-txt"> on Routine Blood Tests</span></p>
+                                        <span className="violet-txt"> on Routine Blood Tests</span></p>
                                 </li>
                                 <li>
                                     <img className="offer-icon" src={VoiletTick} alt="Offer Icon" />
                                     <p><span className="orange-text">10% OFF </span>
-                                    <span className="violet-txt"> on Ultrasound @ Shivajinagar, Kasturinagar</span></p>
+                                        <span className="violet-txt"> on Ultrasound @ Shivajinagar, Kasturinagar</span></p>
                                 </li>
                                 <li>
                                     <img className="offer-icon" src={VoiletTick} alt="Offer Icon" />
                                     <p><span className="orange-text">10% OFF </span>
-                                    <span className="violet-txt"> on ECG @ Shivajinagar, Kasturinagar, Vijaynagar, Jayanagar</span></p>
+                                        <span className="violet-txt"> on ECG @ Shivajinagar, Kasturinagar, Vijaynagar, Jayanagar</span></p>
                                 </li>
                                 <li>
                                     <img className="offer-icon" src={VoiletTick} alt="Offer Icon" />
                                     <p><span className="orange-text">10% OFF </span>
-                                    <span className="violet-txt"> on Dexa, Mammogram, Eye checkup, PFT @ Shivajinagar</span></p>
+                                        <span className="violet-txt"> on Dexa, Mammogram, Eye checkup, PFT @ Shivajinagar</span></p>
                                 </li>
                             </ul>
                         </div>
@@ -344,16 +371,20 @@ export default function SeniorCitizenCard() {
                     <div className="col-sm-6"><img className="img-fluid" src={ElderCare} alt="Elder Care" /></div>
                     <div className="col-sm-6"><img className="img-fluid" src={BenifitsSCImage} alt="BI" /></div>
                 </div>
-                <div className="cta-container">
+                <div className="cta-container text-center">
                     <p>Your senior discount is just a download away.</p>
                     <p>Get your card and show it at the lab for easy savings.</p>
-                    <button className="b-orange">Download Your Card Now</button>
+                    <p className="text-center d-flex justify-content-center">
+                        {/* <a className="b-orange sent_enquiry width-fitcontent px-3 justify-content-center" href={cardpdf} target="_blank">Download Your Card Now</a> */}
+
+                        <a className="b-orange sent_enquiry width-fitcontent justify-content-center" onClick={(event) => handleClick(event, cardpdf)} target="_blank"><span>Download Your Card Now</span></a>
+                    </p>
                 </div>
             </div>
 
 
-            <div className={`col-12 pt-5             my-3 mx-auto text-center`} >
-                <h3 className='page-header'> <span>BOOK A LAB TESt</span> FROM THE COMFORT OF YOUR HOME </h3>
+            <div className={`col-12 pt-5  my-3 mx-auto text-center`} >
+                <h3 className='page-header'> <span>BOOK A LAB TEST</span> FROM THE COMFORT OF YOUR HOME </h3>
             </div>
 
             <HowItWorks />

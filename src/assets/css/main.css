@@ -375,8 +375,13 @@ a:hover {
   }
 
   .mothers-day-page,
-  .allergy-test-page {
+  .allergy-test-page,
+  .page-banner-section {
     padding-top: 110px;
+  }
+
+  .pkg_section>.row {
+    width: 80%;
   }
 }
 

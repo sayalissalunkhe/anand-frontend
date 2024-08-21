@@ -88,6 +88,7 @@ import Dengue from './Components/Dengue/Dengue'
 import FriendshipDay from './Components/FriendshipDay/FriendshipDay'
 import IndependenceDay from './Components/IndependanceDay/IndependanceDay' 
 import SeniorCitizenCard from './Components/SeniorCitizenCard/SeniorCitizenCard' 
+import HealthCheck from './Components/HealthCheck/HealthCheck'
 
 export default function App() {
   const dispatch = useDispatch();
@@ -190,6 +191,7 @@ export default function App() {
           <Route path='/friendship-day' exact element={<FriendshipDay />} />
           <Route path='/independence-day' exact element={<IndependenceDay />} />
           <Route path='/senior-citizen-card' exact element={<SeniorCitizenCard />} />
+          <Route path='/health-check' exact element={<HealthCheck />} />
         </Routes>
         <Footer />
         <AlertBox />
