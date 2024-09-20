@@ -110,22 +110,22 @@ export default function App() {
 
 
 
-  useEffect(() => {
-    const gtmScript1 = document.createElement("script");
-    gtmScript1.async = true;
-    gtmScript1.src = 'https://www.googletagmanager.com/gtag/js?id=G-YPG4W4CLZ5';
+  // useEffect(() => {
+  //   const gtmScript1 = document.createElement("script");
+  //   gtmScript1.async = true;
+  //   gtmScript1.src = 'https://www.googletagmanager.com/gtag/js?id=G-YPG4W4CLZ5';
 
-    const gtmScript2 = document.createElement("script");
-    gtmScript2.innerHTML = `
-       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YPG4W4CLZ5');
-    `;
-    document.head.appendChild(gtmScript1);
-    document.head.appendChild(gtmScript2);
+  //   const gtmScript2 = document.createElement("script");
+  //   gtmScript2.innerHTML = `
+  //      window.dataLayer = window.dataLayer || [];
+  //     function gtag(){dataLayer.push(arguments);}
+  //     gtag('js', new Date());
+  //     gtag('config', 'G-YPG4W4CLZ5');
+  //   `;
+  //   document.head.appendChild(gtmScript1);
+  //   document.head.appendChild(gtmScript2);
 
-  }, []);
+  // }, []);
 
 
   return (
