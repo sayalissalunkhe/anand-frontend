@@ -52,12 +52,19 @@ export default function SeniorCitizenCard() {
 
     const gtmScript3 = document.createElement("script");
     gtmScript3.innerHTML = `
+      gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+    const gtmScript5 = document.createElement("script");
+  gtmScript5.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
   `;
 
-    const gtmScript4 = document.createElement("script");
+const gtmScript4 = document.createElement("script");
     gtmScript4.innerHTML = `
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -77,6 +84,7 @@ export default function SeniorCitizenCard() {
     document.head.appendChild(gtmScript2);
     document.head.appendChild(gtmScript3);
     document.head.appendChild(gtmScript4);
+document.head.appendChild(gtmScript5);
 
     const gtag_report_conversion = (url) => {
         const callback = () => {
@@ -175,6 +183,7 @@ export default function SeniorCitizenCard() {
         window.scroll(0, 0);
         if (window.location.pathname.includes('Bengaluru')) {
             document.head.appendChild(gtmScript4);
+document.head.appendChild(gtmScript5);
         }
 
 
@@ -302,7 +311,7 @@ export default function SeniorCitizenCard() {
 
                     <div className="col-12 mt-4">
                         <div className="col-lg-4 col-md-7 m-auto">
-                            <a href={`tel:+918035287579`} className='sent_enquiry call-btn m-auto'> CALL US
+                            <a href={`tel:+918035287579 `} className='sent_enquiry call-btn m-auto'> CALL US
                                 <i className="fa fa-phone"></i>
                                 +91 8035 28 7579</a>
                         </div>

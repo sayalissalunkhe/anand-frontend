@@ -131,7 +131,7 @@ export default function Header() {
                           </Link>
                         </li>
                         <li>
-                          <a href="tel:18004251974">
+                          <a href="tel:9700369700">
                             <img src={toll} alt="" className="img-fluid" />
                             <span>Toll-free</span>
                           </a>
@@ -341,7 +341,7 @@ export default function Header() {
                                         alt=""
                                         className="img-fluid"
                                       />
-                                      18004251974 (TOLL-FREE)
+                                      9700 36 9700 (TOLL-FREE)
                                     </a>
                                   </li>
                                 </ul>

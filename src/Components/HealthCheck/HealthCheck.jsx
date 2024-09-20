@@ -45,12 +45,19 @@ function HealthCheck() {
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
+      gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+  const gtmScript5 = document.createElement("script");
+  gtmScript5.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
   `;
 
-  const gtmScript4 = document.createElement("script");
+const gtmScript4 = document.createElement("script");
   gtmScript4.innerHTML = `
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -70,6 +77,7 @@ function HealthCheck() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
+document.head.appendChild(gtmScript5);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
@@ -148,6 +156,7 @@ function HealthCheck() {
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
+document.head.appendChild(gtmScript5);
     }
   }, []);
 
@@ -194,7 +203,7 @@ function HealthCheck() {
 
             <div className={`${[css['banner-links1']]} d-flex justify-content-center`}>
                 {/* <a href="#getin_touch" className={` ${css.get_touch}`}>Get in Touch</a> */}
-                <a href={`tel:918035287579`} className={` ${css.sent_enquiry} m-auto`}>CAll US <i className="fa fa-phone"></i> +918035287579</a>
+                <a href={`tel:+918035287579 `} className={` ${css.sent_enquiry} m-auto`}>CAll US <i className="fa fa-phone"></i> +918035287579 </a>
               </div>
           </div>
         </div>

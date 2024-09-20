@@ -46,7 +46,7 @@ function WomensHealth() {
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
-      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+      gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
   `;
@@ -81,12 +81,20 @@ function WomensHealth() {
       return false;
   }`;
 
+  const gtmScript6 = document.createElement("script");
+  gtmScript5.innerHTML = `
+      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
   // Append the script tags to the head of the document
   document.head.appendChild(gtmScript1);
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
   document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript6);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
@@ -182,6 +190,7 @@ function WomensHealth() {
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
+      document.head.appendChild(gtmScript5);
     }
   }, []);
 
@@ -196,7 +205,7 @@ function WomensHealth() {
               <h5 className={`${[css['banner-subheading']]}`}>Book Your <span>Comprehensive Health Checkup</span> Today! </h5>
               <div className={`${[css['banner-links']]}`}>
                 <a href="#getin_touch" className={` ${css.get_touch}`}>Get in Touch</a>
-                <a href={`tel:918035287579`} className={` ${css.sent_enquiry}`}><i className="fa fa-phone"></i> +918035287579</a>
+                <a href={`tel:+918035287579 `} className={` ${css.sent_enquiry}`}><i className="fa fa-phone"></i> +918035287579 </a>
               </div>
             </div>
           </div>
@@ -393,11 +402,11 @@ function WomensHealth() {
               <img
                 src={form_banner}
                 alt="captain-banner"
-                className={`img-fluid ${css.page_banner}`} 
+                className={`img-fluid ${css.page_banner}`}
               />
             </div>
             <div className={`col-sm-5`}>
-            <div className={`${css.form_module}`}>
+              <div className={`${css.form_module}`}>
                 <form onSubmit={handleSubmit(contactUsFrom)}>
                   <div className="form-container p-0">
                     <h5 className="get-callback-heading">Our partners in health are at your service.</h5>

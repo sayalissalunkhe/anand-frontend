@@ -55,6 +55,13 @@ export default function AllergyTesting() {
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
+      gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+  const gtmScript5 = document.createElement("script");
+  gtmScript5.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
@@ -80,6 +87,7 @@ export default function AllergyTesting() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
+  document.head.appendChild(gtmScript5);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
@@ -135,10 +143,10 @@ export default function AllergyTesting() {
       setLoading(true);
 
       formData.page = "ALLERGY TESTING";
-      formData.page_url = window.location.href; 
+      formData.page_url = window.location.href;
       formData.notes = notesDataString;
       // console.log(notesDataString);
- 
+
       gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
 
       axios.post(API_URL.LANDING_PAGES_FORM, formData)
@@ -201,6 +209,7 @@ export default function AllergyTesting() {
 
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
+      document.head.appendChild(gtmScript5);
     }
   }, []);
 

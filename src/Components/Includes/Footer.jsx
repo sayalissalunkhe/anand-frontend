@@ -248,7 +248,7 @@ export default function Footer() {
           <img src={sky} alt="" className="img-fluid" />
         Reports
         </Link> 
-        <a href="tel:18004251974" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
+        <a href="tel:9700369700" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
           Toll-Free
         </a>
         {

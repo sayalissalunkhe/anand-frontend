@@ -40,12 +40,19 @@ export default function CaptainHealth() {
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
-      gtag('config', 'AW-10841898141/WxZXCPaj0LEZEJ356LEo', {
-        'phone_conversion_number': '+91 8035287588'
+      gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
       });
   `;
 
-  const gtmScript4 = document.createElement("script");
+  const gtmScript5 = document.createElement("script");
+  gtmScript5.innerHTML = `
+      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+const gtmScript4 = document.createElement("script");
   gtmScript4.innerHTML = `
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -65,6 +72,7 @@ export default function CaptainHealth() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
+document.head.appendChild(gtmScript5);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
@@ -169,6 +177,7 @@ export default function CaptainHealth() {
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
+document.head.appendChild(gtmScript5);
     }
   }, []);
 
@@ -220,7 +229,7 @@ export default function CaptainHealth() {
             &nbsp; CAPTAIN'S HEALTH
           </span>
           <div class="contact-number-container-home mb-5 mt-3 w-25 mx-auto">
-            <a href="tel:8035287588" class="call-icon-home shadow-lg"> <i class="fa fa-phone"></i>+91 8035287588</a>
+            <a href="tel:+918035287579" class="call-icon-home shadow-lg"> <i class="fa fa-phone"></i>+91 +918035287579</a>
           </div>
         </div>
       </div>
