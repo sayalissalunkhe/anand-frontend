@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 
-import Header from './Components/Includes/Header' 
+import Header from './Components/Includes/Header'
 import Footer from './Components/Includes/Footer'
 import Test from './Components/Test/Test'
 import TestDetails from './Components/Containers/TestDetails'
@@ -86,8 +86,8 @@ import MensHealth from './Components/MensHealth/MensHealth'
 import WomensHealth from './Components/WomensHealth/WomensHealth'
 import Dengue from './Components/Dengue/Dengue'
 import FriendshipDay from './Components/FriendshipDay/FriendshipDay'
-import IndependenceDay from './Components/IndependanceDay/IndependanceDay' 
-import SeniorCitizenCard from './Components/SeniorCitizenCard/SeniorCitizenCard' 
+import IndependenceDay from './Components/IndependanceDay/IndependanceDay'
+import SeniorCitizenCard from './Components/SeniorCitizenCard/SeniorCitizenCard'
 import HealthCheck from './Components/HealthCheck/HealthCheck'
 
 export default function App() {
@@ -107,6 +107,27 @@ export default function App() {
     }
   }, [])
   const queryClient = new QueryClient()
+
+
+
+  useEffect(() => {
+    const gtmScript1 = document.createElement("script");
+    gtmScript1.async = true;
+    gtmScript1.src = 'https://www.googletagmanager.com/gtag/js?id=G-YPG4W4CLZ5';
+
+    const gtmScript2 = document.createElement("script");
+    gtmScript2.innerHTML = `
+       window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YPG4W4CLZ5');
+    `;
+    document.head.appendChild(gtmScript1);
+    document.head.appendChild(gtmScript2);
+
+  }, []);
+
+
   return (
     <QueryClientProvider client={queryClient}>
       <Fragment>

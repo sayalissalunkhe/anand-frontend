@@ -81,8 +81,8 @@ function WomensHealth() {
       return false;
   }`;
 
-  const gtmScript6 = document.createElement("script");
-  gtmScript5.innerHTML = `
+  const gtmScript8 = document.createElement("script");
+  gtmScript8.innerHTML = `
       gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
@@ -93,8 +93,8 @@ function WomensHealth() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
-  document.head.appendChild(gtmScript5);
-  document.head.appendChild(gtmScript6);
+   document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
@@ -190,7 +190,8 @@ function WomensHealth() {
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
-      document.head.appendChild(gtmScript5);
+       document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
     }
   }, []);
 

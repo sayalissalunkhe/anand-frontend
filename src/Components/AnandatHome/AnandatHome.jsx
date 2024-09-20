@@ -120,12 +120,21 @@ export default function AnandatHome() {
         'phone_conversion_number': '+918035287579'
       });
     `;
+    
+  const gtmScript8 = document.createElement("script");
+  gtmScript8.innerHTML = `
+      gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
 
   // Append the script tags to the head of the document
   document.head.appendChild(gtmScript1);
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
+  document.head.appendChild(gtmScript8);
 
   return (
     <>

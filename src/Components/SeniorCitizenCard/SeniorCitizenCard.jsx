@@ -64,6 +64,13 @@ export default function SeniorCitizenCard() {
       });
   `;
 
+  const gtmScript8 = document.createElement("script");
+  gtmScript8.innerHTML = `
+       gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
+    'phone_conversion_number': '+918035287579'
+      });
+  `;
+
 const gtmScript4 = document.createElement("script");
     gtmScript4.innerHTML = `
     function gtag_report_conversion(url) {
@@ -84,7 +91,8 @@ const gtmScript4 = document.createElement("script");
     document.head.appendChild(gtmScript2);
     document.head.appendChild(gtmScript3);
     document.head.appendChild(gtmScript4);
-document.head.appendChild(gtmScript5);
+ document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
 
     const gtag_report_conversion = (url) => {
         const callback = () => {
@@ -183,7 +191,8 @@ document.head.appendChild(gtmScript5);
         window.scroll(0, 0);
         if (window.location.pathname.includes('Bengaluru')) {
             document.head.appendChild(gtmScript4);
-document.head.appendChild(gtmScript5);
+ document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
         }
 
 
