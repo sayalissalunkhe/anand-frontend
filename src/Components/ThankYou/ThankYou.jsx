@@ -15,7 +15,21 @@ function ThankYou() {
       gtag('config', 'AW-10841898141');
     `;
 
-  const gtmScript4 = document.createElement("script");
+  const gtmScript5 = document.createElement("script");
+  gtmScript5.innerHTML = `
+      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+  const gtmScript8 = document.createElement("script");
+  gtmScript8.innerHTML = `
+       gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
+    'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+const gtmScript4 = document.createElement("script");
   gtmScript4.innerHTML = `
   gtag('event', 'conversion', {
     'send_to': 'AW-10841898141/k2ylCOPjl7MZEJ356LEo',
@@ -26,6 +40,8 @@ function ThankYou() {
   document.head.appendChild(gtmScript1);
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript4);
+ document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
 
 
   useEffect(() => {

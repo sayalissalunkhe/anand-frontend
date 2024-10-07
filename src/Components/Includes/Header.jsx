@@ -341,7 +341,7 @@ export default function Header() {
                                         alt=""
                                         className="img-fluid"
                                       />
-                                      18004251974 (TOLL-FREE)
+                                      1800 425 1974 (TOLL-FREE)
                                     </a>
                                   </li>
                                 </ul>

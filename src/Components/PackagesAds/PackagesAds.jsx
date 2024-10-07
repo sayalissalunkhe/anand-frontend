@@ -103,13 +103,27 @@ export default function PackagesAds() {
 
   const gtmScript3 = document.createElement('script');
   gtmScript3.innerHTML = `
-      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+      gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
     `;
 
 
-  const gtmScript4 = document.createElement("script");
+  const gtmScript5 = document.createElement("script");
+  gtmScript5.innerHTML = `
+      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+  const gtmScript8 = document.createElement("script");
+  gtmScript8.innerHTML = `
+       gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
+    'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+const gtmScript4 = document.createElement("script");
   gtmScript4.innerHTML = `
   function gtag_report_conversion(url) {
     var callback = function () {
@@ -130,6 +144,8 @@ export default function PackagesAds() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
+ document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {

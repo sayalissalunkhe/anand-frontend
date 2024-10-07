@@ -45,7 +45,7 @@ function MensHealth() {
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
-      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+      gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
   `;
@@ -80,12 +80,28 @@ function MensHealth() {
       return false;
   }`;
 
+  const gtmScript6 = document.createElement("script");
+  gtmScript6.innerHTML = `
+      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+  const gtmScript8 = document.createElement("script");
+  gtmScript8.innerHTML = `
+      gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
   // Append the script tags to the head of the document
   document.head.appendChild(gtmScript1);
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
-  document.head.appendChild(gtmScript5);
+   document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
+  document.head.appendChild(gtmScript6);
 
   // Define the gtag_report_conversion function
   const gtag_report_conversion = (url) => {
@@ -181,6 +197,8 @@ function MensHealth() {
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
+       document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript8);
     }
   }, []);
 
@@ -196,7 +214,7 @@ function MensHealth() {
 
               <div className={`${[css['banner-links']]}`}>
                 <a href="#getin_touch" className={` ${css.get_touch}`}>Get in Touch</a>
-                <a href={`tel:918035287579`} className={` ${css.sent_enquiry}`}><i className="fa fa-phone"></i> +918035287579</a>
+                <a href={`tel:+918035287579 `} className={` ${css.sent_enquiry}`}><i className="fa fa-phone"></i> +918035287579 </a>
               </div>
             </div>
           </div>
@@ -403,7 +421,7 @@ function MensHealth() {
               />
             </div>
             <div className={`col-sm-5`}>
-            <div className={`${css.form_module}`}>
+              <div className={`${css.form_module}`}>
                 <form onSubmit={handleSubmit(contactUsFrom)}>
                   <div className="form-container p-0">
                     <h5 className="get-callback-heading">Our partners in health are at your service.</h5>

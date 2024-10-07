@@ -124,7 +124,7 @@ export default function LabShivajiNagarBranch() {
 
   const gtmScript3 = document.createElement("script");
   gtmScript3.innerHTML = `
-    gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+    gtag('config', 'AW-10841898141/8FEGCJn-otAZEJ356LEo', {
       'phone_conversion_number': '+918035287579'
     });
     `;
