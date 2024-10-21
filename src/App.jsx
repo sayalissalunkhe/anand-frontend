@@ -89,6 +89,7 @@ import FriendshipDay from './Components/FriendshipDay/FriendshipDay'
 import IndependenceDay from './Components/IndependanceDay/IndependanceDay'
 import SeniorCitizenCard from './Components/SeniorCitizenCard/SeniorCitizenCard'
 import HealthCheck from './Components/HealthCheck/HealthCheck'
+import LatestOffer from './Components/LatestOffer/LatestOffer'
 
 export default function App() {
   const dispatch = useDispatch();
@@ -213,6 +214,7 @@ export default function App() {
           <Route path='/independence-day' exact element={<IndependenceDay />} />
           <Route path='/senior-citizen-card' exact element={<SeniorCitizenCard />} />
           <Route path='/health-check' exact element={<HealthCheck />} />
+          <Route path='/latest-offer' exact element={<LatestOffer />} />
         </Routes>
         <Footer />
         <AlertBox />
