@@ -120,14 +120,14 @@ export default function LatestOffer() {
         'phone_conversion_number': '+918035287579'
       });
     `;
-    
+
   const gtmScript8 = document.createElement("script");
   gtmScript8.innerHTML = `
       gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
         'phone_conversion_number': '+918035287579'
       });
   `;
-    
+
   const gtmScript9 = document.createElement("script");
   gtmScript8.innerHTML = `
       gtag('config', 'AW-10841898141/hmNnCMaRtt4ZEJ356LEo', {
@@ -168,13 +168,15 @@ export default function LatestOffer() {
                   <img src={anandhome} alt="Anand at Home Collection Box for Lab Testing – A white box with the 'Anand' logo, designed for convenient and secure collection of samples for laboratory testing at home with contact information written on it" className="img-fluid" />
                   <br />
                   <br />
-                  <div className="common-para1 drk detilos-expl indication-details p-0">
-                    <p>At Neuberg Anand, we offer comprehensive health checkups tailored to your needs, starting at just ₹999. Our expert team ensures precise and timely results, helping you stay healthy and proactive.
+                  <div className="common-para1 drk detilos-expl indication-details p-0 text-left">
+                    <p>At Neuberg Anand, we offer comprehensive health checkups tailored to your needs, starting at just ₹999. Our expert team ensures precise and timely results, helping you stay healthy and proactive.  <br /><br />
+                      <b> Get 50% off on key tests – HbA1c, Vitamin D, and Iron Profile.</b> <br />
+                      <i> Offer valid till 31st October 2023.</i>                    {/* At Neuberg Anand, we offer comprehensive health checkups tailored to your needs, starting at just ₹999. Our expert team ensures precise and timely results, helping you stay healthy and proactive. */}
                     </p>
-                    <ul>
+                    {/* <ul>
                       <li>50% Off on Key Tests – HbA1c, Vitamin D, Iron Profile</li>
                       <li>Valid till 31 Oct 2023</li>
-                    </ul>
+                    </ul> */}
                     <br />
                     <b>Book your health check now!</b>
                   </div>
