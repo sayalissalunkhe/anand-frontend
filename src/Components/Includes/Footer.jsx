@@ -82,7 +82,8 @@ export default function Footer() {
                   </li> */}
                     <li>
                     {/* <Link to="/reports"> */}
-                    <Link to="https://reports.anandlab.com/V3/" target="_blank">
+                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+" target="_blank">
                       Download Reports
                     </Link>
                     </li>
@@ -111,7 +112,8 @@ export default function Footer() {
                     </li>
                     <li>                                     
                     {/* <Link to="/reports"> */}
-                    <Link to="https://reports.anandlab.com/V3/" target="_blank">
+                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+" target="_blank">
                       Download Reports
                     </Link>
                     </li>
@@ -243,7 +245,8 @@ export default function Footer() {
           <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span>
         </a>
         {/* <Link to="/reports" data-toggle="tooltip" title="Download Your Reports"> */}
-        <Link to="https://reports.anandlab.com/V3/" 
+        <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+" 
                 target="_blank" data-toggle="tooltip" title="Download Your Reports">
           <img src={sky} alt="" className="img-fluid" />
         Reports

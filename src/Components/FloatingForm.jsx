@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import { API_URL } from "../Redux/Constant/ApiRoute";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -43,7 +43,7 @@ function FloatingForm() {
 
     return (
         <div className="womensdayawrap">
-            <div className={open == true ? 'womendaycontent ' : 'womendaycontent conthgt'}>
+            <div className={open == true ? 'womendaycontent d-none' : 'womendaycontent conthgt'}>
                 <div className="green-bg animated fadeInRight">
                     <h4 className="mb-3 text-white">Book Home Collection</h4>
                     <form onSubmit={handleSubmit(contactUsFrom)}>
@@ -77,17 +77,19 @@ function FloatingForm() {
                     </form>
                 </div>
             </div>
-            <div className="womensdayawrapsec" onClick={() => setOpen(!open)} >
+            {/* <div className="womensdayawrapsec" onClick={() => setOpen(!open)} > */}
+            <a className="womensdayawrapsec" href="tel:+918035287579">
                 <span>
                     <img src={require('../../src/assets/images/call-girl.png')} className="img-responsive" alt="Call" />
                     <div className="mob-rlce">Reach Us</div>
                 </span>
                 <span>
-                    <h2>Request a Call Back</h2>
+                    <h2>Call Us</h2>
                     <p>For Home Collection</p>
                 </span>
-                {open ? <FaPlus /> : <FaMinus />}
-            </div>
+                {/* {open ? <FaPlus /> : <FaMinus />} */}
+                {open ? <FaPhoneAlt /> : <FaPhoneAlt />}
+            </a>
         </div>
     )
 }

@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 // import anandhome from "../../assets/images/anandathome.jpg"; 
 // import anandhome from "../../assets/images/Health-package-desk.jpg";
 // import anandhome from "../../assets/images/anant-at-home-banner-min.png";
-import anandhome from "../../assets/images/Anand-At-Home-Banner.png";
+// import anandhome from "../../assets/images/Anand-At-Home-Banner.png";
+// import anandhome from "../../assets/images/diwali-banner.jpg";
+import anandhome from "../../assets/images/anand-at-home-banner-2024.png";
 import { useForm } from "react-hook-form";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
@@ -13,6 +15,15 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import axios from "axios";
 import ReCAPTCHA from 'react-google-recaptcha';
+import commitmentIcon1 from "../../assets/images/commitment-icon-1.png";
+import commitmentIcon2 from "../../assets/images/commitment-icon-2.png";
+import commitmentIcon3 from "../../assets/images/commitment-icon-3.png";
+import GlobalStyle from "../HowItWorks/HowItWorks.module.css";
+import how_work1 from '../../assets/images/landing_pages/Share-your-details.png';
+import how_work2 from '../../assets/images/landing_pages/Schedule-the-test.png';
+import how_work3 from '../../assets/images/landing_pages/visit-your-home-1.png';
+import how_work4 from '../../assets/images/landing_pages/visit-your-home.png';
+import how_work5 from '../../assets/images/landing_pages/Get-your-reports.png';
 
 export default function AnandatHome() {
   const [open, setOpen] = useState(true)
@@ -120,7 +131,7 @@ export default function AnandatHome() {
         'phone_conversion_number': '+918035287579'
       });
     `;
-    
+
   const gtmScript8 = document.createElement("script");
   gtmScript8.innerHTML = `
       gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
@@ -154,21 +165,22 @@ export default function AnandatHome() {
               <div className="col-lg-7">
                 <div className="common-heading">
                   <h2>
-                    <span className="inlne">Why choose </span>
-                    Anand@home?
+                    <span className="inlne">Your Health, Your Comfort </span> <br />
+                    Delivered to Your Doorstep
                   </h2>
                   <img src={anandhome} alt="Anand at Home Collection Box for Lab Testing – A white box with the 'Anand' logo, designed for convenient and secure collection of samples for laboratory testing at home with contact information written on it" className="img-fluid" />
                   <br />
                   <br />
                   <div className="common-para1 drk detilos-expl indication-details p-0">
-                    <ul>
+                    <p>At Neuberg Anand, we understand that prioritizing your health should be convenient and hassle-free. That’s why we bring our trusted diagnostic services right to your home with our Home Collection Service. Whether it's routine health checkups or specialized tests, you no longer need to step out of the house—let us come to you.</p>
+                    {/* <ul>
                       <li>Sample collection done right at your doorstep</li>
                       <li>Easy/multiple booking channels- Telephone, Whatsapp, Email, Live Chat, Online Appointment Form</li>
                       <li>Home Care Kit: A complete sample collection kit, sealed for one time use only</li>
                       <li>Since 1974, Ensuring Care in Healthcare, putting customer convenience first</li>
                     </ul>
                     <br />
-                    <b>With Anand@home and the Home Care Kit, we’re bringing the finest healthcare experience right to your doorstep.</b>
+                    <b>With Anand@home and the Home Care Kit, we’re bringing the finest healthcare experience right to your doorstep.</b> */}
                   </div>
                 </div>
               </div>
@@ -228,6 +240,66 @@ export default function AnandatHome() {
               </div>
             </div>
           </div>
+
+          <div className="our-commitment-container">
+            <h4 className="section-heading">Our Commitment</h4>
+
+            <div className="insider-comm-box">
+              <div className="commitment-info-container">
+                <div className="commitment-info">
+                  <img src={commitmentIcon2} alt="" />
+                  <h4>Safety First</h4>
+                  <p>Ensuring a safe and comfortable testing process.</p>
+                </div>
+                <div className="commitment-info">
+                  <img src={commitmentIcon3} alt="" />
+                  <h4>Quality Care</h4>
+                  <p>
+                    Our team is dedicated to providing personalized care and
+                    support.
+                  </p>
+                </div>
+                <div className="commitment-info">
+                  <img src={commitmentIcon1} alt="" />
+                  <h4>Quick Turnaround Time</h4>
+                  <p>Get your test reports within 24 hours — download online for fast, convenient access.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={`container py-5`}>
+            <div className="row">
+                <div className={`col-12 mb-4`} >
+                    <h3 className={`${GlobalStyle.purple_text} fw-bold text-center ${GlobalStyle.section_heading}`}>How It Works </h3>
+                </div>
+
+                <div className="col-md col-sm-4">
+                    <div className={`${GlobalStyle.how_it_work_module}`}>
+                        <img src={how_work1} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                        <span>Share your details with us</span>
+                    </div>
+                </div>
+                <div className="col-md col-sm-4">
+                    <div className={`${GlobalStyle.how_it_work_module}`}>
+                        <img src={how_work2} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                        <span>Schedule the test at your home</span>
+                    </div>
+                </div>
+                <div className="col-md col-sm-4">
+                    <div className={`${GlobalStyle.how_it_work_module}`}>
+                    <img src={how_work4} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                        <span>Our phlebotomist would visit your home</span>
+                    </div>
+                </div>
+                <div className="col-md col-sm-4">
+                    <div className={`${GlobalStyle.how_it_work_module}`}>
+                        <img src={how_work5} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                        <span>Get your reports online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         </section>
       </div>
 

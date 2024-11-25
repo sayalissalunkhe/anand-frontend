@@ -125,7 +125,8 @@ export default function Header() {
                         </li>
                         <li>
                           {/* <Link to='/reports'> */}
-                          <Link to="https://reports.anandlab.com/V3/" target="_blank">
+                          <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+" target="_blank">
                             <img src={sky} alt="" className="img-fluid" />
                             <span>Report</span>
                           </Link>
@@ -213,7 +214,8 @@ export default function Header() {
                             </li> */}
                           </ul>
                         </li>
-                        <li className="nav-item dropdown">
+
+                        {/* <li className="nav-item dropdown">
                           <Link
                             onClick={handleLink}
                             className="nav-link dropdown-toggle"
@@ -319,7 +321,8 @@ export default function Header() {
                                     {/* <Link to="/reports"
                                       className="dropdown-item"
                                     > */}
-                                    <Link to="https://reports.anandlab.com/V3/" target="_blank"
+                        {/*<Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+" target="_blank"
                                       className="dropdown-item"
                                     >
                                       <img
@@ -348,7 +351,64 @@ export default function Header() {
                               </li>
                             </ul>
                           </div>
+                        </li> */}
+
+                        <li className="nav-item dropdown sngle-frce">
+                          <Link
+                            onClick={handleLink}
+                            className="nav-link dropdown-toggle"
+                            to="/packages"
+                          >HEALTH CHECKUP
+                          </Link>
+
+                          <span
+                            className="mobile-toggle"
+                            onClick={mobileToggle}
+                          >
+                            <i className="fa fa-plus"></i>
+                          </span>
+                          <ul className="dropdown-menu frresplyr-doc">
+                            <li>
+                              <Link
+                                onClick={handleLink}
+                                to="/for-patient"
+                                className="dropdown-item"
+                              >
+                                Explore All Tests
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                onClick={handleLink}
+                                to="/packages"
+                                className="dropdown-item"
+                              >
+                                Packages
+                              </Link>
+                            </li>
+
+                            <li>
+                              <Link
+                                onClick={handleLink}
+                                to="/preparing-for-health-checkup"
+                                className="dropdown-item"
+                              >
+                                Preparing for Health Checkup
+                              </Link>
+                            </li>
+
+                            <li>
+                              <Link
+                                onClick={handleLink}
+                                to="/feedback"
+                                className="dropdown-item"
+                              >
+                                Feedback
+                              </Link>
+                            </li>
+                          </ul>
                         </li>
+
                         <li className="nav-item dropdown sngle-frce">
                           <Link
                             onClick={handleLink}
@@ -375,7 +435,18 @@ export default function Header() {
                                 Directory of service (DOS)
                               </a>
                             </li>
+
                             <li>
+                              <Link
+                                onClick={handleLink}
+                                className="dropdown-item"
+                                to="/healthcheckup-for-employees"
+                              >
+
+                                Health Checkup for employees
+                              </Link>
+                            </li>
+                            {/* <li>
                               <Link
                                 onClick={handleLink}
                                 className="dropdown-item"
@@ -384,8 +455,8 @@ export default function Header() {
 
                                 Department
                               </Link>
-                            </li>
-                            <li>
+                            </li> */}
+                            {/* <li>
                               <Link
                                 onClick={handleLink}
                                 to="/physiotherapy"
@@ -394,7 +465,7 @@ export default function Header() {
 
                                 Physiotherapy
                               </Link>
-                            </li>
+                            </li> */}
                             <li>
                               <Link
                                 onClick={handleLink}
@@ -446,14 +517,7 @@ export default function Header() {
                             </li>
                           </ul>
                         </li>
-                        <li className="nav-item sngle-frce about-inn">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link"
-                            to="/packages"
-                          >HEALTH CHECKUP
-                          </Link>
-                        </li>
+
                         <li className="nav-item sngle-frce about-inn">
                           <Link
                             onClick={handleLink}
@@ -462,6 +526,7 @@ export default function Header() {
                           >Accreditation
                           </Link>
                         </li>
+
                         {/* <li className="nav-item sngle-frce about-inn">
                           <Link
                             onClick={handleLink}
@@ -470,9 +535,12 @@ export default function Header() {
                           >Events
                           </Link>
                         </li> */}
-                        <li className="nav-item sngle-frce about-inn">
+
+                        {/* <li className="nav-item sngle-frce about-inn">
                           <a href="https://www.anandlab.com/blog" className="nav-link">Blogs</a>
-                        </li>
+                        </li> */}
+
+
                         <li className="nav-item dropdown sngle-frce">
                           <Link
                             onClick={handleLink}
@@ -492,16 +560,6 @@ export default function Header() {
                               <button onClick={() => navigate('/find-lab', { state: { LocationId: null } })} className="dropdown-item">
                                 Reach our lab
                               </button>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/healthcheckup-for-employees"
-                              >
-
-                                Health Checkup for employees
-                              </Link>
                             </li>
                             <li>
                               <Link
