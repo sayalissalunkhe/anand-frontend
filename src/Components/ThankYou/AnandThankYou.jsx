@@ -51,7 +51,7 @@ function AnandThankYou() {
             For spending your valuable time.{" "}
           </h3>
           <p className="mb-4">We will reach you soon...</p>
-          <Link to="/" style={{ color: "#fdb758" }}>
+          <Link to="https://www.neubergdiagnostics.com/" style={{ color: "#fdb758" }}>
             <b>Go to Home</b> <i className="fa fa-arrow-right"></i>
           </Link>
         </div>

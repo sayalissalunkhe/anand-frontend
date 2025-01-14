@@ -82,7 +82,7 @@ export default function Footer() {
                   </li> */}
                     <li>
                     {/* <Link to="/reports"> */}
-                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/public
 " target="_blank">
                       Download Reports
                     </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
                     </li>
                     <li>                                     
                     {/* <Link to="/reports"> */}
-                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/public
 " target="_blank">
                       Download Reports
                     </Link>
@@ -245,7 +245,7 @@ export default function Footer() {
           <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span>
         </a>
         {/* <Link to="/reports" data-toggle="tooltip" title="Download Your Reports"> */}
-        <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+        <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/public
 " 
                 target="_blank" data-toggle="tooltip" title="Download Your Reports">
           <img src={sky} alt="" className="img-fluid" />

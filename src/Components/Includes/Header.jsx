@@ -91,19 +91,19 @@ export default function Header() {
     <>
       <header id="header" className="main-header site-navbar">
         <div className="container">
-          <div className="row">
+          <div className="row w-100"> 
             <div className="col">
               <nav className="navbar navbar-default navbar-trans navbar-expand-lg">
-                <Link to="/" className="navbar-brand text-brand">
+                <Link to="https://www.neubergdiagnostics.com/" className="navbar-brand text-brand">
                   <img src={logoberg} alt="" className="img-fluid" />
                 </Link>
                 <div
-                  className="navbar-collapse collapse justify-content-center"
+                  className="navbar-collapse collapse justify-content-center1"
                   id="navbarDefault"
                   ref={navElement}
                 >
-                  <div className="row align-items-center no-disp-tabscrn">
-                    <div className="col">
+                  <div className="row align-items-center1 no-disp-tabscrn  w-100">
+                    {/* <div className="col">
                       <ul className="top-links text-center">
                         <li>
                           <input
@@ -114,19 +114,18 @@ export default function Header() {
                           />
                         </li>
                       </ul>
-                    </div>
-                    <div className="col">
-                      <ul className="icns-lst text-center">
+                    </div> */}
+                    {/* <div className="col-12">
+                      <ul className="icns-lst text-center1">
                         <li>
                           <a onClick={handleShow}>
                             <img src={location} alt="" className="img-fluid" />
                             <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span>
                           </a>
                         </li>
-                        <li>
+                        <li> */}
                           {/* <Link to='/reports'> */}
-                          <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
-" target="_blank">
+                          {/* <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/public" target="_blank">
                             <img src={sky} alt="" className="img-fluid" />
                             <span>Report</span>
                           </Link>
@@ -150,441 +149,16 @@ export default function Header() {
                                 <span>Account</span>
                               </Link>
                           }
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                           <CartCount />
-                        </li>
-                      </ul>
-                    </div>
+                        </li> */}
+                      {/* </ul>
+                    </div> */}
                   </div>
                   <div className="">
                     <div className="">
-                      <ul className="navbar-nav">
-                        <li className="nav-item dropdown sngle-frce about-inn">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link dropdown-toggle"
-                            to="/about-us"
-                          >
-                            About Us
-                          </Link>
-                          <span
-                            className="mobile-toggle"
-                            onClick={mobileToggle}
-                          >
-                            <i className="fa fa-plus about-inn"></i>
-                          </span>
-                          <ul className="dropdown-menu frresplyr-abt">
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/people-behind"
-                              >
-
-                                People behind
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/history"
-                              >
-                                History
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/commitment"
-                              >
-                                Commitment
-                              </Link>
-                            </li>
-                            {/* <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/accreditation"
-                              >
-                                Accreditation
-                              </Link>
-                            </li> */}
-                          </ul>
-                        </li>
-
-                        {/* <li className="nav-item dropdown">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link dropdown-toggle"
-                            to="#"
-                          >
-                            Patients
-                          </Link>
-                          <span
-                            className="mobile-toggle"
-                            onClick={mobileToggle}
-                          >
-                            <i className="fa fa-plus"></i>
-                          </span>
-                          <div className="dropdown-bg">
-                            <ul className="dropdown-menu frresplyr-pat topr-clmn row">
-                              <li className="col frst-clmn">
-                                <ul>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/packages"
-                                      className="dropdown-item"
-                                    >
-                                      Packages
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/for-patient"
-                                      className="dropdown-item"
-                                    >
-                                      Explore All Tests
-                                    </Link>
-                                  </li>
-
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/preparing-for-health-checkup"
-                                      className="dropdown-item"
-                                    >
-                                      Preparing for Health Checkup
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/drive-through-blood-collection"
-                                      className="dropdown-item"
-                                    >
-                                      Drive through Blood Collection
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-
-                              <li className="col secnd-clmn">
-                                <ul>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/patients-consumers"
-                                      className="dropdown-item"
-                                    >
-                                      Patient Care
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/feedback"
-                                      className="dropdown-item"
-                                    >
-                                      Feedback
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="https://www.anandlab.com/blog/"
-                                      target="_blank"
-                                      className="dropdown-item"
-                                      rel="noreferrer"
-                                    >
-                                      Health tips
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/faq"
-                                      className="dropdown-item"
-                                    >
-                                      Frequently Asked Questions
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-
-                              <li className="col thrd-clmn">
-                                <ul>
-                                  <li className="dwd">
-                                    {/* <Link to="/reports"
-                                      className="dropdown-item"
-                                    > */}
-                        {/*<Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
-" target="_blank"
-                                      className="dropdown-item"
-                                    >
-                                      <img
-                                        src={dwd}
-                                        alt=""
-                                        className="img-fluid"
-                                      />
-                                      Download Reports
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <a
-                                      onClick={handleLink}
-                                      href="tel:18004251974"
-                                      className="dropdown-item"
-                                    >
-                                      <img
-                                        src={men4}
-                                        alt=""
-                                        className="img-fluid"
-                                      />
-                                      1800 425 1974 (TOLL-FREE)
-                                    </a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                        </li> */}
-
-                        <li className="nav-item dropdown sngle-frce">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link dropdown-toggle"
-                            to="/packages"
-                          >HEALTH CHECKUP
-                          </Link>
-
-                          <span
-                            className="mobile-toggle"
-                            onClick={mobileToggle}
-                          >
-                            <i className="fa fa-plus"></i>
-                          </span>
-                          <ul className="dropdown-menu frresplyr-doc">
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                to="/for-patient"
-                                className="dropdown-item"
-                              >
-                                Explore All Tests
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                to="/packages"
-                                className="dropdown-item"
-                              >
-                                Packages
-                              </Link>
-                            </li>
-
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                to="/preparing-for-health-checkup"
-                                className="dropdown-item"
-                              >
-                                Preparing for Health Checkup
-                              </Link>
-                            </li>
-
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                to="/feedback"
-                                className="dropdown-item"
-                              >
-                                Feedback
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li className="nav-item dropdown sngle-frce">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link dropdown-toggle"
-                            to="#"
-                          >
-                            Partner With Us
-                          </Link>
-                          <span
-                            className="mobile-toggle"
-                            onClick={mobileToggle}
-                          >
-                            <i className="fa fa-plus"></i>
-                          </span>
-                          <ul className="dropdown-menu frresplyr-doc">
-                            <li>
-                              <a
-                                className="dropdown-item"
-                                href="https://reports.anandlab.com/dos/"
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-
-                                Directory of service (DOS)
-                              </a>
-                            </li>
-
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/healthcheckup-for-employees"
-                              >
-
-                                Health Checkup for employees
-                              </Link>
-                            </li>
-                            {/* <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/department"
-                              >
-
-                                Department
-                              </Link>
-                            </li> */}
-                            {/* <li>
-                              <Link
-                                onClick={handleLink}
-                                to="/physiotherapy"
-                                className="dropdown-item"
-                              >
-
-                                Physiotherapy
-                              </Link>
-                            </li> */}
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/hospital-or-lab-management"
-                              >
-
-                                Hospital or Lab Management
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/clinical-lab-management"
-                              >
-
-                                Clinician Lab Management
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/franchising-opportunities"
-                              >
-
-                                Franchise Opportunities
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/research"
-                              >
-
-                                Research
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                to="/feedback-b2b"
-                                className="dropdown-item"
-                              >
-                                Feedback B2B
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li className="nav-item sngle-frce about-inn">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link"
-                            to="/accreditation"
-                          >Accreditation
-                          </Link>
-                        </li>
-
-                        {/* <li className="nav-item sngle-frce about-inn">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link"
-                            to="/neuberg-anand-50-years"
-                          >Events
-                          </Link>
-                        </li> */}
-
-                        {/* <li className="nav-item sngle-frce about-inn">
-                          <a href="https://www.anandlab.com/blog" className="nav-link">Blogs</a>
-                        </li> */}
-
-
-                        <li className="nav-item dropdown sngle-frce">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link dropdown-toggle"
-                            to="/reach-us"
-                          >
-                            Reach Us
-                          </Link>
-                          <span
-                            className="mobile-toggle"
-                            onClick={mobileToggle}
-                          >
-                            <i className="fa fa-plus"></i>
-                          </span>
-                          <ul className="dropdown-menu frresplyr-con">
-                            <li>
-                              <button onClick={() => navigate('/find-lab', { state: { LocationId: null } })} className="dropdown-item">
-                                Reach our lab
-                              </button>
-                            </li>
-                            <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/careers"
-                              >
-
-                                Job opportunities
-                              </Link>
-                            </li>
-                            <li>
-                              <a
-                                href="http://www.naalm.com/academics/"
-                                target="_blank"
-                                className="dropdown-item"
-                                rel="noreferrer"
-                              >
-
-                                Upgrade your skills
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                      
                     </div>
                   </div>
                 </div>
@@ -595,7 +169,7 @@ export default function Header() {
                 >
                   <img src={logoberg} alt="" className="img-fluid" />
                 </Link> */}
-                <button
+                {/* <button
                   ref={toggleIcon}
                   className="navbar-toggler collapsed"
                   type="button"
@@ -608,12 +182,12 @@ export default function Header() {
                   <span></span>
                   <span></span>
                   <span></span>
-                </button>
+                </button> */}
 
 
-                <Link onClick={handleLink} className="srch-btn" to="/for-patient">
+                {/* <Link onClick={handleLink} className="srch-btn" to="/for-patient">
                   <i className="fa fa-search" aria-hidden="true"></i>
-                </Link>
+                </Link> */}
 
                 <div
                   className="modal fade cstm tpm-set"

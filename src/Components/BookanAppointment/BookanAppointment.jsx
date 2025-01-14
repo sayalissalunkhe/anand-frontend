@@ -170,7 +170,7 @@ export default function BookanAppointment() {
                 <div className="cmn-buton">
                   <p>
                     {/* <Link to="/reports"> */}
-                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+                    <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/public
 " target="_blank">
                       Download Report
                     </Link>

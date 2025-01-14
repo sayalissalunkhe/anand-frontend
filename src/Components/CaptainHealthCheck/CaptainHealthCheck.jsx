@@ -239,7 +239,7 @@ const gtmScript4 = document.createElement("script");
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto my-3 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/captains-health-checkup')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com')}><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -281,7 +281,7 @@ const gtmScript4 = document.createElement("script");
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto mt-2 mb-5 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/neuberg-full-body-health-checkup-basic')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com/health-package/bangalore/8/neuberg-full-body-health-checkup-basic')}><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -322,7 +322,7 @@ const gtmScript4 = document.createElement("script");
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto mt-2 mb-5 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/neuberg-full-body-health-checkup-express')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com/health-package/bangalore/8/neuberg-full-body-health-checkup-express')}><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -365,7 +365,7 @@ const gtmScript4 = document.createElement("script");
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto mt-2 mb-5 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/neuberg-full-body-health-checkup-vita-plus')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com/health-package/bangalore/8/neuberg-full-body-health-checkup-vita-plus')}><span>Book Now</span></a>
             </div>
           </div>
         </div>

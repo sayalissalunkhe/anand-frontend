@@ -91,6 +91,7 @@ import SeniorCitizenCard from './Components/SeniorCitizenCard/SeniorCitizenCard'
 import HealthCheck from './Components/HealthCheck/HealthCheck'
 import LatestOffer from './Components/LatestOffer/LatestOffer'
 import MaintenancePage from './Components/MaintenancePage/MaintenancePage'
+import MiniFooter from './Components/Includes/MiniFooter'
 
 export default function App() {
   const dispatch = useDispatch();
@@ -110,6 +111,91 @@ export default function App() {
   }, [])
   const queryClient = new QueryClient()
 
+
+  // useEffect(() => {
+  //   const currentLocation = window.location.href;
+  //   const baseURL = 'http://localhost:3000';
+  //   const aboutURL = 'http://localhost:3000/about-us';
+
+
+  //   if (currentLocation === baseURL || currentLocation === baseURL + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com';
+  //   } 
+  //   // else if (currentLocation.startsWith(baseURL) && currentLocation !== baseURL && currentLocation !== baseURL + '/') {
+  //   //   window.location.href = baseURL + '/about-us';
+  //   // }
+
+  //   if (currentLocation === aboutURL || currentLocation === aboutURL + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com/about-us';
+  //   } 
+  //   if (currentLocation === 'http://localhost:3000/packages' || currentLocation === 'http://localhost:3000/packages' + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com/book-a-test';
+  //   } 
+  //   if (currentLocation === 'http://localhost:3000/healthcheckup-for-employees' || currentLocation === 'http://localhost:3000/healthcheckup-for-employees' + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com/corporate-wellness';
+  //   } 
+  //   if (currentLocation === 'http://localhost:3000/franchising-opportunities' || currentLocation === 'http://localhost:3000/franchising-opportunities' + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com/our-franchise';
+  //   } 
+  //   if (currentLocation === 'http://localhost:3000/accreditation' || currentLocation === 'http://localhost:3000/accreditation' + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com/nabl-status';
+  //   } 
+  //   if (currentLocation === 'http://localhost:3000/reach-us' || currentLocation === 'http://localhost:3000/reach-us' + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com/lab-locator';
+  //   } 
+  //   if (currentLocation === 'http://localhost:3000/neuberg-anand-lab-at-home-health-checkup' || currentLocation === 'http://localhost:3000/neuberg-anand-lab-at-home-health-checkup' + '/') {
+  //     window.location.href = 'https://www.neubergdiagnostics.com/neuberg-anand-lab-at-home-blood-test';
+  //   } 
+  // }, []);
+
+  // useEffect(() => {
+  //   const currentLocation = window.location.href;
+  //   const baseURL = window.location.origin; // Dynamically get the base URL
+
+  //   const redirects = [
+  //     { path: '/', target: 'https://www.neubergdiagnostics.com' },
+  //     { path: '/about-us', target: 'https://www.neubergdiagnostics.com/about-us' },
+  //     { path: '/packages', target: 'https://www.neubergdiagnostics.com/book-a-test' },
+  //     { path: '/healthcheckup-for-employees', target: 'https://www.neubergdiagnostics.com/corporate-wellness' },
+  //     { path: '/franchising-opportunities', target: 'https://www.neubergdiagnostics.com/our-franchise' },
+  //     { path: '/accreditation', target: 'https://www.neubergdiagnostics.com/nabl-status' },
+  //     { path: '/reach-us', target: 'https://www.neubergdiagnostics.com/lab-locator' },
+  //     { path: '/neuberg-anand-lab-at-home-health-checkup', target: 'https://www.neubergdiagnostics.com/neuberg-anand-lab-at-home-blood-test' }
+  //   ];
+
+  //   redirects.forEach(({ path, target }) => {
+  //     if (currentLocation === baseURL + path || currentLocation === baseURL + path + '/') {
+  //       window.location.href = target;
+  //     }
+  //   });
+  // }, []);
+
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    const queryString = window.location.search; // Get the query string including '?' and parameters
+  
+    const redirects = [
+      { path: '/', target: 'https://www.neubergdiagnostics.com' },
+      { path: '/about-us', target: 'https://www.neubergdiagnostics.com/about-us' },
+      { path: '/packages', target: 'https://www.neubergdiagnostics.com/book-a-test' },
+      { path: '/healthcheckup-for-employees', target: 'https://www.neubergdiagnostics.com/corporate-wellness' },
+      { path: '/franchising-opportunities', target: 'https://www.neubergdiagnostics.com/our-franchise' },
+      { path: '/accreditation', target: 'https://www.neubergdiagnostics.com/nabl-status' },
+      { path: '/reach-us', target: 'https://www.neubergdiagnostics.com/lab-locator' },
+      { path: '/neuberg-anand-lab-at-home-health-checkup', target: 'https://www.neubergdiagnostics.com/neuberg-anand-lab-at-home-blood-test' }
+    ];
+  
+    redirects.forEach(({ path, target }) => {
+      // Check if the current path matches any redirect path
+      if (currentPath === path || currentPath === path + '/') {
+        // Redirect to the target URL with the query string appended
+        window.location.href = target + queryString;
+      }
+    });
+  }, []);
+  
+  
 
 
   // useEffect(() => {
@@ -155,8 +241,8 @@ export default function App() {
           <Route path='/register' exact element={<Register />} />
           <Route path='/test/:TestId' exact element={<TestDetails />} />
           <Route path='/package/:TestId' exact element={<TestDetails />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/about-us' element={<About />} />
+          <Route path='https://www.neubergdiagnostics.com' element={<Home />} />
+          <Route path='https://www.neubergdiagnostics.com/about-us' element={<About />} />
           <Route path='/people-behind' element={<Peoplebhind />} />
           <Route path='/history' element={<History />} />
           <Route path='/commitment' element={<Commitment />} />
@@ -228,7 +314,8 @@ export default function App() {
           <Route path='/anand-at-home' exact element={<MaintenancePage />} />
 
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
+        <MiniFooter/>
         <AlertBox />
         <FloatingForm />
         <CallToAction />

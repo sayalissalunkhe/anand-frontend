@@ -56,7 +56,7 @@ export default function DriveThroughBloodCollection() {
             <div className='col-lg-3 text-right'>
             <div className="cmn-buton"><p>
               {/* <Link to="/reports"> */}
-              <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/account
+              <Link to="https://narllims.neubergdiagnostics.com/#/laboratory/public
 " target="_blank">
                       Download Report
               </Link>
