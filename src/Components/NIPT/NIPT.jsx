@@ -37,6 +37,7 @@ export default function NIPT() {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
+        email: Yup.string().required(),
         mobile: Yup.string()
           .matches(/^[6-9]\d{9}$/)
           .required(),
@@ -140,7 +141,7 @@ export default function NIPT() {
       </div>
 
       <div className="book-health-form-container">
-      <div className="left-form h-100">
+        <div className="left-form h-100">
           <div className="left-side-form-container">
             <form onSubmit={handleSubmit(contactUsFrom)}>
               <div className="form-container">
@@ -154,7 +155,7 @@ export default function NIPT() {
                   {...register("name")}
                   type="text"
                   placeholder="Enter Your Name"
-                  className="name-number-inp"
+                  className={`name-number-inp ${errors?.name ? "input-error" : ""}`}
                 />
                 {errors?.mobile ? (
                   <small className="text-danger">
@@ -167,7 +168,20 @@ export default function NIPT() {
                   {...register("mobile")}
                   type="tel"
                   placeholder="Enter Your Mobile Number"
-                  className="name-number-inp"
+                  className={`name-number-inp ${errors?.mobile ? "input-error" : ""}`}
+                />
+                {errors?.email ? (
+                  <small className="text-danger">
+                    {"Email is a invalid field"}
+                  </small>
+                ) : (
+                  ""
+                )}
+                <input
+                  {...register("email")}
+                  type="email"
+                  placeholder="Enter Your Email"
+                  className={`name-number-inp ${errors?.email ? "input-error" : ""}`}
                 />
                 <div className="radio-inputs-container">
                   <p>Please enter your details and we will reach out to you as soon as we can.</p>

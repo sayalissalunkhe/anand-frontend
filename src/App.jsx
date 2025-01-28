@@ -181,9 +181,10 @@ export default function App() {
       { path: '/packages', target: 'https://www.neubergdiagnostics.com/book-a-test' },
       { path: '/healthcheckup-for-employees', target: 'https://www.neubergdiagnostics.com/corporate-wellness' },
       { path: '/franchising-opportunities', target: 'https://www.neubergdiagnostics.com/our-franchise' },
-      { path: '/accreditation', target: 'https://www.neubergdiagnostics.com/nabl-status' },
+      { path: '/accreditation', target: 'https://dos.neubergdiagnostics.com/nabl-status' },
       { path: '/reach-us', target: 'https://www.neubergdiagnostics.com/lab-locator' },
-      { path: '/neuberg-anand-lab-at-home-health-checkup', target: 'https://www.neubergdiagnostics.com/neuberg-anand-lab-at-home-blood-test' }
+      { path: '/neuberg-anand-lab-at-home-health-checkup', target: 'https://www.neubergdiagnostics.com/neuberg-anand-lab-at-home-blood-test' },
+      // { path: '/neuberg-anand-lab-at-home-labtesting', target: 'https://www.neubergdiagnostics.com/neuberg-anand-lab-at-home-blood-test' }
     ];
   
     redirects.forEach(({ path, target }) => {

@@ -139,6 +139,7 @@ export default function VitaminTesting() {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
+        email: Yup.string().required(),
         mobile: Yup.string()
           .matches(/^[6-9]\d{9}$/)
           .required(),
@@ -273,7 +274,7 @@ export default function VitaminTesting() {
                 {...register("name")}
                 type="text"
                 placeholder="Enter Your Name"
-                className="name-number-inp"
+                className={`name-number-inp ${errors?.name ? "input-error" : ""}`}
               />
               {errors?.mobile ? (
                 <small className="text-danger">
@@ -286,7 +287,20 @@ export default function VitaminTesting() {
                 {...register("mobile")}
                 type="tel"
                 placeholder="Enter Your Mobile Number"
-                className="name-number-inp"
+                className={`name-number-inp ${errors?.mobile ? "input-error" : ""}`}
+              />
+              {errors?.email ? (
+                <small className="text-danger">
+                  {"Email is a invalid field"}
+                </small>
+              ) : (
+                ""
+              )}
+              <input
+                {...register("email")}
+                type="email"
+                placeholder="Enter Your Email"
+                className={`name-number-inp ${errors?.email ? "input-error" : ""}`}
               />
               <div className="radio-inputs-container">
                 {/* <p>

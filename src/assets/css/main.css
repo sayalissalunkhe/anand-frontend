@@ -187,7 +187,7 @@ h6 {
   color: #6e6e6e;
 }
 
-h1, 
+h1,
 .maintenance-page {
   font-size: 50px;
   color: #5c2d91;
@@ -3235,6 +3235,14 @@ span.flag-option p {
 
 .cir-frm .form-data input[type="submit"]:hover {
   background-color: #5b2584;
+}
+
+.formdata .btn-primary {
+  font-weight: 600;
+}
+
+.formdata .btn-primary:hover {
+  background-color: #f7931e;
 }
 
 .mid-poart {
@@ -8708,7 +8716,8 @@ ul.action-felds li i.fa.fa-minus-square {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  height: 23vw;
+  /* height: 23vw; */
+  height: 31vw;
   min-height: 275px;
   max-height: 375px;
 }
@@ -8819,8 +8828,19 @@ ul.action-felds li i.fa.fa-minus-square {
   border-radius: 5px;
 }
 
-.name-number-inp.error {
+.name-number-inp.error,
+.name-number-inp.input-error {
   border: 1px solid red !important;
+}
+
+.book-health-form-container .text-danger,
+.friendship-day-page .text-danger,
+#getin_touch .text-danger {
+  display: none;
+}
+
+.name-number-inp.input-error::placeholder {
+  color: red !important;
 }
 
 .error {
@@ -10391,7 +10411,7 @@ img.line-image {
   }
 
   .text-light+div>div>div,
-  .text-light+div>div>div iframe, 
+  .text-light+div>div>div iframe,
   .rc-anchor-normal {
     width: 100% !important;
   }
@@ -10421,7 +10441,7 @@ img.line-image {
   }
 
   .text-light+div>div>div,
-  .text-light+div>div>div iframe, 
+  .text-light+div>div>div iframe,
   .rc-anchor-normal {
     width: 100% !important;
   }
@@ -10439,7 +10459,7 @@ img.line-image {
   } */
 
   .text-light+div>div>div,
-  .text-light+div>div>div iframe, 
+  .text-light+div>div>div iframe,
   .rc-anchor-normal {
     width: 100% !important;
   }

@@ -60,6 +60,7 @@ export default function AnandatHome() {
       Yup.object().shape({
         name: Yup.string().required(),
         mobile: Yup.string().matches(/^[6-9]\d{9}$/).required(),
+        email: Yup.string().required(),
         // message: Yup.string().required()
       })
     )
@@ -199,6 +200,10 @@ export default function AnandatHome() {
                       {errors?.mobile ? <small className='text-danger'>{'Mobile is a invalid field'}</small> : ''}
                       <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
                     </div>
+                    <div className="formdata">
+                      {errors?.email ? <small className='text-danger'>{'Email is a invalid field'}</small> : ''}
+                      <input {...register('email')} type="email" placeholder="Enter Your Email" className='form-control' />
+                    </div>
                     <h6 className="text-light">
                       {/* Please enter your details and we will reach out to you as soon as we can. */}
                     </h6>
@@ -270,36 +275,36 @@ export default function AnandatHome() {
 
           <div className={`container py-5`}>
             <div className="row">
-                <div className={`col-12 mb-4`} >
-                    <h3 className={`${GlobalStyle.purple_text} fw-bold text-center ${GlobalStyle.section_heading}`}>How It Works </h3>
-                </div>
+              <div className={`col-12 mb-4`} >
+                <h3 className={`${GlobalStyle.purple_text} fw-bold text-center ${GlobalStyle.section_heading}`}>How It Works </h3>
+              </div>
 
-                <div className="col-md col-sm-4">
-                    <div className={`${GlobalStyle.how_it_work_module}`}>
-                        <img src={how_work1} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
-                        <span>Share your details with us</span>
-                    </div>
+              <div className="col-md col-sm-4">
+                <div className={`${GlobalStyle.how_it_work_module}`}>
+                  <img src={how_work1} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                  <span>Share your details with us</span>
                 </div>
-                <div className="col-md col-sm-4">
-                    <div className={`${GlobalStyle.how_it_work_module}`}>
-                        <img src={how_work2} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
-                        <span>Schedule the test at your home</span>
-                    </div>
+              </div>
+              <div className="col-md col-sm-4">
+                <div className={`${GlobalStyle.how_it_work_module}`}>
+                  <img src={how_work2} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                  <span>Schedule the test at your home</span>
                 </div>
-                <div className="col-md col-sm-4">
-                    <div className={`${GlobalStyle.how_it_work_module}`}>
-                    <img src={how_work4} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
-                        <span>Our phlebotomist would visit your home</span>
-                    </div>
+              </div>
+              <div className="col-md col-sm-4">
+                <div className={`${GlobalStyle.how_it_work_module}`}>
+                  <img src={how_work4} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                  <span>Our phlebotomist would visit your home</span>
                 </div>
-                <div className="col-md col-sm-4">
-                    <div className={`${GlobalStyle.how_it_work_module}`}>
-                        <img src={how_work5} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
-                        <span>Get your reports online</span>
-                    </div>
+              </div>
+              <div className="col-md col-sm-4">
+                <div className={`${GlobalStyle.how_it_work_module}`}>
+                  <img src={how_work5} alt="icon" className="d-block mx-auto mb-4 img-fluid" />
+                  <span>Get your reports online</span>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
         </section>
       </div>
 

@@ -58,7 +58,7 @@ export default function ArthritisPackage() {
       });
   `;
 
-const gtmScript4 = document.createElement("script");
+  const gtmScript4 = document.createElement("script");
   gtmScript4.innerHTML = `
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -78,7 +78,7 @@ const gtmScript4 = document.createElement("script");
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
- document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript5);
   document.head.appendChild(gtmScript8);
 
   // Define the gtag_report_conversion function
@@ -124,6 +124,7 @@ const gtmScript4 = document.createElement("script");
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
+        email: Yup.string().required(),
         mobile: Yup.string()
           .matches(/^[6-9]\d{9}$/)
           .required(),
@@ -184,8 +185,8 @@ const gtmScript4 = document.createElement("script");
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
- document.head.appendChild(gtmScript5);
-  document.head.appendChild(gtmScript8);
+      document.head.appendChild(gtmScript5);
+      document.head.appendChild(gtmScript8);
     }
   }, []);
 
@@ -256,7 +257,7 @@ const gtmScript4 = document.createElement("script");
                   {...register("name")}
                   type="text"
                   placeholder="Enter Your Name"
-                  className="name-number-inp"
+                  className={`name-number-inp ${errors?.name ? "input-error" : ""}`}
                 />
                 {errors?.mobile ? (
                   <small className="text-danger">
@@ -269,7 +270,20 @@ const gtmScript4 = document.createElement("script");
                   {...register("mobile")}
                   type="tel"
                   placeholder="Enter Your Mobile Number"
-                  className="name-number-inp"
+                  className={`name-number-inp ${errors?.mobile ? "input-error" : ""}`}
+                />
+                {errors?.email ? (
+                  <small className="text-danger">
+                    {"Email is a invalid field"}
+                  </small>
+                ) : (
+                  ""
+                )}
+                <input
+                  {...register("email")}
+                  type="email"
+                  placeholder="Enter Your Email"
+                  className={`name-number-inp ${errors?.email ? "input-error" : ""}`}
                 />
                 <div className="radio-inputs-container">
                   <p>

@@ -99,7 +99,7 @@ function MensHealth() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
-   document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript5);
   document.head.appendChild(gtmScript8);
   document.head.appendChild(gtmScript6);
 
@@ -163,6 +163,7 @@ function MensHealth() {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
+        email: Yup.string().required(),
         mobile: Yup.string()
           .matches(/^[6-9]\d{9}$/)
           .required(),
@@ -197,8 +198,8 @@ function MensHealth() {
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
-       document.head.appendChild(gtmScript5);
-  document.head.appendChild(gtmScript8);
+      document.head.appendChild(gtmScript5);
+      document.head.appendChild(gtmScript8);
     }
   }, []);
 
@@ -436,7 +437,7 @@ function MensHealth() {
                       {...register("name")}
                       type="text"
                       placeholder="Name"
-                      className="name-number-inp"
+                      className={`name-number-inp ${errors?.name ? "input-error" : ""}`}
                     />
                     {errors?.mobile ? (
                       <small className="text-danger">
@@ -449,7 +450,20 @@ function MensHealth() {
                       {...register("mobile")}
                       type="tel"
                       placeholder="Mobile Number"
-                      className="name-number-inp"
+                      className={`name-number-inp ${errors?.mobile ? "input-error" : ""}`}
+                    />
+                    {errors?.email ? (
+                      <small className="text-danger">
+                        {"Email is a invalid field"}
+                      </small>
+                    ) : (
+                      ""
+                    )}
+                    <input
+                      {...register("email")}
+                      type="email"
+                      placeholder="Enter Your Email"
+                      className={`name-number-inp ${errors?.email ? "input-error" : ""}`}
                     />
                     <div className={[css['radio-inputs-container']]}>
                       <p>
@@ -463,6 +477,7 @@ function MensHealth() {
                         ""
                       )}
                     </div>
+
 
                     <ReCAPTCHA
                       sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key

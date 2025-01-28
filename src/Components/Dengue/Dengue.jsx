@@ -48,6 +48,7 @@ export default function Dengue() {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
+        email: Yup.string().required(),
         mobile: Yup.string().matches(/^[6-9]\d{9}$/).required(),
         // message: Yup.string().required()
       })
@@ -171,6 +172,10 @@ export default function Dengue() {
                     <div className="formdata">
                       {errors?.mobile ? <small className='text-danger'>{'Mobile is a invalid field'}</small> : ''}
                       <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
+                    </div>
+                    <div className="formdata">
+                      {errors?.email ? <small className='text-danger'>{'Email is a invalid field'}</small> : ''}
+                      <input {...register('email')} type="email" placeholder="Enter Your Email" className='form-control' />
                     </div>
                     <h6 className="text-light">
                       {/* Please enter your details and we will reach out to you as soon as we can. */}
