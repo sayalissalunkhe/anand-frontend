@@ -173,7 +173,7 @@ export default function AnandatHome() {
                   <br />
                   <br />
                   <div className="common-para1 drk detilos-expl text-justify indication-details p-0">
-                    <p>At <b>Neuberg Anand Reference Laboratory</b> (formerly known as <b>Anand Diagnostic Laboratory / Anand Lab</b>), we believe that taking care of your health should be simple and stress-free. With our <b>Home Collection Service</b>, we bring our trusted diagnostic expertise right to your doorstep. Whether it's routine health checkups or specialized tests, you no longer need to step out—our team ensures safe, reliable, and hassle-free sample collection from the comfort of your home.  .</p>
+                    <p>At <b>Neuberg Anand Reference Laboratory</b> (formerly known as <b>Anand Diagnostic Laboratory / Anand Lab</b>), we believe that taking care of your health should be simple and stress-free. With our <b>Home Collection Service</b>, we bring our trusted diagnostic expertise right to your doorstep. Whether it's routine health checkups or specialized tests, you no longer need to step out—our team ensures safe, reliable, and hassle-free sample collection from the comfort of your home.</p>
                     {/* <ul>
                       <li>Sample collection done right at your doorstep</li>
                       <li>Easy/multiple booking channels- Telephone, Whatsapp, Email, Live Chat, Online Appointment Form</li>
