@@ -99,7 +99,7 @@ function MensHealth() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
-   document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript5);
   document.head.appendChild(gtmScript8);
   document.head.appendChild(gtmScript6);
 
@@ -163,6 +163,7 @@ function MensHealth() {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
+        email: Yup.string().required(),
         mobile: Yup.string()
           .matches(/^[6-9]\d{9}$/)
           .required(),
@@ -197,8 +198,8 @@ function MensHealth() {
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
-       document.head.appendChild(gtmScript5);
-  document.head.appendChild(gtmScript8);
+      document.head.appendChild(gtmScript5);
+      document.head.appendChild(gtmScript8);
     }
   }, []);
 
@@ -255,7 +256,7 @@ function MensHealth() {
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto my-3 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/captains-health-checkup')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com/')}><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -297,7 +298,7 @@ function MensHealth() {
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto mt-2 mb-5 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/neuberg-full-body-health-checkup-basic')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com/health-package/bangalore/8/neuberg-full-body-health-checkup-basic')}><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -338,7 +339,7 @@ function MensHealth() {
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto mt-2 mb-5 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/neuberg-full-body-health-checkup-express')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com/health-package/bangalore/8/neuberg-full-body-health-checkup-express')}><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -381,7 +382,7 @@ function MensHealth() {
           <div className="col-6 col-md-3 col-lg-3">
             <div className={`${css['price-btn']} mx-auto mt-2 mb-5 ${css['book-now-btn']}`}>
               {/* <label>&nbsp;</label> */}
-              <a onClick={(event) => handleClick(event, '/package/neuberg-full-body-health-checkup-vita-plus')}><span>Book Now</span></a>
+              <a onClick={(event) => handleClick(event, 'https://www.neubergdiagnostics.com/health-package/bangalore/8/neuberg-full-body-health-checkup-vita-plus')}><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -436,7 +437,7 @@ function MensHealth() {
                       {...register("name")}
                       type="text"
                       placeholder="Name"
-                      className="name-number-inp"
+                      className={`name-number-inp ${errors?.name ? "input-error" : ""}`}
                     />
                     {errors?.mobile ? (
                       <small className="text-danger">
@@ -449,7 +450,20 @@ function MensHealth() {
                       {...register("mobile")}
                       type="tel"
                       placeholder="Mobile Number"
-                      className="name-number-inp"
+                      className={`name-number-inp ${errors?.mobile ? "input-error" : ""}`}
+                    />
+                    {errors?.email ? (
+                      <small className="text-danger">
+                        {"Email is a invalid field"}
+                      </small>
+                    ) : (
+                      ""
+                    )}
+                    <input
+                      {...register("email")}
+                      type="email"
+                      placeholder="Enter Your Email"
+                      className={`name-number-inp ${errors?.email ? "input-error" : ""}`}
                     />
                     <div className={[css['radio-inputs-container']]}>
                       <p>
@@ -463,6 +477,7 @@ function MensHealth() {
                         ""
                       )}
                     </div>
+
 
                     <ReCAPTCHA
                       sitekey="6Lf_BRIqAAAAAOD6XxxBdBiNnV0EuYM0Hsg1wp_M" // Replace with your actual site key

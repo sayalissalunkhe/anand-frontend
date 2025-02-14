@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-// import anandhome from "../../assets/images/Dengue.jpg"; 
+// import anandhome from "../../assets/images/anandathome.jpg"; 
 // import anandhome from "../../assets/images/Health-package-desk.jpg";
 // import anandhome from "../../assets/images/anant-at-home-banner-min.png";
-import anandhome from "../../assets/images/dengue-banner.png";
+import anandhome from "../../assets/images/latest-offer-banner.jpg";
 import { useForm } from "react-hook-form";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
@@ -14,7 +14,7 @@ import * as Yup from 'yup'
 import axios from "axios";
 import ReCAPTCHA from 'react-google-recaptcha';
 
-export default function Dengue() {
+export default function LatestOffer() {
   const [open, setOpen] = useState(true)
   const [Loading, setLoading] = useState(false)
   const navigate = useNavigate();
@@ -48,7 +48,6 @@ export default function Dengue() {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
-        email: Yup.string().required(),
         mobile: Yup.string().matches(/^[6-9]\d{9}$/).required(),
         // message: Yup.string().required()
       })
@@ -57,7 +56,7 @@ export default function Dengue() {
   const contactUsFrom = (data) => {
     if (recaptchaValue) {
       setLoading(true)
-      data.page = 'ANAND AT HOME'
+      data.page = 'Latest Offer'
       data.page_url = window.location.href
       data.notes = notesDataString;
       axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
@@ -66,7 +65,8 @@ export default function Dengue() {
         setLoading(false)
         reset()
         setOpen(!open)
-      })
+      });
+      // console.log('Form submitted successfully');
     } else {
       // Handle the case where reCAPTCHA validation failed
       console.log('Please complete the reCAPTCHA');
@@ -74,7 +74,7 @@ export default function Dengue() {
     }
   }
   useEffect(() => {
-    document.title = "Book a Dengue Test | Neuberg Anand";
+    document.title = "Book A Home Collection | Neuberg Anand";
     window.scroll(0, 0);
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -86,7 +86,7 @@ export default function Dengue() {
 
     const metaDescription = document.createElement('meta');
     metaDescription.name = 'description';
-    metaDescription.content = 'Get Tested for Dengue Now! Act quickly and ensure your health and safety by booking your dengue blood test with us today.';
+    metaDescription.content = 'Discover the convenience of Lab Testing at Home with Neuberg Anand. Our hassle-free and convenient Home Collection bring the lab to you, ensuring a stress-free and comfortable experience in the familiar surroundings of your home. Prioritise your health at home with Neuberg Anand. Lab Tests Anytime, Anywhere. ';
     document.head.appendChild(metaDescription);
 
     const metaKeywords = document.createElement('meta');
@@ -114,10 +114,35 @@ export default function Dengue() {
       });
     `;
 
+  const gtmScript4 = document.createElement('script');
+  gtmScript4.innerHTML = `
+      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+    `;
+
+  const gtmScript8 = document.createElement("script");
+  gtmScript8.innerHTML = `
+      gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
+        'phone_conversion_number': '+918035287579'
+      });
+  `;
+
+  const gtmScript9 = document.createElement("script");
+  gtmScript8.innerHTML = `
+      gtag('config', 'AW-10841898141/hmNnCMaRtt4ZEJ356LEo', {
+        'phone_conversion_number': '08035287578'
+      });
+  `;
+
+
   // Append the script tags to the head of the document
   document.head.appendChild(gtmScript1);
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
+  document.head.appendChild(gtmScript4);
+  document.head.appendChild(gtmScript8);
+  document.head.appendChild(gtmScript9);
 
   return (
     <>
@@ -137,33 +162,32 @@ export default function Dengue() {
               <div className="col-lg-7">
                 <div className="common-heading">
                   <h2>
-                    <span className="inlne">Is That Fever </span>
-                    Dengue?
+                    <span className="inlne">Take charge of your   </span>
+                    well-being today!
                   </h2>
                   <img src={anandhome} alt="Anand at Home Collection Box for Lab Testing – A white box with the 'Anand' logo, designed for convenient and secure collection of samples for laboratory testing at home with contact information written on it" className="img-fluid" />
                   <br />
                   <br />
-                  <div className="common-para1 drk detilos-expl indication-details p-0">
-                    <ul>
-                      <li>Dengue symptoms can include a cold, high fever, acute headache, severe pain in the eyes, joints, muscles, or bones, and a skin rash.</li>
-                      <li>To prevent dengue, it's recommended to wear long sleeves, pants, and socks; avoid outdoor play after dark; eliminate stagnant water at home; and ensure windows and doors are shut after dusk or have nets installed.
-                      </li>
-                    </ul>
+                  <div className="common-para1 drk detilos-expl indication-details p-0 text-left">
+                    <p>At Neuberg Anand, we offer comprehensive health checkups tailored to your needs, starting at just ₹999. Our expert team ensures precise and timely results, helping you stay healthy and proactive.  <br /><br />
+                      <b> Get 50% off on key tests – HbA1c, Vitamin D, and Iron Profile.</b> <br />
+                      <i> Offer valid till 31st October 2023.</i>                    {/* At Neuberg Anand, we offer comprehensive health checkups tailored to your needs, starting at just ₹999. Our expert team ensures precise and timely results, helping you stay healthy and proactive. */}
+                    </p>
+                    {/* <ul>
+                      <li>50% Off on Key Tests – HbA1c, Vitamin D, Iron Profile</li>
+                      <li>Valid till 31 Oct 2023</li>
+                    </ul> */}
                     <br />
-                    <p><b>If you experience any dengue symptoms, do not self-diagnose on the internet. Consult a doctor immediately for proper diagnosis and treatment.
-                    </b></p>
-                    <p className="mt-1"><b>Act quickly and ensure your health and safety by booking your dengue blood test with us today. <br />
-                    </b></p>
-                    <p><i>This guide helps you understand dengue but isn't a substitute for professional medical advice.</i></p>
+                    <b>Book your health check now!</b>
                   </div>
                 </div>
               </div>
               <div className="col-sm-12 col-md-12 col-lg-5 mb-5">
                 <div className="contact-number-container-home">
-                  <a href="tel:+918035287579 " className="call-icon-home shadow-lg"> <i className="fa fa-phone"></i>+918035287579 </a>
+                  <a href="tel:08035287578" className="call-icon-home shadow-lg"> <i className="fa fa-phone"></i>08035287578 </a>
                 </div>
                 <div className="green-bg ps-rel franc-isemed animated fadeInRight">
-                  <h4 className="mb-3 text-center text-white">Get Tested for Dengue Now!</h4>
+                  <h4 className="mb-3 text-center text-white">Enquire Now</h4>
                   <form onSubmit={handleSubmit(contactUsFrom)}>
                     <div className="formdata">
                       {errors?.name ? <small className='text-danger'>{errors?.name?.message}</small> : ''}
@@ -172,10 +196,6 @@ export default function Dengue() {
                     <div className="formdata">
                       {errors?.mobile ? <small className='text-danger'>{'Mobile is a invalid field'}</small> : ''}
                       <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
-                    </div>
-                    <div className="formdata">
-                      {errors?.email ? <small className='text-danger'>{'Email is a invalid field'}</small> : ''}
-                      <input {...register('email')} type="email" placeholder="Enter Your Email" className='form-control' />
                     </div>
                     <h6 className="text-light">
                       {/* Please enter your details and we will reach out to you as soon as we can. */}

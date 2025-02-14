@@ -94,7 +94,7 @@ export default function AllergyTesting() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
-   document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript5);
   document.head.appendChild(gtmScript8);
 
   // Define the gtag_report_conversion function
@@ -142,6 +142,7 @@ export default function AllergyTesting() {
         mobile: Yup.string()
           .matches(/^[6-9]\d{9}$/)
           .required(),
+        email: Yup.string().required(),
       })
     ),
   });
@@ -217,8 +218,8 @@ export default function AllergyTesting() {
 
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
-       document.head.appendChild(gtmScript5);
-  document.head.appendChild(gtmScript8);
+      document.head.appendChild(gtmScript5);
+      document.head.appendChild(gtmScript8);
     }
   }, []);
 
@@ -291,7 +292,7 @@ export default function AllergyTesting() {
                     {...register("name")}
                     type="text"
                     placeholder="Enter Your Name"
-                    className="name-number-inp"
+                    className={`name-number-inp ${errors?.name ? "input-error" : ""}`}
                   />
                   {errors?.mobile ? (
                     <small className="text-danger">
@@ -304,7 +305,20 @@ export default function AllergyTesting() {
                     {...register("mobile")}
                     type="tel"
                     placeholder="Enter Your Mobile Number"
-                    className="name-number-inp"
+                    className={`name-number-inp ${errors?.mobile ? "input-error" : ""}`}
+                  />
+                  {errors?.email ? (
+                    <small className="text-danger">
+                      {"Email is a invalid field"}
+                    </small>
+                  ) : (
+                    ""
+                  )}
+                  <input
+                    {...register("email")}
+                    type="email"
+                    placeholder="Enter Your Email"
+                    className={`name-number-inp ${errors?.email ? "input-error" : ""}`}
                   />
 
 

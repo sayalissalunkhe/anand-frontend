@@ -64,7 +64,7 @@ function HealthCheck() {
       });
   `;
 
-const gtmScript4 = document.createElement("script");
+  const gtmScript4 = document.createElement("script");
   gtmScript4.innerHTML = `
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -84,7 +84,7 @@ const gtmScript4 = document.createElement("script");
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
- document.head.appendChild(gtmScript5);
+  document.head.appendChild(gtmScript5);
   document.head.appendChild(gtmScript8);
 
   // Define the gtag_report_conversion function
@@ -130,6 +130,7 @@ const gtmScript4 = document.createElement("script");
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
+        email: Yup.string().required(),
         mobile: Yup.string()
           .matches(/^[6-9]\d{9}$/)
           .required(),
@@ -139,20 +140,20 @@ const gtmScript4 = document.createElement("script");
   });
   const contactUsFrom = (data) => {
     if (recaptchaValue) {
-    setLoading(true);
-    data.page = "HEALTH CHECK";
-    data.page_url = window.location.href;
-    data.notes = notesDataString;
+      setLoading(true);
+      data.page = "HEALTH CHECK";
+      data.page_url = window.location.href;
+      data.notes = notesDataString;
 
-    gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
+      gtag_report_conversion('https://www.anandlab.com/anand-at-home-thank-you');
 
-    axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
-      // FormResponse()
-      navigate("/anand-at-home-thank-you");
-      setLoading(false);
-      reset();
-      setOpen(!open);
-    });
+      axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
+        // FormResponse()
+        navigate("/anand-at-home-thank-you");
+        setLoading(false);
+        reset();
+        setOpen(!open);
+      });
     } else {
       // Handle the case where reCAPTCHA validation failed
       console.log('Please complete the reCAPTCHA');
@@ -164,8 +165,8 @@ const gtmScript4 = document.createElement("script");
     window.scroll(0, 0);
     if (window.location.pathname.includes('Bengaluru')) {
       document.head.appendChild(gtmScript4);
- document.head.appendChild(gtmScript5);
-  document.head.appendChild(gtmScript8);
+      document.head.appendChild(gtmScript5);
+      document.head.appendChild(gtmScript8);
     }
   }, []);
 
@@ -203,17 +204,17 @@ const gtmScript4 = document.createElement("script");
             <img src={dhoni_img} alt="banner-img" className="img-fluid" />
           </div>
         </div>
-      </div> 
+      </div>
 
       <div className="container pt-4">
         <div className="row">
           <div className="col-12 col-sm-8 col-md-5 m-auto">
-            {/* <p className={`${[css['page-content']]} text-center`}>Embark on a journey to holistic well-being with our Health Check. Comprehensive and thorough, this checkup covers every aspect of your health, providing invaluable insights into your overall wellness. </p> */}           
+            {/* <p className={`${[css['page-content']]} text-center`}>Embark on a journey to holistic well-being with our Health Check. Comprehensive and thorough, this checkup covers every aspect of your health, providing invaluable insights into your overall wellness. </p> */}
 
             <div className={`${[css['banner-links1']]} d-flex justify-content-center`}>
-                {/* <a href="#getin_touch" className={` ${css.get_touch}`}>Get in Touch</a> */}
-                <a href={`tel:+918035287579 `} className={` ${css.sent_enquiry} m-auto`}>CAll US <i className="fa fa-phone"></i> +918035287579 </a>
-              </div>
+              {/* <a href="#getin_touch" className={` ${css.get_touch}`}>Get in Touch</a> */}
+              <a href={`tel:+918035287579 `} className={` ${css.sent_enquiry} m-auto`}>CAll US <i className="fa fa-phone"></i> +918035287579 </a>
+            </div>
           </div>
         </div>
       </div>
@@ -475,6 +476,19 @@ const gtmScript4 = document.createElement("script");
                       type="tel"
                       placeholder="Mobile Number"
                       className="name-number-inp"
+                    />
+                    {errors?.email ? (
+                      <small className="text-danger">
+                        {"Email is a invalid field"}
+                      </small>
+                    ) : (
+                      ""
+                    )}
+                    <input
+                      {...register("email")}
+                      type="email"
+                      placeholder="Enter Your Email"
+                      className={`name-number-inp ${errors?.email ? "input-error" : ""}`}
                     />
                     <div className={[css['radio-inputs-container']]}>
                       <p>

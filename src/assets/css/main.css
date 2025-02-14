@@ -187,7 +187,8 @@ h6 {
   color: #6e6e6e;
 }
 
-h1 {
+h1,
+.maintenance-page {
   font-size: 50px;
   color: #5c2d91;
   font-weight: 700;
@@ -197,6 +198,11 @@ h1 {
   padding-left: 0px;
   margin-bottom: 0px;
 }
+
+.maintenance-page {
+  font-size: 30px;
+}
+
 
 h4 {
   font-weight: 300;
@@ -3231,6 +3237,14 @@ span.flag-option p {
   background-color: #5b2584;
 }
 
+.formdata .btn-primary {
+  font-weight: 600;
+}
+
+.formdata .btn-primary:hover {
+  background-color: #f7931e;
+}
+
 .mid-poart {
   position: relative;
 }
@@ -6049,6 +6063,10 @@ input[type="range"]::-moz-range-thumb {
   right: 0;
 }
 
+.womensdayawrapsec:hover {
+  color: #fff;
+}
+
 .womensdayawrapsec span {
   display: inline-block;
   vertical-align: middle;
@@ -6112,9 +6130,12 @@ input[type="range"]::-moz-range-thumb {
 .womensdayawrapsec {
   position: relative;
   background: #4f1f85;
-  padding: 10px;
+  padding: 10px 1.5rem;
   box-shadow: 0px 0px 35px hsla(0, 0%, 0%, 0.1);
   cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
   color: #fff;
 }
 
@@ -6134,7 +6155,8 @@ input[type="range"]::-moz-range-thumb {
   right: 0;
   bottom: 0;
   z-index: 99999;
-  width: 380px;
+  width: 300px;
+  background: #4f1f85;
 }
 
 .womendaycontent {
@@ -8694,7 +8716,8 @@ ul.action-felds li i.fa.fa-minus-square {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  height: 23vw;
+  /* height: 23vw; */
+  height: 31vw;
   min-height: 275px;
   max-height: 375px;
 }
@@ -8805,8 +8828,19 @@ ul.action-felds li i.fa.fa-minus-square {
   border-radius: 5px;
 }
 
-.name-number-inp.error {
+.name-number-inp.error,
+.name-number-inp.input-error {
   border: 1px solid red !important;
+}
+
+.book-health-form-container .text-danger,
+.friendship-day-page .text-danger,
+#getin_touch .text-danger {
+  display: none;
+}
+
+.name-number-inp.input-error::placeholder {
+  color: red !important;
 }
 
 .error {
@@ -10375,6 +10409,12 @@ img.line-image {
   .w-25 {
     width: 50% !important;
   }
+
+  .text-light+div>div>div,
+  .text-light+div>div>div iframe,
+  .rc-anchor-normal {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 769px) {
@@ -10399,12 +10439,30 @@ img.line-image {
     width: 60%;
     margin-top: 1rem;
   }
+
+  .text-light+div>div>div,
+  .text-light+div>div>div iframe,
+  .rc-anchor-normal {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 600px) {
+
+  .maintenance-page {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+
   /* .brochure-btn {
     float: none;
   } */
+
+  .text-light+div>div>div,
+  .text-light+div>div>div iframe,
+  .rc-anchor-normal {
+    width: 100% !important;
+  }
 
   .director-row {
     width: 90%;
