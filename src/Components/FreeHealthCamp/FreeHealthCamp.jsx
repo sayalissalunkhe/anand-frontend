@@ -68,7 +68,7 @@ export default function FreeHealthCamp() {
   const contactUsFrom = (data) => {
     if (recaptchaValue) {
       setLoading(true)
-      data.page = 'ANAND AT HOME'
+      data.page = 'Free Health Camp'
       data.page_url = window.location.href
       data.notes = notesDataString;
       axios.post(API_URL.LANDING_PAGES_FORM, data).then((res) => {
@@ -86,24 +86,24 @@ export default function FreeHealthCamp() {
     }
   }
   useEffect(() => {
-    document.title = "Book A Home Collection | Neuberg Anand";
+    document.title = "Free Health Camp | Neuberg Anand";
     window.scroll(0, 0);
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       window.dataLayer.push(arguments);
     }
     gtag("js", new Date());
-    // gtag("config", "AW-10841898141");
-    gtag('config', 'G-8VQRMYBYFG');
+    gtag("config", "AW-10841898141");
+    // gtag('config', 'G-8VQRMYBYFG');
 
     const metaDescription = document.createElement('meta');
     metaDescription.name = 'description';
-    metaDescription.content = 'Discover the convenience of Lab Testing at Home with Neuberg Anand. Our hassle-free and convenient Home Collection bring the lab to you, ensuring a stress-free and comfortable experience in the familiar surroundings of your home. Prioritise your health at home with Neuberg Anand. Lab Tests Anytime, Anywhere. ';
+    metaDescription.content = 'Discover the convenience of Lab Testing at Home with Neuberg Anand. Our hassle-free and convenient Free Health Camp bring the lab to you, ensuring a stress-free and comfortable experience in the familiar surroundings of your home. Prioritise your health at home with Neuberg Anand. Lab Tests Anytime, Anywhere. ';
     document.head.appendChild(metaDescription);
 
     const metaKeywords = document.createElement('meta');
     metaKeywords.name = 'keywords';
-    metaKeywords.content = 'anand diagnostic, blood test, lab test home collection, anand lab bangalore, diagnostic centre near me open now, anand laboratory, full body test, health checkup bangalore, thyroid test price, allergy testing, cbc test price, allergy skin patch test, hcg test, immunology tests, blood sugar test, NST testing, NIPT testing, lipid profile test, diabetes tests, kidney test';
+    metaKeywords.content = 'anand diagnostic, blood test, lab test Free Health Camp, anand lab bangalore, diagnostic centre near me open now, anand laboratory, full body test, health checkup bangalore, thyroid test price, allergy testing, cbc test price, allergy skin patch test, hcg test, immunology tests, blood sugar test, NST testing, NIPT testing, lipid profile test, diabetes tests, kidney test';
     document.head.appendChild(metaKeywords);
   }, []);
 
@@ -128,16 +128,7 @@ export default function FreeHealthCamp() {
 
   const gtmScript4 = document.createElement('script');
   gtmScript4.innerHTML = `
-      gtag('config', 'AW-10841898141/GDwECMeVpv0YEJ356LEo', {
-        'phone_conversion_number': '+918035287579'
-      });
-    `;
-
-  const gtmScript8 = document.createElement("script");
-  gtmScript8.innerHTML = `
-      gtag('config', 'AW-10841898141/QgvjCPu13tMZEJ356LEo', {
-        'phone_conversion_number': '+918035287579'
-      });
+     gtag('event', 'conversion', {'send_to': 'AW-10841898141/Qa7oCKKE9ZoZEJ356LEo'});
   `;
 
 
@@ -146,17 +137,16 @@ export default function FreeHealthCamp() {
   document.head.appendChild(gtmScript2);
   document.head.appendChild(gtmScript3);
   document.head.appendChild(gtmScript4);
-  document.head.appendChild(gtmScript8);
 
   return (
     <>
 
       <Helmet>
-        {/* <script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-10841898141"
-        ></script> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VQRMYBYFG"></script>
+        ></script>
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VQRMYBYFG"></script> */}
       </Helmet>
 
       <div>
@@ -167,9 +157,9 @@ export default function FreeHealthCamp() {
                 <div className="common-heading">
                   <h2>
                     <span className="inlne">Free Health Camp at Neuberg Anand, Shivajinagar
-</span><br/>Special Offers on Lab & Radiology Tests!
+                    </span><br />Special Offers on Lab & Radiology Tests!
                   </h2>
-                  <img src={anandhome} alt="Anand at Home Collection Box for Lab Testing – A white box with the 'Anand' logo, designed for convenient and secure collection of samples for laboratory testing at home with contact information written on it" className="img-fluid" />
+                  <img src={anandhome} alt="Anand at Free Health Camp Box for Lab Testing – A white box with the 'Anand' logo, designed for convenient and secure collection of samples for laboratory testing at home with contact information written on it" className="img-fluid" />
                   <br />
                   <br />
                   <div className="common-para1 drk detilos-expl text-justify indication-details p-0">
@@ -177,22 +167,22 @@ export default function FreeHealthCamp() {
                     </p>
                     <h2 class="text-center mb-3 mt-5">Exclusive Health Camp Offers</h2>
                     <ul class=" mb-4 mt-2">
-                        <li><strong>FREE Blood Sugar Tests</strong> – FBS, PPBS, RBS</li>
-                        <li><strong>20% OFF</strong> on Routine Lab Investigations (A & B Category)</li>
-                        <li><strong>30% OFF</strong> on Radiology Tests – Echo, ECG, TMT, Mammogram, Dexa, X-ray Chest</li>
-                      </ul>
-                      <div className=" mt-4">
+                      <li><strong>FREE Blood Sugar Tests</strong> – FBS, PPBS, RBS</li>
+                      <li><strong>20% OFF</strong> on Routine Lab Investigations (A & B Category)</li>
+                      <li><strong>30% OFF</strong> on Radiology Tests – Echo, ECG, TMT, Mammogram, Dexa, X-ray Chest</li>
+                    </ul>
+                    <div className=" mt-4">
                       <h2 className="text-center mb-3">Event Details</h2>
                       <ul class=" mb-0 mt-2">
                         <li><strong>Dates:</strong> 22nd & 23rd February 2025</li>
                         <li><strong>Time:</strong> 7:30 AM – 4:00 PM</li>
                         <li><strong>Location:</strong> Neuberg Anand , Shivajinagar Branch, Bangalore</li>
                         <li><strong>Find Us Easily on Google Maps:</strong></li>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.849743711489!2d77.60357287539158!3d12.981460587334869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1662e7c1a033%3A0x33ceeda312ca9a2c!2sNeuberg%20Anand%20Reference%20Laboratory%20-%20Shivajinagar%20offers%20Diagnostics%2C%20X%20Ray%2C%20ECG%2C%20Dexa%2C%20Mammogram%2C%20Ultrasound!5e0!3m2!1sen!2sin!4v1739534046549!5m2!1sen!2sin" width="400" height="300" style={{border:0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.849743711489!2d77.60357287539158!3d12.981460587334869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1662e7c1a033%3A0x33ceeda312ca9a2c!2sNeuberg%20Anand%20Reference%20Laboratory%20-%20Shivajinagar%20offers%20Diagnostics%2C%20X%20Ray%2C%20ECG%2C%20Dexa%2C%20Mammogram%2C%20Ultrasound!5e0!3m2!1sen!2sin!4v1739534046549!5m2!1sen!2sin" width="400" height="300" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                       </ul>
                     </div>
-        
+
 
                     {/* <ul>
                       <li>Sample collection done right at your doorstep</li>
