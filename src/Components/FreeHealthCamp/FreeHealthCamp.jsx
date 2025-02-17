@@ -166,8 +166,8 @@ export default function FreeHealthCamp() {
               <div className="col-lg-7">
                 <div className="common-heading">
                   <h2>
-                    <span className="inlne">Free Health Camp at Neuberg Anand, Shivajinagar 
-                    </span><br/>– Special Offers on Lab & Radiology Tests!
+                    <span className="inlne">Free Health Camp at Neuberg Anand, Shivajinagar
+</span><br/>Special Offers on Lab & Radiology Tests!
                   </h2>
                   <img src={anandhome} alt="Anand at Home Collection Box for Lab Testing – A white box with the 'Anand' logo, designed for convenient and secure collection of samples for laboratory testing at home with contact information written on it" className="img-fluid" />
                   <br />
@@ -186,7 +186,7 @@ export default function FreeHealthCamp() {
                       <ul class=" mb-0 mt-2">
                         <li><strong>Dates:</strong> 22nd & 23rd February 2025</li>
                         <li><strong>Time:</strong> 7:30 AM – 4:00 PM</li>
-                        <li><strong>Location:</strong> Neuberg Anand, Shivajinagar Branch, Bangalore</li>
+                        <li><strong>Location:</strong> Neuberg Anand , Shivajinagar Branch, Bangalore</li>
                         <li><strong>Find Us Easily on Google Maps:</strong></li>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.849743711489!2d77.60357287539158!3d12.981460587334869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1662e7c1a033%3A0x33ceeda312ca9a2c!2sNeuberg%20Anand%20Reference%20Laboratory%20-%20Shivajinagar%20offers%20Diagnostics%2C%20X%20Ray%2C%20ECG%2C%20Dexa%2C%20Mammogram%2C%20Ultrasound!5e0!3m2!1sen!2sin!4v1739534046549!5m2!1sen!2sin" width="400" height="300" style={{border:0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
