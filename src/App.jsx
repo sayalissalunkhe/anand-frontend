@@ -92,6 +92,8 @@ import HealthCheck from './Components/HealthCheck/HealthCheck'
 import LatestOffer from './Components/LatestOffer/LatestOffer'
 import MaintenancePage from './Components/MaintenancePage/MaintenancePage'
 import MiniFooter from './Components/Includes/MiniFooter'
+import FreeHealthCamp from './Components/FreeHealthCamp/FreeHealthCamp'
+
 
 export default function App() {
   const dispatch = useDispatch();
@@ -298,6 +300,7 @@ export default function App() {
           <Route path='/independence-day' exact element={<IndependenceDay />} />
           <Route path='/senior-citizen-card' exact element={<SeniorCitizenCard />} />
           <Route path='/latest-offer-old' exact element={<LatestOffer />} />
+          <Route path='/free-health-camp' exact element={<FreeHealthCamp />} />
 
           {/* New routes */}
           <Route path='/neuberg-anand-lab-at-home-dengue-test' exact element={<Dengue />} />
