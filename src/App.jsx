@@ -93,7 +93,7 @@ import LatestOffer from './Components/LatestOffer/LatestOffer'
 import MaintenancePage from './Components/MaintenancePage/MaintenancePage'
 import MiniFooter from './Components/Includes/MiniFooter'
 import FreeHealthCamp from './Components/FreeHealthCamp/FreeHealthCamp'
-import TestingPage from './Components/Testing-Page/Testing-Page'
+// import TestingPage from './Components/Testing-Page/Testing-Page'
 
 
 export default function App() {
@@ -302,7 +302,7 @@ export default function App() {
           <Route path='/senior-citizen-card' exact element={<SeniorCitizenCard />} />
           <Route path='/latest-offer-old' exact element={<LatestOffer />} />
           <Route path='/free-health-camp' exact element={<FreeHealthCamp />} />
-          <Route path='/testing-page' exact element={<TestingPage />} />
+          {/* <Route path='/testing-page' exact element={<TestingPage />} /> */}
 
 
 
